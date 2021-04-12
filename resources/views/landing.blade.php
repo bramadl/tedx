@@ -16,7 +16,7 @@
             <p class="Section-Text">
                 Keinginan kami untuk terkoneksi denganmu kami wujudkan dalam Gerai Sorai. Ramaikan perayaan ini dengan membeli Merchandise TEDxUniversitasBrawijaya!
             </p>
-            <a href="http://localhost:8000" class="Section-Link">
+            <a href="https://app.tedxuniversitasbrawijaya.com" class="Section-Link">
                 Beli Sekarang
             </a>
         </main>
