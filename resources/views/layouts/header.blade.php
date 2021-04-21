@@ -1,6 +1,6 @@
 <header class="Header">
   <nav class="Nav">
-    <a href="#">
+    <a href="/">
       <img src="/img/tedx.png" alt="TEDx" class="Nav-Logo" />
     </a>
 

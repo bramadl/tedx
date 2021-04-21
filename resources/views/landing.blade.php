@@ -14,7 +14,7 @@
             Loka Hasta Karya hadir sebagai wadah apresiasi bagi setiap bagian dari kita yang ingin berkontribusi dalam Manifestasi Peradaban melalui karya-karya terbaik yang akan ditampilkan pada penyelenggaraan eksibisi Main Event TEDxUniversitasBrawijaya 2021. Kami mengajakmu berpartisipasi dalam Loka Hasta Karya dengan cara memberikan karya-karya terbaikmu di sini!
             </p>
             <a href="{{ url('/loka-hasta-karya/registrasi') }}" class="Section-Link">Registrasi</a>
-            <a href="" class="Section-Link">Guideline</a>
+            <a href="{{ url('/loka-hasta-karya/guidelines') }}" class="Section-Link">Guideline</a>
         </main>
     </section>
 
