@@ -206,7 +206,29 @@
                         displayErrorFor('sumber_informasi', sumber_informasi)
                     }
 
-                    console.log(data);
+                    if (data.success) {
+                        Swal.fire({
+                            title: 'File kamu telah kami simpan!',
+                            text: "Kami akan menghubungi melalui Email. Mohon menunggu informasi berikutnya!",
+                            icon: 'success',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Lanjutkan!',
+                            cancelButtonText: 'Tutup!',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire(
+                                    'Terima kasih!',
+                                    'Jangan lupa untuk datang di main event!',
+                                    'success'
+                                )
+                            }
+                            setTimeout(() => {
+                                location.href = '/'
+                            }, 2000)
+                        })
+                    }
                 })
                 .catch(error => {
                     console.log('Lah', error);
