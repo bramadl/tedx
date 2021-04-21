@@ -462,7 +462,11 @@ button {
   justify-content: flex-start;
 }
 
-.Landing .Section--Lokarona {
+.Landing .Section--LokaKarya {
+  text-align: end;
+}
+
+.Landing .Section--LokaKarya {
   justify-content: flex-end;
 }
 
@@ -499,7 +503,7 @@ button {
 }
 
 .Landing .Section .Elaborasi-Section,
-.Landing .Section .Lokarona-Section {
+.Landing .Section .LokaKarya-Section {
   position: relative;
   z-index: 2;
   width: 75%;
@@ -510,27 +514,27 @@ button {
 
 @media only screen and (min-width: 768px) {
   .Landing .Section .Elaborasi-Section,
-  .Landing .Section .Lokarona-Section {
+  .Landing .Section .LokaKarya-Section {
     width: 50%;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .Landing .Section .Elaborasi-Section,
-  .Landing .Section .Lokarona-Section {
+  .Landing .Section .LokaKarya-Section {
     padding: 1rem 2rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .Landing .Section .Elaborasi-Section,
-  .Landing .Section .Lokarona-Section {
+  .Landing .Section .LokaKarya-Section {
     padding: 2rem 4rem;
   }
 }
 
 .Landing .Section .Elaborasi-Section .Section-Title,
-.Landing .Section .Lokarona-Section .Section-Title {
+.Landing .Section .LokaKarya-Section .Section-Title {
   color: #010202;
   font-family: "Manifestasi", sans-serif;
   font-size: 1.5rem;
@@ -539,20 +543,20 @@ button {
 
 @media only screen and (min-width: 768px) {
   .Landing .Section .Elaborasi-Section .Section-Title,
-  .Landing .Section .Lokarona-Section .Section-Title {
+  .Landing .Section .LokaKarya-Section .Section-Title {
     font-size: 2.5rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .Landing .Section .Elaborasi-Section .Section-Title,
-  .Landing .Section .Lokarona-Section .Section-Title {
+  .Landing .Section .LokaKarya-Section .Section-Title {
     font-size: 4rem;
   }
 }
 
 .Landing .Section .Elaborasi-Section .Section-Text,
-.Landing .Section .Lokarona-Section .Section-Text {
+.Landing .Section .LokaKarya-Section .Section-Text {
   color: #010202ee;
   font-family: "Stamp One", sans-serif;
   font-size: 0.8rem;
@@ -561,20 +565,20 @@ button {
 
 @media only screen and (min-width: 768px) {
   .Landing .Section .Elaborasi-Section .Section-Text,
-  .Landing .Section .Lokarona-Section .Section-Text {
+  .Landing .Section .LokaKarya-Section .Section-Text {
     font-size: 1rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .Landing .Section .Elaborasi-Section .Section-Text,
-  .Landing .Section .Lokarona-Section .Section-Text {
+  .Landing .Section .LokaKarya-Section .Section-Text {
     font-size: 1.25rem;
   }
 }
 
 .Landing .Section .Elaborasi-Section .Section-Link,
-.Landing .Section .Lokarona-Section .Section-Link {
+.Landing .Section .LokaKarya-Section .Section-Link {
   background: rgba(255, 255, 255, 0);
   border: 2px solid #010202ee;
   border-radius: 0.5rem;
@@ -590,13 +594,13 @@ button {
 
 @media only screen and (min-width: 768px) {
   .Landing .Section .Elaborasi-Section .Section-Link,
-  .Landing .Section .Lokarona-Section .Section-Link {
+  .Landing .Section .LokaKarya-Section .Section-Link {
     font-size: 1rem;
   }
 }
 
 .Landing .Section .Elaborasi-Deco,
-.Landing .Section .Lokarona-Deco {
+.Landing .Section .LokaKarya-Deco {
   position: absolute;
   right: 0;
   top: 0;
@@ -604,7 +608,7 @@ button {
   z-index: 1;
 }
 
-.Landing .Section .Lokarona-Deco {
+.Landing .Section .LokaKarya-Deco {
   left: 0;
   width: 25%;
 }
@@ -736,7 +740,7 @@ button {
   color: #fff;
 }
 
-.Lokarona {
+.LokaKarya {
   --bg: linear-gradient(145deg, rgb(5, 5, 5), rgb(10, 10, 10));
   --cl: #FEFAFA;
   width: 100%;
@@ -747,7 +751,7 @@ button {
   color: var(--cl);
 }
 
-.Lokarona-Preload {
+.LokaKarya-Preload {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -757,7 +761,7 @@ button {
   text-align: center;
 }
 
-.Lokarona-Preload .ml13 {
+.LokaKarya-Preload .ml13 {
   font-family: "Lato", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
@@ -766,16 +770,16 @@ button {
 }
 
 @media only screen and (min-width: 768px) {
-  .Lokarona-Preload .ml13 {
+  .LokaKarya-Preload .ml13 {
     font-size: 2rem;
   }
 }
 
-.Lokarona-Preload .ml13 .letter {
+.LokaKarya-Preload .ml13 .letter {
   display: inline-block;
 }
 
-.Lokarona-Header {
+.LokaKarya-Header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -785,17 +789,17 @@ button {
 }
 
 @media only screen and (min-width: 768px) {
-  .Lokarona-Header {
+  .LokaKarya-Header {
     flex-direction: row;
   }
 }
 
-.Lokarona-Title {
+.LokaKarya-Title {
   margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .Lokarona-Title {
+  .LokaKarya-Title {
     margin-bottom: 0;
   }
 }
