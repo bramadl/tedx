@@ -1235,3 +1235,83 @@ button {
     margin-bottom: 3rem;
   }
 }
+
+/* Guidelines pages */
+.guideline {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: url("/img/backgrounds/background.jpg") center top/cover;
+}
+.Section-Guideline {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+}
+.section-header, 
+.terms-conditions,
+.registrasi-guideline {
+  /* border: 1px solid red; */
+  width: 80%;
+  margin: auto;
+}
+
+.section-guideline-title {
+  text-align: center;
+  font-family: 'Manifestasi';
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+.section-guideline-title span {
+  color: red;
+}
+.section-guideline-content {
+  text-align: justify;
+  font-size: 1.2rem;
+}
+.registrasi-periode-guideline {
+  text-align: center;
+  margin: 3rem 0;
+  font-family: 'Manifestasi';
+  font-size: 1.5rem;
+}
+.terms-conditions h2 {
+  margin: 1rem 0;
+  font-family: 'Manifestasi';
+  font-size: 2rem;
+}
+.terms-conditions {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+.terms-conditions ol li {
+  line-height: 1.5rem;
+}
+
+.registrasi-guideline h2{
+  margin: 1rem 0;
+  font-family: 'Manifestasi';
+  font-size: 2rem;
+}
+.registrasi-guideline {
+  text-align: justify;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+/* Responsive Pages */
+@media screen and (min-width: 360px) {
+  .section-guideline-title {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .terms-conditions h2,
+  .registrasi-guideline 
+  h2 {
+    text-align: center;
+  }
+  .registrasi-guideline {
+    margin-bottom: 10rem;
+  }
+}
