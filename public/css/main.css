@@ -1156,3 +1156,82 @@ button {
   text-decoration: underline;
   margin-top: 1rem;
 }
+
+/* Loka Hasta Karya Pages */
+.forms {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: url("/img/backgrounds/background.jpg") center top/cover;
+}
+.Section-Form-LokaKarya .Section-Title{
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Manifestasi';
+  font-size: 2rem;
+}
+.Section-Form-LokaKarya .Section-Title span{
+  color: red;
+}
+.Section-Form-LokaKarya {
+  width: 100%;
+}
+.Section-Title {
+  width: 100%;
+}
+.Section-Form {
+  width: 80%;
+  margin: auto;
+}
+.Section-Form .form-group label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+.form-group {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+.form-group .text{
+  width: 100%;
+  background: none;
+  padding: .5rem;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.form-group textarea {
+  width: 100%;
+  background: none;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.form-group .radio-input {
+  margin: .75rem;
+}
+.buttonLokaWrapper {
+  text-align: center;
+}
+.buttonLoka {
+  margin-top: 3rem;
+  background-color: black;
+  color: white;
+  width: 320px;
+  padding: .75rem 0;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Responsive Forms */
+@media only screen and (max-width: 768px) {
+  .Section-Title h1{
+    text-align: center;
+    font-size: 2rem;
+  }
+  .buttonLokaWrapper {
+    margin-bottom: 3rem;
+  }
+}
