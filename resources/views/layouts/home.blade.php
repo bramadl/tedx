@@ -38,6 +38,7 @@
     @yield('page')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @stack('scripts')
 </body>
 
