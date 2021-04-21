@@ -109,7 +109,7 @@
 
 @push('scripts')
 <script>
-    const url = 'http://127.0.0.1:8001/api/loka-hasta-karya'
+    const url = 'https://admin.tedxuniversitasbrawijaya.com/api/loka-hasta-karya'
     const form = document.getElementById('form-loka-hasta-karya')
 
     const getValueFrom = (element) => {
