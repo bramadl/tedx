@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'landing');
-Route::view('/loka-hasta-karya/registrasi', 'loka-hasta-karya.form');
-Route::view('/loka-hasta-karya/guidelines', 'loka-hasta-karya.guideline');
+Route::view('/', 'home');

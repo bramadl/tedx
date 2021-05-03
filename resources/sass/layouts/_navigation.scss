@@ -1,0 +1,23 @@
+._tedx_navigation_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  ._tedx_logo_container {
+    line-height: 0;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  ._tedx_menu_container {
+    display: inline-block;
+  }
+}
