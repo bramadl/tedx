@@ -21,16 +21,19 @@
 </head>
 
 <body>
-    <div id="cursor"><div class="cursor__circle"></div></div>
     <div class="_tedx" data-scroll-container>
+        @include('layouts.partials.menu')
         <div class="_tedx_header_wrapper" data-scroll-section>
-            @include('layouts.partials.navigation')
             <div class="_tedx_hero_wrapper">
+                @include('layouts.partials.navigation')
                 @yield('hero')
             </div>
         </div>
         @yield('content')
         @include('layouts.partials.footer')
+    </div>
+    <div id="cursor">
+        <div class="cursor__circle"></div>
     </div>
 
     <!-- GSAP JS -->
