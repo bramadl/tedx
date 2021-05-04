@@ -1,6 +1,6 @@
 // @ts-nocheck
 // You can change global variables here:
-var radius = 250; // how big of the radius
+var radius = 260; // how big of the radius
 var autoRotate = true; // auto rotate or not
 var rotateSpeed = -100; // unit: seconds/360 degrees
 var imgWidth = 150; // width of images (unit: px)

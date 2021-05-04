@@ -7,6 +7,7 @@
 @import "layouts/header";
 @import "layouts/navigation";
 @import "layouts/hero";
+@import "layouts/footer";
 
 // Sections
 @import "sections/videoTeaser";
@@ -80,98 +81,114 @@
     justify-content: space-between;
 }
 
-._tedx_footer {
-  width: calc(100% + 200px);
-  height: auto;
-  margin-left: -100px;
-  margin-top: 250px;
-
-  ._tedx_footer_container {
-    position: relative;
-    background: #751B1B;
-    padding: 100px 100px 0;
+#speakerList {
+  ._tedx_speaker_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+  }
+  
+  ._tedx_speaker_profile {
+    position: relative;
+    border-radius: 1rem;
 
-    &::before {
-      content: "";
+    ._tedx_speaker_image {
+      width: 768px;
+      height: 576px;
+      border-radius: 1rem;
+      position: relative;
+
+      &.reveal {
+        visibility: hidden;
+        overflow: hidden;
+      
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transform-origin: left;
+        }
+      }
+    }
+
+    ._tedx_speaker_title {
       position: absolute;
-      left: 0;
-      bottom: 100%;
-      transform: translate(0, 1px);
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #751B1B);
-    }
-
-    ._tedx_footer_asset {
-      transform: translateY(1rem);
-    }
-
-    ._tedx_footer_content {
-
-      ._tedx_footer_quick_links {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1rem;
-
-        h4 {
+      left: 2rem;
+      bottom: 2rem;
+      width: calc(100% - 4rem);
+      
+      div {
+        overflow: hidden;
+        h1 {
+          display: inline-block;
+          padding: 1rem;
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: .5rem;
+          white-space: nowrap;
           color: $white;
           font-size: 1.5rem;
-          font-weight: 400;
+          font-weight: 800;
           font-family: 'Playfair Display', serif;
         }
-
-        ul {
-          margin-top: 2rem;
-
-          li {
-            margin: 1rem 0;
-            overflow: hidden;
-
-            a {
-              color: $white;
-              font-family: 'Open Sans', sans-serif;
-              font-size: 1rem;
-              font-weight: 300;
-              text-decoration: none;
-              transition: margin-left .4s $cubiz-bezier;
-
-              &:hover {
-                margin-left: .5rem;
-              }
-            }
-          }
-        }
       }
+    }
+  }
 
-      ._tedx_footer_license {
-        color: $white;
-        font-size: 1rem;
-        font-weight: 300;
-        font-family: 'Open Sans', sans-serif;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: .5rem;
-        padding: 1rem;
-        margin: 2rem 0;
-      }
+  .separator {
+    width: 1px;
+    height: 576px;
+    background: $white-50;
+    border-radius: 100px;
+  }
 
-      ._tedx_footer_extra_links {
+  ._tedx_speaker_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    ._tedx_speaker_list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      ._tedx_speaker_avatar {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-
-        a {
-          color: $white-50;
-          font-size: 1.25rem;
-          font-family: 'Playfair Display', serif;
-          transition: .4s $cubiz-bezier;
-
-          &:hover {
+        justify-content: flex-start;
+        padding: 1rem 0;
+        border-bottom: 1px solid $white-50;
+        opacity: 0;
+  
+        img {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+  
+        ._tedx_speaker_info {
+          margin-left: 1rem;
+          
+          h1 {
             color: $white;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+          }
+  
+          p {
+            margin-top: 1rem;
+            color: $white-50;
+            font-size: 1rem;
+            font-weight: 300;
+            font-family: 'Open Sans', sans-serif;
           }
         }
       }
+    }
+
+    ._tedx_link {
+      align-self: flex-end;
     }
   }
 }

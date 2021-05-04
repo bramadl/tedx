@@ -6,5 +6,6 @@ require('./plugins/gsap.js');
 require('./plugins/locomotiveScroll');
 
 require('./modules/teaser');
+require('./modules/speaker');
 require('./modules/archetype');
 

@@ -1,75 +1,104 @@
 #cursor {
-  position: fixed;
-  z-index: 99;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  will-change: transform;
-  mix-blend-mode: difference;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: difference;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .cursor__circle {
-      width: 2rem;
-      height: 2rem;
-      margin-top: -50%;
-      margin-left: -50%;
-      border-radius: 50%;
-      border: solid 1px rgba(227, 222, 193, 0.64);
-      transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-          background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-          border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-          width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-          height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  }
+    .cursor__circle {
+        width: 2rem;
+        height: 2rem;
+        margin-top: -50%;
+        margin-left: -50%;
+        border-radius: 50%;
+        border: solid 1px rgba(227, 222, 193, 0.64);
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-  #cursor.hover .cursor__circle {
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: #073099;
-      border-color: #073099;
-  }
+    #cursor.hover .cursor__circle {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #073099;
+        border-color: #073099;
+    }
 
-  #cursor.click .cursor__circle,
-  #cursor.drag .cursor__circle {
-      width: 128px;
-      height: 128px;
-      background-color: #073099;
-      border-color: #073099;
-  }
+    #cursor.subtle .cursor__circle {
+        opacity: 0.16;
+    }
 
-  #cursor.click::after,
-  #cursor.drag::after {
-      position: absolute;
-      left: -50%;
-      top: -50%;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 300;
-      font-family: "Playfair Display", serif;
-      text-transform: uppercase;
-      color: $white;
-  }
+    #cursor.overlay .cursor__circle {
+        width: 48px;
+        height: 48px;
+        background-color: rgba(227, 222, 193, 0.08);
+        border-color: transparent;
+    }
 
-  #cursor.drag::after {
-      content: "Drag";
-  }
-  #cursor.click::after {
-      content: "Click";
-  }
+    #cursor.speaker .cursor__circle,
+    #cursor.drag .cursor__circle {
+        width: 128px;
+        height: 128px;
+        background-color: #073099;
+        border-color: #073099;
+    }
 
-  #cursor.subtle .cursor__circle {
-      opacity: 0.16;
-  }
+    #cursor.dreamer .cursor__circle,
+    #cursor.hero .cursor__circle,
+    #cursor.lover .cursor__circle,
+    #cursor.jester .cursor__circle {
+        width: 128px;
+        height: 128px;
+        background-color: #073099;
+        border-color: #073099;
+    }
 
-  #cursor.overlay .cursor__circle {
-      width: 48px;
-      height: 48px;
-      background-color: rgba(227, 222, 193, 0.08);
-      border-color: transparent;
-  }
+    #cursor.dreamer::after,
+    #cursor.hero::after,
+    #cursor.lover::after,
+    #cursor.jester::after,
+    #cursor.speaker::after,
+    #cursor.drag::after {
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-family: "Playfair Display", serif;
+        text-transform: uppercase;
+        text-align: center;
+        color: $white;
+        font-size: 1rem;
+    }
+
+    #cursor.speaker::after {
+        content: "Click To Read";
+    }
+    #cursor.drag::after {
+        content: "Drag";
+    }
+    #cursor.dreamer::after {
+        content: "The Dreamer";
+    }
+    #cursor.hero::after {
+        content: "The Hero";
+    }
+    #cursor.lover::after {
+        content: "The Lover";
+    }
+    #cursor.jester::after {
+        content: "The Jester";
+    }
+    
 }
