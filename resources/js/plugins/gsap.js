@@ -69,4 +69,3 @@ tl
   duration: 1,
   ease: 'power2.inOut'
 }, '-=.6')
-

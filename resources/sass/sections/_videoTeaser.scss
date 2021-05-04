@@ -1,0 +1,86 @@
+#videoTeaser {
+    ._tedx_video_teaser {
+        position: relative;
+        height: 100vh;
+        padding: 0 1rem;
+        display: grid;
+        place-content: center;
+
+        ._tedx_video_mask {
+            width: 80vw;
+            height: 80vh;
+            background: url(https://images.unsplash.com/photo-1486693128850-a77436e7ba3c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+            background-size: cover;
+            background-position-x: 50%;
+            background-position-y: 90%;
+            background-size: 100%;
+            border-radius: 1rem;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $black-50;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            ._tedx_video_text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -40%);
+                text-align: center;
+                z-index: 1;
+                opacity: 0;
+                transition: 0.4s $cubiz-bezier;
+
+                h1 {
+                    font-size: 1rem;
+                    font-weight: 300;
+                    font-family: "Open Sans", sans-serif;
+                    letter-spacing: 4px;
+
+                    span {
+                        color: $red;
+                    }
+                }
+
+                h2 {
+                    font-size: 4rem;
+                    font-weight: 800;
+                    font-family: "Open Sans", sans-serif;
+                    text-transform: uppercase;
+                    margin: 1.5rem 0;
+                }
+
+                button {
+                    border-radius: 100px;
+                    border: none;
+                    outline: none;
+                    appearance: none;
+                    background: $red-50;
+                    color: $white;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    font-family: "Open Sans", sans-serif;
+                    display: inline-block;
+                    padding: 0.5rem 1.25rem;
+                    transition: 0.4s $cubiz-bezier;
+
+                    &:hover {
+                        background: $red;
+                    }
+                }
+            }
+        }
+    }
+}

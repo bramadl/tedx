@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    cursor: none !important;
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -245,7 +246,7 @@ html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
+    cursor: none; /* 3 */
     *overflow: visible;  /* 4 */
 }
 
