@@ -1,10 +1,31 @@
 // @ts-nocheck
 // You can change global variables here:
-var radius = 260; // how big of the radius
+var radius; // how big of the radius
 var autoRotate = true; // auto rotate or not
 var rotateSpeed = -100; // unit: seconds/360 degrees
-var imgWidth = 150; // width of images (unit: px)
-var imgHeight = 180; // height of images (unit: px)
+var imgWidth; // width of images (unit: px)
+var imgHeight; // height of images (unit: px)
+if (window.innerWidth < 576) { 
+  radius = 100
+  imgWidth = 60
+  imgHeight = 90
+}
+else if (window.innerWidth < 768) { 
+  radius = 480
+  imgWidth = 90
+  imgHeight = 120
+}
+else if (window.innerWidth < 996) { 
+  radius = 180
+  imgWidth = 120
+  imgHeight = 150
+}
+else { 
+  radius = 220;
+  imgWidth = 150
+  imgHeight = 180
+}
+
 
 // Link of background music - set 'null' if you dont want to play background music
 var bgMusicURL = null && 'https://api.soundcloud.com/tracks/143041228/stream?client_id=587aa2d384f7333a886010d5f52f302a';

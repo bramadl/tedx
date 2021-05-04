@@ -1,7 +1,8 @@
 ._tedx_section_title_overlay {
   border-top: 1px solid $red-25;
   border-bottom: 1px solid $red-25;
-  padding: 50px 0 120px;
+  padding: 25px 0 95px;
+  @include md { padding: 50px 0px 120px; }
   display: inline-block;
   position: relative;
 
@@ -14,7 +15,9 @@
 
     h2 {
       color: $white-25;
-      font-size: 10rem;
+      font-size: 4rem;
+      @include md { font-size: 8rem; }
+      @include lg { font-size: 10rem; }
       font-family: 'Open Sans', sans-serif;
       font-weight: 800;
       text-transform: uppercase;
@@ -24,12 +27,16 @@
   ._tedx_section_text {
     position: absolute;
     top: 50%;
-    left: -2rem;
-    width: calc(100% + 4rem);
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80vw;
     height: auto;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 0.6rem;
+    line-height: 1.5;
+    @include md { font-size: .8rem; }
+    @include lg { font-size: 1rem; }
     text-align: left;
     
     h3 {
@@ -38,22 +45,25 @@
     }
 
     p {
-      margin-top: 1rem;
+      // margin-top: 1rem;
     }
   }
 }
 
 ._tedx_section_speakers
 ._tedx_section_title_overlay {
-  padding: 50px 0 110px;
+  padding: 25px 0 85px;
+  @include md { padding: 50px 0 110px; }
 }
 
 ._tedx_section_anima
 ._tedx_section_title_overlay {
-  padding: 50px 0 100px;
+  padding: 25px 0 75px;
+  @include md { padding: 50px 0 100px; }
 }
 
 ._tedx_section_ticket
 ._tedx_section_title_overlay {
-  padding: 50px 0 90px;
+  padding: 25px 0 65px;
+  @include md { padding: 50px 0 90px; }
 }

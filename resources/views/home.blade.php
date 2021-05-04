@@ -70,7 +70,7 @@
 </section>
 
 <!-- Video Teaser -->
-<div id="videoTeaser" style="margin: 150px 0;" data-scroll-section>
+<div id="videoTeaser" data-scroll-section>
   <div class="_tedx_video_teaser">
     <div class="_tedx_video_mask">
       <div class="_tedx_video_text">
@@ -98,7 +98,7 @@
 </section>
 
 <!-- Speaker List -->
-<div id="speakerList" style="margin: 150px 0;" data-scroll-section>
+<div id="speakerList" data-scroll-section>
   <div class="_tedx_speaker_container">
     <div class="_tedx_speaker_profile">
       <div class="_tedx_speaker_image reveal">
@@ -158,7 +158,7 @@
 </section>
 
 <!-- Anima Archetype -->
-<div id="animaArchetype" style="margin: 0 0 150px;" data-scroll-section>
+<div id="animaArchetype" data-scroll-section>
   <div class="_tedx_archetype">
     <div id="drag-container" cursor-class="drag">
       <div id="spin-container">
@@ -194,7 +194,7 @@
 </section>
 
 <!-- Ticket Purchase -->
-<div id="ticketPurchase" style="margin: 150px 0;" data-scroll-section>
+<div id="ticketPurchase" data-scroll-section>
   <div class="_tedx_ticket_container">
     <div class="_tedx_ticket">
       <div class="_tedx_ticket_left">
@@ -223,7 +223,7 @@
         </svg>
       </div>
     </div>
-    <div class="_tedx_ticket_detail" style="padding-left: 50px;">
+    <div class="_tedx_ticket_detail">
       <div class="_tedx_ticket_description">
         <div>
           <h3><span>Ticket</span> Presale 1</h3>
@@ -247,8 +247,8 @@
     </div>
   </div>
 
-  <div class="_tedx_ticket_container" style="margin-top: 150px;">
-    <div class="_tedx_ticket_detail" style="padding-right: 50px;">
+  <div class="_tedx_ticket_container">
+    <div class="_tedx_ticket_detail">
       <div class="_tedx_ticket_description">
         <div>
           <h3><span>Ticket</span> Presale 1</h3>

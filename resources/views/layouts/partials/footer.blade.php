@@ -1,4 +1,4 @@
-<footer class="_tedx_footer" style="margin-top: 250px;" data-scroll-section>
+<footer class="_tedx_footer" data-scroll-section>
   <div class="_tedx_footer_container">
     <div class="_tedx_footer_asset">
       <img src="{{ asset('img/illustrations/mascot.svg') }}" alt="Mascot TEDxUB2021">

@@ -7,13 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 0;
+  padding: 25px 0;
+  @include md { padding: 50px 0; }
 
   ._tedx_logo_container {
     line-height: 0;
 
     img {
-      width: 200px;
+      width: 100px;
+      @include lg { width: 200px; }
     }
   }
 

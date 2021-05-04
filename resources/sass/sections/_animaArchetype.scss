@@ -1,6 +1,12 @@
 #animaArchetype {
+    margin: 50px 0;
+    @include md { margin: 0 0 150px; }
+    
     ._tedx_archetype {
-        height: 100vh;
+        padding: 100px;
+        @include md { padding: 0; }
+        height: auto;
+        @include md { height: 100vh; }
         overflow: hidden;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -52,11 +58,12 @@
         color: #fff;
         text-align: center;
         font-family: Serif;
-        font-size: 1.25rem;
+        font-size: .75rem;
+        @include md { font-size: 1.25rem; }
         position: absolute;
         top: 100%;
         left: 50%;
-        min-width: 400px;
+        min-width: 320px;
         -webkit-transform: translate(-50%, -50%) rotateX(90deg);
         transform: translate(-50%, -50%) rotateX(90deg);
     }
