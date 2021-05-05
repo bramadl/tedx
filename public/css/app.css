@@ -546,41 +546,6 @@ textarea {
   font-family: "Open Sans", sans-serif;
 }
 
-._tedx_hero_title ._tedx_hero_title_container ._tedx_title h1 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-}
-
-@media only screen and (min-width: 768px) {
-  ._tedx_hero_title ._tedx_hero_title_container ._tedx_title h1 {
-    font-size: 2.25rem;
-  }
-}
-
-._tedx_hero_title ._tedx_hero_title_container ._tedx_title h1 p {
-  overflow: hidden;
-  display: inline-block;
-}
-
-._tedx_hero_title ._tedx_hero_title_container ._tedx_title h1 p span {
-  display: inline-block;
-}
-
-._tedx_hero_title ._tedx_hero_title_container ._tedx_title h1 .background {
-  position: absolute;
-  left: -1.5rem;
-  top: -1.5rem;
-  width: 100%;
-  height: 100%;
-  background: rgba(184, 43, 43, 0.25);
-  z-index: -1;
-}
-
 ._tedx_hero_title ._tedx_hero_title_container ._tedx_subtitle {
   margin: 1.5rem 0;
 }
@@ -1117,199 +1082,376 @@ textarea {
 #speakerList ._tedx_speaker_container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
-@media only screen and (min-width: 996px) {
-  #speakerList ._tedx_speaker_container {
-    flex-direction: row;
-  }
+#speakerList ._tedx_speaker_wrapper {
+  display: block;
+  justify-content: space-between;
+  margin: 0 -12.5px;
 }
 
-#speakerList ._tedx_speaker_profile {
-  position: relative;
-  border-radius: 1rem;
-}
-
-@media only screen and (min-width: 996px) {
-  #speakerList ._tedx_speaker_profile {
-    margin-right: 50px;
-  }
-}
-
-#speakerList ._tedx_speaker_profile ._tedx_speaker_image {
-  width: 100%;
-  height: 360px;
-  border-radius: 1rem;
-  position: relative;
-}
-
-@media only screen and (min-width: 996px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_image {
-    width: 500px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_image {
-    width: 760px;
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper {
+    display: flex;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_image {
-    height: 480px;
+  #speakerList ._tedx_speaker_wrapper {
+    margin: 0 -25px;
   }
 }
 
 @media only screen and (min-width: 996px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_image {
+  #speakerList ._tedx_speaker_wrapper {
+    margin: 0 -37.5px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #speakerList ._tedx_speaker_wrapper {
+    margin: 0 -50px;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile {
+  flex: 1;
+  position: relative;
+  border-radius: 1rem;
+  margin: 0 12.5px;
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile {
+    margin: 0 25px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile {
+    margin: 0 37.5px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile {
+    margin: 0 50px;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_image {
+  width: 100%;
+  height: 240px;
+  border-radius: 1rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_image {
+    height: 360px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_image {
     height: 400px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_image {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_image {
     height: 576px;
   }
 }
 
-#speakerList ._tedx_speaker_profile ._tedx_speaker_image.reveal {
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_image.reveal {
   visibility: hidden;
   overflow: hidden;
 }
 
-#speakerList ._tedx_speaker_profile ._tedx_speaker_image.reveal img {
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_image.reveal img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
   transform-origin: left;
 }
 
-#speakerList ._tedx_speaker_profile ._tedx_speaker_title {
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_title {
   position: absolute;
   left: 1rem;
   bottom: 1rem;
   width: calc(100% - 2rem);
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_title {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_title {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_title {
     left: 2rem;
     bottom: 2rem;
     width: calc(100% - 4rem);
   }
 }
 
-#speakerList ._tedx_speaker_profile ._tedx_speaker_title div {
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_title div {
   overflow: hidden;
 }
 
-#speakerList ._tedx_speaker_profile ._tedx_speaker_title div h1 {
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_title div h1 {
   display: inline-block;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
   white-space: nowrap;
   color: #FFFFFF;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: "Playfair Display", serif;
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_profile ._tedx_speaker_title div h1 {
+    font-size: 1rem;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+  opacity: 0;
+  margin: 0 12.5px;
+  max-width: 100%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    margin: 0 25px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    margin: 0 37.5px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    margin: 0 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    max-width: 240px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    max-width: 360px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    height: 360px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail {
+    height: 576px;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_title {
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_title {
+    margin: 0;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_title h1 {
+  font-size: 1.5rem;
   font-weight: 800;
   font-family: "Playfair Display", serif;
 }
 
 @media only screen and (min-width: 768px) {
-  #speakerList ._tedx_speaker_profile ._tedx_speaker_title div h1 {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_title h1 {
     font-size: 1.25rem;
   }
 }
 
-#speakerList .separator {
-  display: none;
-  width: 1px;
-  height: 576px;
-  margin: 0;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 100px;
-}
-
-@media only screen and (min-width: 1200px) {
-  #speakerList .separator {
-    display: block;
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_title h1 {
+    font-size: 2rem;
   }
 }
 
-#speakerList ._tedx_speaker_wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_name {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  overflow: hidden;
 }
 
-#speakerList ._tedx_speaker_wrapper ._tedx_speaker_list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_name {
+    margin: 1rem 0;
+  }
 }
 
-#speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar {
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_name {
+    margin: 2rem 0;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_name h2 {
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_name h2 {
+    font-size: 1rem;
+  }
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_name h2 em {
+  font-style: italic;
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_description {
+  flex: 1;
+  overflow: auto;
+}
+
+#speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_description p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_description p {
+    font-size: 0.8rem;
+  }
+}
+
+#speakerList ._tedx_speaker_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #speakerList ._tedx_speaker_list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_list {
+    grid-gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_list {
+    margin-top: 50px;
+  }
+}
+
+#speakerList ._tedx_speaker_list ._tedx_speaker_avatar {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   opacity: 0;
 }
 
-#speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar img {
-  width: 3rem;
-  height: 3rem;
+#speakerList ._tedx_speaker_list ._tedx_speaker_avatar img {
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 @media only screen and (min-width: 768px) {
-  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar img {
+  #speakerList ._tedx_speaker_list ._tedx_speaker_avatar img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #speakerList ._tedx_speaker_list ._tedx_speaker_avatar img {
     width: 4rem;
     height: 4rem;
   }
 }
 
-@media only screen and (min-width: 996px) {
-  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar img {
-    width: 5rem;
-    height: 5rem;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  #speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar img {
-    width: 6rem;
-    height: 6rem;
-  }
-}
-
-#speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info {
+#speakerList ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info {
   margin-left: 1rem;
 }
 
-#speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info h1 {
+#speakerList ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info h1 {
   color: #FFFFFF;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   font-weight: 400;
   font-family: "Playfair Display", serif;
 }
 
-#speakerList ._tedx_speaker_wrapper ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info p {
-  margin-top: 1rem;
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info h1 {
+    font-size: 1rem;
+  }
+}
+
+#speakerList ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info p {
+  margin-top: 0.5rem;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
 }
 
-#speakerList ._tedx_speaker_wrapper ._tedx_link {
-  align-self: flex-end;
+@media only screen and (min-width: 768px) {
+  #speakerList ._tedx_speaker_list ._tedx_speaker_avatar ._tedx_speaker_info p {
+    font-size: 0.8rem;
+  }
 }
 
 #animaArchetype {
@@ -1764,6 +1906,239 @@ textarea {
   font-weight: 400;
 }
 
+._tedx_about_ted_wrapper,
+._tedx_about_tedx_wrapper {
+  position: relative;
+  transform: translateX(-100px);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_content,
+._tedx_about_ted_wrapper ._tedx_about_tedx_content,
+._tedx_about_tedx_wrapper ._tedx_about_ted_content,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_content {
+  flex: 1;
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_content_container,
+._tedx_about_ted_wrapper ._tedx_about_tedx_content_container,
+._tedx_about_tedx_wrapper ._tedx_about_ted_content_container,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container {
+  padding: 100px;
+  opacity: 0;
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_content_container ._tedx_link,
+._tedx_about_ted_wrapper ._tedx_about_tedx_content_container ._tedx_link,
+._tedx_about_tedx_wrapper ._tedx_about_ted_content_container ._tedx_link,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container ._tedx_link {
+  white-space: nowrap;
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_image,
+._tedx_about_ted_wrapper ._tedx_about_tedx_image,
+._tedx_about_tedx_wrapper ._tedx_about_ted_image,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_image {
+  flex: 1;
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_image img,
+._tedx_about_ted_wrapper ._tedx_about_tedx_image img,
+._tedx_about_tedx_wrapper ._tedx_about_ted_image img,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_image img {
+  width: calc(100% + 3px);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#coreTeams {
+  padding-bottom: 150px;
+}
+
+#coreTeams .container {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+#coreTeams .carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-animation: rotate360 60s infinite forwards linear;
+          animation: rotate360 60s infinite forwards linear;
+}
+
+#coreTeams .carousel__face {
+  position: absolute;
+  width: 150px;
+  height: 187px;
+  top: 20px;
+  left: 75px;
+  right: 75px;
+  display: flex;
+  overflow: hidden;
+}
+
+#coreTeams .carousel__face img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  filter: grayscale(1);
+  transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+#coreTeams .carousel__face:hover img {
+  filter: grayscale(0);
+}
+
+#coreTeams .carousel__face div {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 100%;
+  opacity: 0;
+  transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+#coreTeams .carousel__face div h1 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#coreTeams .carousel__face div p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#coreTeams .carousel__face:hover div {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+#coreTeams .carousel__face:nth-child(1) {
+  transform: rotateY(22.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(2) {
+  transform: rotateY(45deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(3) {
+  transform: rotateY(67.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(4) {
+  transform: rotateY(90deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(5) {
+  transform: rotateY(112.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(6) {
+  transform: rotateY(135deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(7) {
+  transform: rotateY(157.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(8) {
+  transform: rotateY(180deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(9) {
+  transform: rotateY(202.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(10) {
+  transform: rotateY(225deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(11) {
+  transform: rotateY(247.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(12) {
+  transform: rotateY(270deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(13) {
+  transform: rotateY(292.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(14) {
+  transform: rotateY(315deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(15) {
+  transform: rotateY(337.5deg) translateZ(430px);
+}
+
+#coreTeams .carousel__face:nth-child(16) {
+  transform: rotateY(360deg) translateZ(430px);
+}
+
+@-webkit-keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+#volunteerTeams ._tedx_volunteer_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  text-align: center;
+}
+
+#volunteerTeams ._tedx_volunteer_container ._tedx_team_container {
+  margin-bottom: 2rem;
+}
+
+#volunteerTeams ._tedx_volunteer_container h2 {
+  font-family: "Playfair Display";
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+#volunteerTeams ._tedx_volunteer_container ul {
+  margin-top: 2rem;
+}
+
+#volunteerTeams ._tedx_volunteer_container ul li {
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
 #cursor {
   position: fixed;
   z-index: 99;
@@ -2185,6 +2560,78 @@ textarea {
   }
 }
 
+._tedx_section_teams ._tedx_section_title_overlay {
+  padding: 25px 0 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section_teams ._tedx_section_title_overlay {
+    padding: 50px 0 75px;
+  }
+}
+
+._tedx_title h1,
+._tedx_title h2,
+._tedx_title_alt h1,
+._tedx_title_alt h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_title h1,
+  ._tedx_title h2,
+  ._tedx_title_alt h1,
+  ._tedx_title_alt h2 {
+    font-size: 2.25rem;
+  }
+}
+
+._tedx_title h1 p,
+._tedx_title h2 p,
+._tedx_title_alt h1 p,
+._tedx_title_alt h2 p {
+  overflow: hidden;
+  display: inline-block;
+}
+
+._tedx_title h1 p span,
+._tedx_title h2 p span,
+._tedx_title_alt h1 p span,
+._tedx_title_alt h2 p span {
+  display: inline-block;
+}
+
+._tedx_title h1 .background,
+._tedx_title h2 .background,
+._tedx_title_alt h1 .background,
+._tedx_title_alt h2 .background {
+  position: absolute;
+  left: -1.5rem;
+  top: -1.5rem;
+  width: 100%;
+  height: 100%;
+  background: rgba(184, 43, 43, 0.25);
+  z-index: -1;
+}
+
+._tedx_text {
+  margin: 2rem 0;
+}
+
+._tedx_text p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+}
+
 ._tedx {
   position: relative;
   color: #FFFFFF;
@@ -2224,6 +2671,7 @@ textarea {
 
 ._tedx_section {
   text-align: center;
+  margin: 150px 0;
 }
 
 ._tedx_section_about_cta {
@@ -2238,5 +2686,127 @@ textarea {
   ._tedx_section_about_cta {
     flex-direction: row;
   }
+}
+
+.volunteer {
+  padding-top: 200px;
+  margin: 150px 0;
+}
+
+#timelineTedx div.draw-line-height {
+  /* feel free to change height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150vh;
+}
+
+#timelineTedx #line-svg {
+  width: 80%;
+  height: 100%;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#timelineTedx ._tedx_timeline {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#timelineTedx ._tedx_timeline .indicator {
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  border-radius: 50%;
+}
+
+#timelineTedx ._tedx_timeline h1 {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+#timelineTedx ._tedx_timeline p {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#timelineTedx ._tedx_timeline_one,
+#timelineTedx ._tedx_timeline_three,
+#timelineTedx ._tedx_timeline_five,
+#timelineTedx ._tedx_timeline_seven {
+  text-align: right;
+  right: 50%;
+}
+
+#timelineTedx ._tedx_timeline_one .indicator,
+#timelineTedx ._tedx_timeline_three .indicator,
+#timelineTedx ._tedx_timeline_five .indicator,
+#timelineTedx ._tedx_timeline_seven .indicator {
+  order: 1;
+  margin-left: 100px;
+}
+
+#timelineTedx ._tedx_timeline_two,
+#timelineTedx ._tedx_timeline_four,
+#timelineTedx ._tedx_timeline_six,
+#timelineTedx ._tedx_timeline_eight {
+  text-align: left;
+  left: 50%;
+}
+
+#timelineTedx ._tedx_timeline_two .indicator,
+#timelineTedx ._tedx_timeline_four .indicator,
+#timelineTedx ._tedx_timeline_six .indicator,
+#timelineTedx ._tedx_timeline_eight .indicator {
+  order: 0;
+  margin-right: 100px;
+}
+
+#timelineTedx ._tedx_timeline_one {
+  top: 0;
+  transform: translate(-34px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_two {
+  top: 12.5%;
+  transform: translate(32px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_three {
+  top: 25%;
+  transform: translate(26px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_four {
+  top: 37.5%;
+  transform: translate(-40px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_five {
+  top: 50%;
+  transform: translate(-34px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_six {
+  top: 62.5%;
+  transform: translate(4px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_seven {
+  top: 75%;
+  transform: translate(42px, -50%);
+}
+
+#timelineTedx ._tedx_timeline_eight {
+  top: 87.5%;
+  transform: translate(-32px, -50%);
 }
 

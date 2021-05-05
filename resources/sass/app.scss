@@ -14,6 +14,9 @@
 @import "sections/speakerList";
 @import "sections/animaArchetype";
 @import "sections/ticketPurchase";
+@import "sections/aboutTed";
+@import "sections/coreTeams";
+@import "sections/volunteerTeams";
 
 // Components
 @import "components/cursor";
@@ -43,13 +46,136 @@
     }
 }
 
-._tedx_section { text-align: center; }
+._tedx_section {
+    text-align: center;
+    margin: 150px 0;
+}
 
 ._tedx_section_about_cta {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    @include md { flex-direction: row; }
+    @include md {
+        flex-direction: row;
+    }
     align-items: center;
     justify-content: space-between;
+}
+
+.volunteer {
+    padding-top: 200px;
+    margin: 150px 0;
+}
+
+#timelineTedx {
+    div.draw-line-height {
+        /* feel free to change height */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150vh;
+    }
+    
+    #line-svg {
+        width: 80%;
+        height: 100%;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    ._tedx_timeline {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .indicator {
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: $white-50;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        p {
+            margin-top: 1rem;
+            color: $white-50;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+    }
+
+    ._tedx_timeline_one,
+    ._tedx_timeline_three,
+    ._tedx_timeline_five,
+    ._tedx_timeline_seven {
+        text-align: right;
+        right: 50%;
+
+        .indicator {
+            order: 1;
+            margin-left: 100px;
+        }
+    }
+
+    ._tedx_timeline_two,
+    ._tedx_timeline_four,
+    ._tedx_timeline_six,
+    ._tedx_timeline_eight {
+        text-align: left;
+        left: 50%;
+
+        .indicator {
+            order: 0;
+            margin-right: 100px;
+        }
+    }
+
+    ._tedx_timeline_one {
+        top: 0;
+        transform: translate(-34px, -50%);
+    }
+
+    ._tedx_timeline_two {
+        top: 12.5%;
+        transform: translate(32px, -50%);
+    }
+
+    ._tedx_timeline_three {
+        top: 25%;
+        transform: translate(26px, -50%);
+    }
+
+    ._tedx_timeline_four {
+        top: 37.5%;
+        transform: translate(-40px, -50%);
+    }
+
+    ._tedx_timeline_five {
+        top: 50%;
+        transform: translate(-34px, -50%);
+    }
+
+    ._tedx_timeline_six {
+        top: 62.5%;
+        transform: translate(4px, -50%);
+    }
+
+    ._tedx_timeline_seven {
+        top: 75%;
+        transform: translate(42px, -50%);
+    }
+
+    ._tedx_timeline_eight {
+        top: 87.5%;
+        transform: translate(-32px, -50%);
+    }
 }

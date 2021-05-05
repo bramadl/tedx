@@ -1,0 +1,34 @@
+._tedx_about_ted_wrapper,
+._tedx_about_tedx_wrapper {
+    position: relative;
+    transform: translateX(-100px);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ._tedx_about_ted_content,
+    ._tedx_about_tedx_content {
+        flex: 1;
+
+        &_container {
+            padding: 100px;
+            opacity: 0;
+
+            ._tedx_link {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    ._tedx_about_ted_image,
+    ._tedx_about_tedx_image {
+        flex: 1;
+
+        img {
+            width: calc(100% + 3px);
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -6,7 +6,7 @@ var rotateSpeed = -100; // unit: seconds/360 degrees
 var imgWidth; // width of images (unit: px)
 var imgHeight; // height of images (unit: px)
 if (window.innerWidth < 576) { 
-  radius = 100
+  radius = 180
   imgWidth = 60
   imgHeight = 90
 }
@@ -16,12 +16,12 @@ else if (window.innerWidth < 768) {
   imgHeight = 120
 }
 else if (window.innerWidth < 996) { 
-  radius = 180
+  radius = 260
   imgWidth = 120
   imgHeight = 150
 }
 else { 
-  radius = 220;
+  radius = 320;
   imgWidth = 150
   imgHeight = 180
 }
