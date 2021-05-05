@@ -1,11 +1,14 @@
 #coreTeams {
-  padding-bottom: 150px;
+  @include md { padding-bottom: 150px; }
   
   .container {
       position: relative;
       width: 320px;
       margin: 100px auto 0 auto;
       perspective: 1000px;
+      transform: scale(0.4);
+      @include md { transform: scale(0.6); }
+      @include lg { transform: scale(0.8); }
     }
     
     .carousel {

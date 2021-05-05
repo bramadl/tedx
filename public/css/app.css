@@ -1909,11 +1909,40 @@ textarea {
 ._tedx_about_ted_wrapper,
 ._tedx_about_tedx_wrapper {
   position: relative;
-  transform: translateX(-100px);
+  transform: translateX(-25px);
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_about_ted_wrapper,
+  ._tedx_about_tedx_wrapper {
+    transform: translateX(-50px);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_about_ted_wrapper,
+  ._tedx_about_tedx_wrapper {
+    transform: translateX(-75px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_about_ted_wrapper,
+  ._tedx_about_tedx_wrapper {
+    transform: translateX(-100px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_about_ted_wrapper,
+  ._tedx_about_tedx_wrapper {
+    flex-direction: row;
+  }
 }
 
 ._tedx_about_ted_wrapper ._tedx_about_ted_content,
@@ -1927,8 +1956,35 @@ textarea {
 ._tedx_about_ted_wrapper ._tedx_about_tedx_content_container,
 ._tedx_about_tedx_wrapper ._tedx_about_ted_content_container,
 ._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container {
-  padding: 100px;
+  padding: 25px;
   opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content_container,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content_container,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content_container,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container {
+    padding: 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content_container,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content_container,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content_container,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container {
+    padding: 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content_container,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content_container,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content_container,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container {
+    padding: 100px;
+  }
 }
 
 ._tedx_about_ted_wrapper ._tedx_about_ted_content_container ._tedx_link,
@@ -1936,6 +1992,78 @@ textarea {
 ._tedx_about_tedx_wrapper ._tedx_about_ted_content_container ._tedx_link,
 ._tedx_about_tedx_wrapper ._tedx_about_tedx_content_container ._tedx_link {
   white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_title_alt h1,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_title_alt h1,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_title_alt h1,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_title_alt h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_title_alt h1,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_title_alt h1,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_title_alt h1,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_title_alt h1 {
+    font-size: 1.5rem;
+  }
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_text p,
+._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_text p,
+._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_text p,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_text p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_text p,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_text p,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_text p,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_text p {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_text p,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_text p,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_text p,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_text p {
+    font-size: 1rem;
+  }
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_link a,
+._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_link a,
+._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_link a,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_link a {
+  font-size: 0.75rem;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_content ._tedx_link a,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content ._tedx_link a,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_content ._tedx_link a,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content ._tedx_link a {
+    font-size: 1rem;
+  }
+}
+
+._tedx_about_ted_wrapper ._tedx_about_tedx_content,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_content {
+  margin-top: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_content,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_content {
+    margin-top: 0;
+  }
 }
 
 ._tedx_about_ted_wrapper ._tedx_about_ted_image,
@@ -1949,14 +2077,42 @@ textarea {
 ._tedx_about_ted_wrapper ._tedx_about_tedx_image img,
 ._tedx_about_tedx_wrapper ._tedx_about_ted_image img,
 ._tedx_about_tedx_wrapper ._tedx_about_tedx_image img {
-  width: calc(100% + 3px);
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-#coreTeams {
-  padding-bottom: 150px;
+@media only screen and (min-width: 1200px) {
+  ._tedx_about_ted_wrapper ._tedx_about_ted_image img,
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_image img,
+  ._tedx_about_tedx_wrapper ._tedx_about_ted_image img,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_image img {
+    width: calc(100% + 3px);
+  }
+}
+
+._tedx_about_ted_wrapper ._tedx_about_ted_image,
+._tedx_about_tedx_wrapper ._tedx_about_ted_image {
+  order: 1;
+}
+
+._tedx_about_ted_wrapper ._tedx_about_tedx_image,
+._tedx_about_tedx_wrapper ._tedx_about_tedx_image {
+  order: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_about_ted_wrapper ._tedx_about_tedx_image,
+  ._tedx_about_tedx_wrapper ._tedx_about_tedx_image {
+    order: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #coreTeams {
+    padding-bottom: 150px;
+  }
 }
 
 #coreTeams .container {
@@ -1964,6 +2120,19 @@ textarea {
   width: 320px;
   margin: 100px auto 0 auto;
   perspective: 1000px;
+  transform: scale(0.4);
+}
+
+@media only screen and (min-width: 768px) {
+  #coreTeams .container {
+    transform: scale(0.6);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #coreTeams .container {
+    transform: scale(0.8);
+  }
 }
 
 #coreTeams .carousel {
@@ -2110,11 +2279,39 @@ textarea {
   }
 }
 
+._tedx_section_teams ._tedx_section_title h2 {
+  font-size: 3rem !important;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section_teams ._tedx_section_title h2 {
+    font-size: 6rem !important;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_section_teams ._tedx_section_title h2 {
+    font-size: 8rem !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_section_teams ._tedx_section_title h2 {
+    font-size: 10rem !important;
+  }
+}
+
 #volunteerTeams ._tedx_volunteer_container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   place-items: center;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  #volunteerTeams ._tedx_volunteer_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 #volunteerTeams ._tedx_volunteer_container ._tedx_team_container {
@@ -2123,9 +2320,21 @@ textarea {
 
 #volunteerTeams ._tedx_volunteer_container h2 {
   font-family: "Playfair Display";
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  #volunteerTeams ._tedx_volunteer_container h2 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #volunteerTeams ._tedx_volunteer_container h2 {
+    font-size: 1.5rem;
+  }
 }
 
 #volunteerTeams ._tedx_volunteer_container ul {
@@ -2133,10 +2342,302 @@ textarea {
 }
 
 #volunteerTeams ._tedx_volunteer_container ul li {
-  margin: 1rem 0;
-  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+}
+
+@media only screen and (min-width: 996px) {
+  #volunteerTeams ._tedx_volunteer_container ul li {
+    margin: 1rem 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #volunteerTeams ._tedx_volunteer_container ul li {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #volunteerTeams ._tedx_volunteer_container ul li {
+    font-size: 1rem;
+  }
+}
+
+#timelineTedx div.draw-line-height {
+  /* feel free to change height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150vh;
+}
+
+#timelineTedx #line-svg {
+  width: 80%;
+  height: 100%;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#timelineTedx ._tedx_timeline {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#timelineTedx ._tedx_timeline .indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: white;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline .indicator {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+#timelineTedx ._tedx_timeline h1 {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Playfair Display", serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #timelineTedx ._tedx_timeline h1 {
+    font-size: 1.5rem;
+  }
+}
+
+#timelineTedx ._tedx_timeline p {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline p {
+    font-size: 1rem;
+  }
+}
+
+#timelineTedx ._tedx_timeline_one,
+#timelineTedx ._tedx_timeline_three,
+#timelineTedx ._tedx_timeline_five,
+#timelineTedx ._tedx_timeline_seven {
+  text-align: right;
+  right: 50%;
+}
+
+#timelineTedx ._tedx_timeline_one .indicator,
+#timelineTedx ._tedx_timeline_three .indicator,
+#timelineTedx ._tedx_timeline_five .indicator,
+#timelineTedx ._tedx_timeline_seven .indicator {
+  order: 1;
+  margin-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_one .indicator,
+  #timelineTedx ._tedx_timeline_three .indicator,
+  #timelineTedx ._tedx_timeline_five .indicator,
+  #timelineTedx ._tedx_timeline_seven .indicator {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #timelineTedx ._tedx_timeline_one .indicator,
+  #timelineTedx ._tedx_timeline_three .indicator,
+  #timelineTedx ._tedx_timeline_five .indicator,
+  #timelineTedx ._tedx_timeline_seven .indicator {
+    margin-left: 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #timelineTedx ._tedx_timeline_one .indicator,
+  #timelineTedx ._tedx_timeline_three .indicator,
+  #timelineTedx ._tedx_timeline_five .indicator,
+  #timelineTedx ._tedx_timeline_seven .indicator {
+    margin-left: 100px;
+  }
+}
+
+#timelineTedx ._tedx_timeline_two,
+#timelineTedx ._tedx_timeline_four,
+#timelineTedx ._tedx_timeline_six,
+#timelineTedx ._tedx_timeline_eight {
+  text-align: left;
+  left: 50%;
+}
+
+#timelineTedx ._tedx_timeline_two .indicator,
+#timelineTedx ._tedx_timeline_four .indicator,
+#timelineTedx ._tedx_timeline_six .indicator,
+#timelineTedx ._tedx_timeline_eight .indicator {
+  order: 0;
+  margin-right: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_two .indicator,
+  #timelineTedx ._tedx_timeline_four .indicator,
+  #timelineTedx ._tedx_timeline_six .indicator,
+  #timelineTedx ._tedx_timeline_eight .indicator {
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #timelineTedx ._tedx_timeline_two .indicator,
+  #timelineTedx ._tedx_timeline_four .indicator,
+  #timelineTedx ._tedx_timeline_six .indicator,
+  #timelineTedx ._tedx_timeline_eight .indicator {
+    margin-right: 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #timelineTedx ._tedx_timeline_two .indicator,
+  #timelineTedx ._tedx_timeline_four .indicator,
+  #timelineTedx ._tedx_timeline_six .indicator,
+  #timelineTedx ._tedx_timeline_eight .indicator {
+    margin-right: 100px;
+  }
+}
+
+#timelineTedx ._tedx_timeline_one {
+  top: 0;
+  transform: translate(-36px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_one {
+    transform: translate(-34px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_two {
+  top: 12.5%;
+  transform: translate(32px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_two {
+    transform: translate(28px, -50%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #timelineTedx ._tedx_timeline_two {
+    transform: translate(32px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_three {
+  top: 25%;
+  transform: translate(20px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_three {
+    transform: translate(24px, -50%);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #timelineTedx ._tedx_timeline_three {
+    transform: translate(26px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_four {
+  top: 37.5%;
+  transform: translate(-32px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_four {
+    transform: translate(-36px, -50%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #timelineTedx ._tedx_timeline_four {
+    transform: translate(-38px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_five {
+  top: 50%;
+  transform: translate(-34px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_five {
+    transform: translate(-30px, -50%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #timelineTedx ._tedx_timeline_five {
+    transform: translate(-34px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_six {
+  top: 62.5%;
+  transform: translate(8px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_six {
+    transform: translate(4px, -50%);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #timelineTedx ._tedx_timeline_six {
+    transform: translate(4px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_seven {
+  top: 75%;
+  transform: translate(34px, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  #timelineTedx ._tedx_timeline_seven {
+    transform: translate(38px, -50%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #timelineTedx ._tedx_timeline_seven {
+    transform: translate(42px, -50%);
+  }
+}
+
+#timelineTedx ._tedx_timeline_eight {
+  top: 87.5%;
+  transform: translate(-32px, -50%);
 }
 
 #cursor {
@@ -2621,7 +3122,19 @@ textarea {
 }
 
 ._tedx_text {
-  margin: 2rem 0;
+  margin: 1rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_text {
+    margin: 1rem 0;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_text {
+    margin: 2rem 0;
+  }
 }
 
 ._tedx_text p {
@@ -2689,124 +3202,19 @@ textarea {
 }
 
 .volunteer {
-  padding-top: 200px;
+  padding-top: 275px;
   margin: 150px 0;
 }
 
-#timelineTedx div.draw-line-height {
-  /* feel free to change height */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150vh;
+@media only screen and (min-width: 768px) {
+  .volunteer {
+    padding-top: 50px;
+  }
 }
 
-#timelineTedx #line-svg {
-  width: 80%;
-  height: 100%;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-#timelineTedx ._tedx_timeline {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#timelineTedx ._tedx_timeline .indicator {
-  width: 1rem;
-  height: 1rem;
-  background: white;
-  border-radius: 50%;
-}
-
-#timelineTedx ._tedx_timeline h1 {
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-#timelineTedx ._tedx_timeline p {
-  margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-#timelineTedx ._tedx_timeline_one,
-#timelineTedx ._tedx_timeline_three,
-#timelineTedx ._tedx_timeline_five,
-#timelineTedx ._tedx_timeline_seven {
-  text-align: right;
-  right: 50%;
-}
-
-#timelineTedx ._tedx_timeline_one .indicator,
-#timelineTedx ._tedx_timeline_three .indicator,
-#timelineTedx ._tedx_timeline_five .indicator,
-#timelineTedx ._tedx_timeline_seven .indicator {
-  order: 1;
-  margin-left: 100px;
-}
-
-#timelineTedx ._tedx_timeline_two,
-#timelineTedx ._tedx_timeline_four,
-#timelineTedx ._tedx_timeline_six,
-#timelineTedx ._tedx_timeline_eight {
-  text-align: left;
-  left: 50%;
-}
-
-#timelineTedx ._tedx_timeline_two .indicator,
-#timelineTedx ._tedx_timeline_four .indicator,
-#timelineTedx ._tedx_timeline_six .indicator,
-#timelineTedx ._tedx_timeline_eight .indicator {
-  order: 0;
-  margin-right: 100px;
-}
-
-#timelineTedx ._tedx_timeline_one {
-  top: 0;
-  transform: translate(-34px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_two {
-  top: 12.5%;
-  transform: translate(32px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_three {
-  top: 25%;
-  transform: translate(26px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_four {
-  top: 37.5%;
-  transform: translate(-40px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_five {
-  top: 50%;
-  transform: translate(-34px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_six {
-  top: 62.5%;
-  transform: translate(4px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_seven {
-  top: 75%;
-  transform: translate(42px, -50%);
-}
-
-#timelineTedx ._tedx_timeline_eight {
-  top: 87.5%;
-  transform: translate(-32px, -50%);
+@media only screen and (min-width: 996px) {
+  .volunteer {
+    padding-top: 150px;
+  }
 }
 

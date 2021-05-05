@@ -110,7 +110,9 @@
 }
 
 ._tedx_text {
-  margin: 2rem 0;
+  margin: 1rem 0;
+  @include md { margin: 1rem 0; }
+  @include lg { margin: 2rem 0; }
 
   p {
       color: $white-75;

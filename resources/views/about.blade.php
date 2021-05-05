@@ -74,7 +74,7 @@
   </div>
 </div>
 
-<section class="_tedx_section _tedx_section_teams" data-scroll-section>
+<section class="_tedx_section _tedx_section_core" data-scroll-section>
   <div class="_tedx_section_title_overlay">
     <div class="_tedx_section_title_wrapper">
       <div class="_tedx_section_title">

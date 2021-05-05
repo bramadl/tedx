@@ -1,0 +1,138 @@
+#timelineTedx {
+    div.draw-line-height {
+        /* feel free to change height */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150vh;
+    }
+
+    #line-svg {
+        width: 80%;
+        height: 100%;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    ._tedx_timeline {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .indicator {
+            width: .5rem;
+            height: .5rem;
+            @include md {
+              width: 1rem;
+              height: 1rem;
+            }
+            background: white;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: $white-50;
+            font-family: "Playfair Display", serif;
+            font-size: .85rem;
+            @include md { font-size: 1.25rem; }
+            @include lg { font-size: 1.5rem; }
+            font-weight: 800;
+        }
+
+        p {
+            margin-top: 1rem;
+            color: $white-50;
+            font-family: "Open Sans", sans-serif;
+            font-size: .75rem;
+            @include md { font-size: 1rem; }
+            font-weight: 300;
+        }
+    }
+
+    ._tedx_timeline_one,
+    ._tedx_timeline_three,
+    ._tedx_timeline_five,
+    ._tedx_timeline_seven {
+        text-align: right;
+        right: 50%;
+
+        .indicator {
+            order: 1;
+            margin-left: 1rem;
+            @include md { margin-left: 50px; }
+            @include lg { margin-left: 75px; }
+            @include xl { margin-left: 100px; }
+        }
+    }
+
+    ._tedx_timeline_two,
+    ._tedx_timeline_four,
+    ._tedx_timeline_six,
+    ._tedx_timeline_eight {
+        text-align: left;
+        left: 50%;
+
+        .indicator {
+            order: 0;
+            margin-right: 25px;
+            @include md { margin-right: 50px; }
+            @include lg { margin-right: 75px; }
+            @include xl { margin-right: 100px; }
+        }
+    }
+
+    ._tedx_timeline_one {
+        top: 0;
+        transform: translate(-36px, -50%);
+        @include md { transform: translate(-34px, -50%); }
+    }
+
+    ._tedx_timeline_two {
+        top: 12.5%;
+        transform: translate(32px, -50%);
+        @include md { transform: translate(28px, -50%); }
+        @include xl { transform: translate(32px, -50%); }
+    }
+
+    ._tedx_timeline_three {
+        top: 25%;
+        transform: translate(20px, -50%);
+        @include md { transform: translate(24px, -50%); }
+        @include lg { transform: translate(26px, -50%); }
+    }
+
+    ._tedx_timeline_four {
+        top: 37.5%;
+        transform: translate(-32px, -50%);
+        @include md { transform: translate(-36px, -50%); }
+        @include xl { transform: translate(-38px, -50%); }
+    }
+
+    ._tedx_timeline_five {
+        top: 50%;
+        transform: translate(-34px, -50%);
+        @include md { transform: translate(-30px, -50%); }
+        @include xl { transform: translate(-34px, -50%); }
+    }
+
+    ._tedx_timeline_six {
+        top: 62.5%;
+        transform: translate(8px, -50%);
+        @include md { transform: translate(4px, -50%); }
+        @include lg { transform: translate(4px, -50%); }
+    }
+
+    ._tedx_timeline_seven {
+        top: 75%;
+        transform: translate(34px, -50%);
+        @include md { transform: translate(38px, -50%); }
+        @include xl { transform: translate(42px, -50%); }
+    }
+
+    ._tedx_timeline_eight {
+        top: 87.5%;
+        transform: translate(-32px, -50%);
+    }
+}
