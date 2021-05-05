@@ -1,0 +1,63 @@
+._tedx_faq_content {
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    @include md {
+
+        ._tedx_faq_question {
+            font-size: 1.2rem;
+        }
+    }
+    @include lg {
+        // border: 1px solid red; 
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    ._tedx_faq_qna_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+        font-size: 1rem;
+
+        @include lg {
+            margin: 0;
+            flex: 1;
+            margin-right: 2rem;
+        }
+
+        ._tedx_faq_number {
+            text-align: left;
+            flex: 2;
+        }
+        ._tedx_faq_question {
+            text-align: right;
+        }
+    }
+    ._tedx_faq_answer {
+        opacity: 80%;
+        @include lg {
+            flex: 1;
+        }
+    }
+}
+._tedx_faq_question {
+    position: relative;
+    display: inline-block;
+  
+    &::after {
+        content: "";    
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        transform: translate(1rem, 0);
+        width: 70%;
+        height: 100%;
+        background: $red-50;
+        z-index: -1;
+        transition: 0.4s $cubiz-bezier;
+    }
+}

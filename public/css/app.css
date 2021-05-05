@@ -2277,6 +2277,80 @@ textarea {
   transform: translateY(-50%);
 }
 
+._tedx_faq_content {
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_faq_content ._tedx_faq_question {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_faq_content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+._tedx_faq_content ._tedx_faq_qna_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_faq_content ._tedx_faq_qna_wrapper {
+    margin: 0;
+    flex: 1;
+    margin-right: 2rem;
+  }
+}
+
+._tedx_faq_content ._tedx_faq_qna_wrapper ._tedx_faq_number {
+  text-align: left;
+  flex: 2;
+}
+
+._tedx_faq_content ._tedx_faq_qna_wrapper ._tedx_faq_question {
+  text-align: right;
+}
+
+._tedx_faq_content ._tedx_faq_answer {
+  opacity: 80%;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_faq_content ._tedx_faq_answer {
+    flex: 1;
+  }
+}
+
+._tedx_faq_question {
+  position: relative;
+  display: inline-block;
+}
+
+._tedx_faq_question::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  transform: translate(1rem, 0);
+  width: 70%;
+  height: 100%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+  transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
 ._tedx {
   position: relative;
   color: #FFFFFF;
