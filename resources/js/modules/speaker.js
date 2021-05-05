@@ -79,6 +79,7 @@ const speakers = {
     title: 'Makeup Universal, Universal Makeup ?'
   }
 }
+
 const speakerAvatars = document.querySelectorAll('._tedx_speaker_avatar')
 speakerAvatars.forEach(avatar => {
   avatar.addEventListener('click', () => {

@@ -19383,9 +19383,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js");
 
-__webpack_require__(/*! ./plugins/gsap.js */ "./resources/js/plugins/gsap.js");
-
 __webpack_require__(/*! ./plugins/locomotiveScroll */ "./resources/js/plugins/locomotiveScroll.js");
+
+__webpack_require__(/*! ./modules/menu */ "./resources/js/modules/menu.js");
+
+__webpack_require__(/*! ./modules/hero */ "./resources/js/modules/hero.js");
 
 __webpack_require__(/*! ./modules/teaser */ "./resources/js/modules/teaser.js");
 
@@ -19393,7 +19395,294 @@ __webpack_require__(/*! ./modules/speaker */ "./resources/js/modules/speaker.js"
 
 __webpack_require__(/*! ./modules/archetype */ "./resources/js/modules/archetype.js"); // console.clear();
 
+/***/ }),
 
+/***/ "./resources/js/bootstrap.js":
+/*!***********************************!*\
+  !*** ./resources/js/bootstrap.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+// import Echo from 'laravel-echo';
+// window.Pusher = require('pusher-js');
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     forceTLS: true
+// });
+
+/***/ }),
+
+/***/ "./resources/js/modules/archetype.js":
+/*!*******************************************!*\
+  !*** ./resources/js/modules/archetype.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+// @ts-nocheck
+// You can change global variables here:
+var radius; // how big of the radius
+
+var autoRotate = true; // auto rotate or not
+
+var rotateSpeed = -100; // unit: seconds/360 degrees
+
+var imgWidth; // width of images (unit: px)
+
+var imgHeight; // height of images (unit: px)
+
+if (window.innerWidth < 576) {
+  radius = 100;
+  imgWidth = 60;
+  imgHeight = 90;
+} else if (window.innerWidth < 768) {
+  radius = 480;
+  imgWidth = 90;
+  imgHeight = 120;
+} else if (window.innerWidth < 996) {
+  radius = 180;
+  imgWidth = 120;
+  imgHeight = 150;
+} else {
+  radius = 220;
+  imgWidth = 150;
+  imgHeight = 180;
+} // Link of background music - set 'null' if you dont want to play background music
+
+
+var bgMusicURL = null && false;
+var bgMusicControls = true; // Show UI music control
+
+/*
+     NOTE:
+       + imgWidth, imgHeight will work for video
+       + if imgWidth, imgHeight too small, play/pause button in <video> will be hidden
+       + Music link are taken from: https://hoangtran0410.github.io/Visualyze-design-your-own-/?theme=HauMaster&playlist=1&song=1&background=28
+       + Custom from code in tiktok video  https://www.facebook.com/J2TEAM.ManhTuan/videos/1353367338135935/
+*/
+// ===================== start =======================
+
+var odrag = document.getElementById('drag-container');
+var ospin = document.getElementById('spin-container');
+
+if (odrag && ospin) {
+  var init = function init(delayTime) {
+    for (var i = 0; i < aEle.length; i++) {
+      aEle[i].style.transform = "rotateY(" + i * (360 / aEle.length) + "deg) translateZ(" + radius + "px)";
+      aEle[i].style.transition = "transform 1s";
+      aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
+    }
+  };
+
+  var applyTranform = function applyTranform(obj) {
+    // Constrain the angle of camera (between 0 and 180)
+    if (tY > 180) tY = 180;
+    if (tY < 0) tY = 0; // Apply the angle
+
+    obj.style.transform = "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
+  };
+
+  var playSpin = function playSpin(yes) {
+    ospin.style.animationPlayState = yes ? 'running' : 'paused';
+  };
+
+  // animation start after 1000 miliseconds
+  setTimeout(init, 0);
+  var aImg = ospin.getElementsByTagName('img');
+  var aVid = ospin.getElementsByTagName('video');
+  var aEle = [].concat(_toConsumableArray(aImg), _toConsumableArray(aVid)); // combine 2 arrays
+
+  var archetype = {
+    dreamer: "Seseorang yang idealis dan tanpa kompromi, kalian menikmati seni populer dengan memilih-milih. Sebagian besar waktu kalian habis dalam angan-angan yang kalian buat sendiri. Mungkin kalian sering berpikir bahwa budaya yang patut diapresiasi adalah budaya yang memiliki \u201Csubstansi\u201D. Namun substansi memiliki makna yang berbeda bagi setiap orang, dan seringkali untuk terkoneksi lebih baik kalian harus menurunkan standar.",
+    lover: "Segala yang ada di dunia ini memiliki unsur romantisme bagi kalian, hidup bukan hanya semata menjalani dari hari ke hari namun mengapresiasi keindahan sederhana yang ditawarkan oleh kehidupan. Cinta dapat ditemukan dimana saja, filosofi ini tercermin dalam preferensi kalian dalam mengkonsumsi budaya populer. Koneksi menurut kalian adalah mencintai dan dicintai, bukan hanya dalam konteks hubungan romantis namun juga ke aspek hidup yang lain.",
+    hero: "Bagi kalian karakter utama dalam hidup adalah diri kalian sendiri, tentu tidak salah untuk mencintai dan mengapresiasi diri sendiri. Dalam bermasyarakat kalian memiliki ideal yang kuat dan tahu apa yang kalian inginkan. Menjadi protagonis dalam kehidupan kalian sendiri bukan merupakan hal yang kalian hindari, persepsi diri menjadi salah satu hal yang esensial dalam berkoneksi dengan sesama. Bagaimana seseorang bisa mencari koneksi apabila ia tidak mengenal dirinya sendiri?",
+    jester: "Hidup bagi kalian ditentukan oleh seberapa banyak kenikmatan yang kalian dapat. Kalian tidak pemilih dan mengkonsumsi apa yang dapat memberi kalian kepuasan. Tidak memiliki preferensi khusus dan mengikuti arus bukan berarti kalian terombang-ambing namun kalian memilih untuk berkoneksi dengan lebih banyak orang lewat selera yang tidak spesifik. Hidup hanya sekali dan tidak salah untuk melewati nya dengan mengkonsumsi dan menikmati sebanyak mungkin dan seluas mungkin."
+  };
+  aEle.forEach(function (element) {
+    element.addEventListener('click', function (e) {
+      var targetArchetype = e.target.dataset.archetype;
+      var textArchetype = archetype[targetArchetype];
+      document.getElementById('archetypeText').innerHTML = "".concat(targetArchetype.toUpperCase(), " <br><br> ").concat(textArchetype);
+    });
+  }); // Size of images
+
+  ospin.style.width = imgWidth + "px";
+  ospin.style.height = imgHeight + "px"; // Size of ground - depend on radius
+
+  var ground = document.getElementById('ground');
+  ground.style.width = radius * 3 + "px";
+  ground.style.height = radius * 3 + "px";
+  var sX,
+      sY,
+      nX,
+      nY,
+      desX = 0,
+      desY = 0,
+      tX = 0,
+      tY = 10; // auto spin
+
+  if (autoRotate) {
+    var animationName = rotateSpeed > 0 ? 'spin' : 'spinRevert';
+    ospin.style.animation = "".concat(animationName, " ").concat(Math.abs(rotateSpeed), "s infinite linear");
+  } // add background music
+
+
+  if (bgMusicURL) {
+    document.getElementById('music-container').innerHTML += "\n  <audio src=\"".concat(bgMusicURL, "\" ").concat(bgMusicControls ? 'controls' : '', " autoplay loop>    \n  <p>If you are reading this, it is because your browser does not support the audio element.</p>\n  </audio>\n  ");
+  } // setup events
+
+
+  document.onpointerdown = function (e) {
+    clearInterval(odrag.timer);
+    e = e || window.event;
+    var sX = e.clientX,
+        sY = e.clientY;
+
+    this.onpointermove = function (e) {
+      e = e || window.event;
+      var nX = e.clientX,
+          nY = e.clientY;
+      desX = nX - sX;
+      desY = nY - sY;
+      tX += desX * 0.1;
+      tY += desY * 0.1;
+      applyTranform(odrag);
+      sX = nX;
+      sY = nY;
+    };
+
+    this.onpointerup = function (e) {
+      odrag.timer = setInterval(function () {
+        desX *= 0.95;
+        desY *= 0.95;
+        tX += desX * 0.1;
+        tY += desY * 0.1;
+        applyTranform(odrag);
+        playSpin(false);
+
+        if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+          clearInterval(odrag.timer);
+          playSpin(true);
+        }
+      }, 17);
+      this.onpointermove = this.onpointerup = null;
+    };
+
+    return false;
+  };
+}
+
+/***/ }),
+
+/***/ "./resources/js/modules/hero.js":
+/*!**************************************!*\
+  !*** ./resources/js/modules/hero.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// @ts-nocheck
+var tl = gsap.timeline();
+var letters = document.querySelectorAll('._tedx_title h1 p span');
+
+if (letters.length) {
+  letters.forEach(function (letter) {
+    letter.innerHTML = letter.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  });
+  tl.from('._tedx_hero_asset_container img', {
+    opacity: 0,
+    width: '150%',
+    height: '150%',
+    duration: 1.4,
+    rotate: '15deg',
+    ease: 'power2.inOut'
+  }).from('._tedx_hero_asset .close', {
+    opacity: 0,
+    scale: 0,
+    duration: 1,
+    ease: 'power2.inOut'
+  }, '-=1.2').from('._tedx_hero_asset .line-container svg', {
+    height: 0,
+    duration: 2,
+    ease: 'power2.inOut'
+  }, '-=1.4').from('._tedx_hero_asset .line-container .text', {
+    width: 0,
+    opacity: 0,
+    duration: 1,
+    ease: 'power2.inOut'
+  });
+  tl.from('._tedx_hero_icons a', {
+    opacity: 0,
+    x: 16,
+    duration: .6,
+    ease: 'power2.inOut',
+    stagger: {
+      amount: .6
+    }
+  }, '-=1.4');
+  tl.from('._tedx_title h1 p span .letter', {
+    opacity: 0,
+    y: '100%',
+    stagger: {
+      amount: .4
+    },
+    duration: .6,
+    ease: 'power2.inOut'
+  }, '-=1.4').from('._tedx_title .background', {
+    width: 0,
+    duration: .6,
+    ease: 'power2.inOut'
+  }, '-=.4').from('._tedx_register_cta', {
+    opacity: 0,
+    duration: .6,
+    ease: 'power2.inOut'
+  }, '-=.4').from('._tedx_subtitle h2', {
+    width: 0,
+    opacity: 0,
+    duration: 1,
+    ease: 'power2.inOut'
+  }, '-=.6');
+}
+
+/***/ }),
+
+/***/ "./resources/js/modules/menu.js":
+/*!**************************************!*\
+  !*** ./resources/js/modules/menu.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// @ts-nocheck
 var $ = function $(el) {
   return document.querySelector(el);
 };
@@ -19492,210 +19781,6 @@ function closeMenu() {
     menuOpen.play();
   }
 }
-
-/***/ }),
-
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-// import Echo from 'laravel-echo';
-// window.Pusher = require('pusher-js');
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
-
-/***/ }),
-
-/***/ "./resources/js/modules/archetype.js":
-/*!*******************************************!*\
-  !*** ./resources/js/modules/archetype.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-// @ts-nocheck
-// You can change global variables here:
-var radius; // how big of the radius
-
-var autoRotate = true; // auto rotate or not
-
-var rotateSpeed = -100; // unit: seconds/360 degrees
-
-var imgWidth; // width of images (unit: px)
-
-var imgHeight; // height of images (unit: px)
-
-if (window.innerWidth < 576) {
-  radius = 100;
-  imgWidth = 60;
-  imgHeight = 90;
-} else if (window.innerWidth < 768) {
-  radius = 480;
-  imgWidth = 90;
-  imgHeight = 120;
-} else if (window.innerWidth < 996) {
-  radius = 180;
-  imgWidth = 120;
-  imgHeight = 150;
-} else {
-  radius = 220;
-  imgWidth = 150;
-  imgHeight = 180;
-} // Link of background music - set 'null' if you dont want to play background music
-
-
-var bgMusicURL = null && false;
-var bgMusicControls = true; // Show UI music control
-
-/*
-     NOTE:
-       + imgWidth, imgHeight will work for video
-       + if imgWidth, imgHeight too small, play/pause button in <video> will be hidden
-       + Music link are taken from: https://hoangtran0410.github.io/Visualyze-design-your-own-/?theme=HauMaster&playlist=1&song=1&background=28
-       + Custom from code in tiktok video  https://www.facebook.com/J2TEAM.ManhTuan/videos/1353367338135935/
-*/
-// ===================== start =======================
-// animation start after 1000 miliseconds
-
-setTimeout(init, 0);
-var odrag = document.getElementById('drag-container');
-var ospin = document.getElementById('spin-container');
-var aImg = ospin.getElementsByTagName('img');
-var aVid = ospin.getElementsByTagName('video');
-var aEle = [].concat(_toConsumableArray(aImg), _toConsumableArray(aVid)); // combine 2 arrays
-
-var archetype = {
-  dreamer: "Seseorang yang idealis dan tanpa kompromi, kalian menikmati seni populer dengan memilih-milih. Sebagian besar waktu kalian habis dalam angan-angan yang kalian buat sendiri. Mungkin kalian sering berpikir bahwa budaya yang patut diapresiasi adalah budaya yang memiliki \u201Csubstansi\u201D. Namun substansi memiliki makna yang berbeda bagi setiap orang, dan seringkali untuk terkoneksi lebih baik kalian harus menurunkan standar.",
-  lover: "Segala yang ada di dunia ini memiliki unsur romantisme bagi kalian, hidup bukan hanya semata menjalani dari hari ke hari namun mengapresiasi keindahan sederhana yang ditawarkan oleh kehidupan. Cinta dapat ditemukan dimana saja, filosofi ini tercermin dalam preferensi kalian dalam mengkonsumsi budaya populer. Koneksi menurut kalian adalah mencintai dan dicintai, bukan hanya dalam konteks hubungan romantis namun juga ke aspek hidup yang lain.",
-  hero: "Bagi kalian karakter utama dalam hidup adalah diri kalian sendiri, tentu tidak salah untuk mencintai dan mengapresiasi diri sendiri. Dalam bermasyarakat kalian memiliki ideal yang kuat dan tahu apa yang kalian inginkan. Menjadi protagonis dalam kehidupan kalian sendiri bukan merupakan hal yang kalian hindari, persepsi diri menjadi salah satu hal yang esensial dalam berkoneksi dengan sesama. Bagaimana seseorang bisa mencari koneksi apabila ia tidak mengenal dirinya sendiri?",
-  jester: "Hidup bagi kalian ditentukan oleh seberapa banyak kenikmatan yang kalian dapat. Kalian tidak pemilih dan mengkonsumsi apa yang dapat memberi kalian kepuasan. Tidak memiliki preferensi khusus dan mengikuti arus bukan berarti kalian terombang-ambing namun kalian memilih untuk berkoneksi dengan lebih banyak orang lewat selera yang tidak spesifik. Hidup hanya sekali dan tidak salah untuk melewati nya dengan mengkonsumsi dan menikmati sebanyak mungkin dan seluas mungkin."
-};
-aEle.forEach(function (element) {
-  element.addEventListener('click', function (e) {
-    var targetArchetype = e.target.dataset.archetype;
-    var textArchetype = archetype[targetArchetype];
-    document.getElementById('archetypeText').innerHTML = "".concat(targetArchetype.toUpperCase(), " <br><br> ").concat(textArchetype);
-  });
-}); // Size of images
-
-ospin.style.width = imgWidth + "px";
-ospin.style.height = imgHeight + "px"; // Size of ground - depend on radius
-
-var ground = document.getElementById('ground');
-ground.style.width = radius * 3 + "px";
-ground.style.height = radius * 3 + "px";
-
-function init(delayTime) {
-  for (var i = 0; i < aEle.length; i++) {
-    aEle[i].style.transform = "rotateY(" + i * (360 / aEle.length) + "deg) translateZ(" + radius + "px)";
-    aEle[i].style.transition = "transform 1s";
-    aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
-  }
-}
-
-function applyTranform(obj) {
-  // Constrain the angle of camera (between 0 and 180)
-  if (tY > 180) tY = 180;
-  if (tY < 0) tY = 0; // Apply the angle
-
-  obj.style.transform = "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
-}
-
-function playSpin(yes) {
-  ospin.style.animationPlayState = yes ? 'running' : 'paused';
-}
-
-var sX,
-    sY,
-    nX,
-    nY,
-    desX = 0,
-    desY = 0,
-    tX = 0,
-    tY = 10; // auto spin
-
-if (autoRotate) {
-  var animationName = rotateSpeed > 0 ? 'spin' : 'spinRevert';
-  ospin.style.animation = "".concat(animationName, " ").concat(Math.abs(rotateSpeed), "s infinite linear");
-} // add background music
-
-
-if (bgMusicURL) {
-  document.getElementById('music-container').innerHTML += "\n<audio src=\"".concat(bgMusicURL, "\" ").concat(bgMusicControls ? 'controls' : '', " autoplay loop>    \n<p>If you are reading this, it is because your browser does not support the audio element.</p>\n</audio>\n");
-} // setup events
-
-
-document.onpointerdown = function (e) {
-  clearInterval(odrag.timer);
-  e = e || window.event;
-  var sX = e.clientX,
-      sY = e.clientY;
-
-  this.onpointermove = function (e) {
-    e = e || window.event;
-    var nX = e.clientX,
-        nY = e.clientY;
-    desX = nX - sX;
-    desY = nY - sY;
-    tX += desX * 0.1;
-    tY += desY * 0.1;
-    applyTranform(odrag);
-    sX = nX;
-    sY = nY;
-  };
-
-  this.onpointerup = function (e) {
-    odrag.timer = setInterval(function () {
-      desX *= 0.95;
-      desY *= 0.95;
-      tX += desX * 0.1;
-      tY += desY * 0.1;
-      applyTranform(odrag);
-      playSpin(false);
-
-      if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
-        clearInterval(odrag.timer);
-        playSpin(true);
-      }
-    }, 17);
-    this.onpointermove = this.onpointerup = null;
-  };
-
-  return false;
-};
 
 /***/ }),
 
@@ -19810,28 +19895,66 @@ speakerAvatars.forEach(function (avatar) {
 /*!****************************************!*\
   !*** ./resources/js/modules/teaser.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../plugins/locomotiveScroll */ "./resources/js/plugins/locomotiveScroll.js");
 // @ts-nocheck
-var options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.8
-};
-var observer = new IntersectionObserver(function (entries, observer) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translate(-50%, -50%)';
-    } else {
-      entry.target.style.opacity = '0';
-      entry.target.style.transform = 'translate(-50%, -40%)';
+
+var videoTeaser = document.querySelector('._tedx_video_teaser');
+var videoMask = document.querySelector('._tedx_video_mask');
+var videoText = document.querySelector('._tedx_video_text');
+
+if (videoTeaser && videoMask && videoText) {
+  gsap.registerPlugin(ScrollTrigger);
+  _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].on('scroll', ScrollTrigger.update);
+  ScrollTrigger.scrollerProxy(videoTeaser, {
+    scrollTop: function scrollTop(value) {
+      return arguments.length ? _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo(value, 0, 0) : _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].scroll.instance.scroll.y;
+    },
+    getBoundingClientRect: function getBoundingClientRect() {
+      return {
+        left: 0,
+        top: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
     }
   });
-}, options);
-var videoTeaser = document.querySelector('._tedx_video_text');
-observer.observe(videoTeaser);
+  ScrollTrigger.create({
+    trigger: videoMask,
+    scroller: videoTeaser,
+    start: 'top+=30% 50%',
+    end: 'bottom-=40% 50%',
+    animation: gsap.to(videoMask, {
+      backgroundSize: '120%'
+    }),
+    scrub: 2
+  });
+  ScrollTrigger.addEventListener('refresh', function () {
+    return _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].update();
+  });
+  ScrollTrigger.refresh();
+  var options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.8
+  };
+  var observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translate(-50%, -50%)';
+      } else {
+        entry.target.style.opacity = '0';
+        entry.target.style.transform = 'translate(-50%, -40%)';
+      }
+    });
+  }, options);
+  observer.observe(videoText);
+}
 
 /***/ }),
 
@@ -19909,116 +20032,21 @@ cursorModifiers.forEach(function (curosrModifier) {
 
 /***/ }),
 
-/***/ "./resources/js/plugins/gsap.js":
-/*!**************************************!*\
-  !*** ./resources/js/plugins/gsap.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// @ts-nocheck
-var tl = gsap.timeline();
-var letters = document.querySelectorAll('._tedx_title h1 p span');
-letters.forEach(function (letter) {
-  letter.innerHTML = letter.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-});
-tl.from('._tedx_hero_asset_container img', {
-  opacity: 0,
-  width: '150%',
-  height: '150%',
-  duration: 1.4,
-  rotate: '15deg',
-  ease: 'power2.inOut'
-}).from('._tedx_hero_asset .close', {
-  opacity: 0,
-  scale: 0,
-  duration: 1,
-  ease: 'power2.inOut'
-}, '-=1.2').from('._tedx_hero_asset .line-container svg', {
-  height: 0,
-  duration: 2,
-  ease: 'power2.inOut'
-}, '-=1.4').from('._tedx_hero_asset .line-container .text', {
-  width: 0,
-  opacity: 0,
-  duration: 1,
-  ease: 'power2.inOut'
-});
-tl.from('._tedx_hero_icons a', {
-  opacity: 0,
-  x: 16,
-  duration: .6,
-  ease: 'power2.inOut',
-  stagger: {
-    amount: .6
-  }
-}, '-=1.4');
-tl.from('._tedx_title h1 p span .letter', {
-  opacity: 0,
-  y: '100%',
-  stagger: {
-    amount: .4
-  },
-  duration: .6,
-  ease: 'power2.inOut'
-}, '-=1.4').from('._tedx_title .background', {
-  width: 0,
-  duration: .6,
-  ease: 'power2.inOut'
-}, '-=.4').from('._tedx_register_cta', {
-  opacity: 0,
-  duration: .6,
-  ease: 'power2.inOut'
-}, '-=.4').from('._tedx_subtitle h2', {
-  width: 0,
-  opacity: 0,
-  duration: 1,
-  ease: 'power2.inOut'
-}, '-=.6');
-
-/***/ }),
-
 /***/ "./resources/js/plugins/locomotiveScroll.js":
 /*!**************************************************!*\
   !*** ./resources/js/plugins/locomotiveScroll.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // @ts-nocheck
 var scroller = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true
 });
-gsap.registerPlugin(ScrollTrigger);
-scroller.on('scroll', ScrollTrigger.update);
-ScrollTrigger.scrollerProxy('._tedx_video_teaser', {
-  scrollTop: function scrollTop(value) {
-    return arguments.length ? scroller.scrollTo(value, 0, 0) : scroller.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect: function getBoundingClientRect() {
-    return {
-      left: 0,
-      top: 0,
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-  }
-});
-ScrollTrigger.create({
-  trigger: '._tedx_video_mask',
-  scroller: '._tedx_video_teaser',
-  start: 'top+=30% 50%',
-  end: 'bottom-=40% 50%',
-  animation: gsap.to('._tedx_video_mask', {
-    backgroundSize: '120%'
-  }),
-  scrub: 2
-});
-ScrollTrigger.addEventListener('refresh', function () {
-  return scroller.update();
-});
-ScrollTrigger.refresh();
+/* harmony default export */ __webpack_exports__["default"] = (scroller);
 
 /***/ }),
 

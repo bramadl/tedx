@@ -1,4 +1,5 @@
 ._tedx_header_wrapper {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
+  @include lg { min-height: 100vh; }
 }
