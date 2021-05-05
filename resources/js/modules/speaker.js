@@ -11,6 +11,7 @@ let revealCallback = (entries, self) => {
     let img = entry.target.querySelector("img");
     let titleContainer = entry.target.querySelector('._tedx_speaker_title')
     let avatars = document.querySelectorAll('._tedx_speaker_avatar')
+    let details = document.querySelector('._tedx_speaker_detail')
 
     const easeInOut = "power3.out";
     const revealAnim = gsap.timeline({ ease: easeInOut });
@@ -42,6 +43,15 @@ let revealCallback = (entries, self) => {
         duration: 2.4,
         ease: easeInOut
       }, '-=3.6')
+      revealAnim.fromTo(details, {
+        opacity: 0,
+        y: 16,
+      }, {
+        opacity: 1,
+        y: 0,
+        ease: easeInOut,
+        duration: 1.6
+      }, '-=3')
       revealAnim.fromTo(avatars, {
         x: 16,
         opacity: 0,
@@ -66,26 +76,98 @@ document.querySelectorAll(".reveal").forEach(reveal => {
 });
 
 const speakers = {
-  angelina_jolie: {
-    url: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
-    title: 'Peran Acting Di Dunia Industri'
+  anastasia: {
+    name: 'Anastasia Satriyo',
+    profession: 'Psikolog',
+    title: 'Ungkaian Persepsi dan Stigma Wajah Asia',
+    description: `
+    Persepsi menjadi salah satu proses penting untuk menangkap dan memproses informasi untuk diterjemahkan dalam otak yang kemudian setiap individu berimprovisasi untuk mengelompokkan informasi-informasi tersebut berdasarkan kategorinya sebagai sebuah stereotip. Stereotip dapat dilakukan pada suatu kelompok manusia, benda, budaya, dan lainnya. Tidak jarang dalam prakteknya bahwa pengelompokkan informasi ini dapat dilakukan secara negatif dan sengaja oleh suatu kelompok budaya pada kelompok lainnya sehingga menimbulkan keresahan dan dampak multidimensi.
+    <br></br>
+    Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.
+    `,
+    url: '/anastasia.jpg'
   },
-  karen_elina: {
-    url: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
-    title: 'Mengguncang Dunia Dengan Tulisan'
+  diego: {
+    name: 'Diego Yanuar',
+    profession: 'Pesepeda',
+    title: 'Tidak Apa-Apa Untuk Tidak Memiliki Cita-Cita',
+    description: `
+    Mendefinisikan kesuksesan dengan hal-hal kecil, Diego merasa terhambat dalam tumbuh kembang karena menurutnya saat ini setiap orang harus memiliki tujuan hidup untuk mencapai kesuksesan. Suatu saat Diego bertemu dengan seseorang dan berkata “it’s okay to not to have goals in your life”, Dari kutipan itu Diego memaknai bahwa Ia dapat melakukan hal apa saja tanpa ada batasan.
+    `,
+    url: '/diego.jpg'
   },
-  jane_wong: {
-    url: 'https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w',
-    title: 'Makeup Universal, Universal Makeup ?'
-  }
+  clara: {
+    name: 'Clara Tunjung Pramesti',
+    profession: 'Mahasiswa',
+    title: 'Seni Sebagai Rumah Bukan Limbah',
+    description: `
+    Untuk sebagian orang karya seni diperuntukan untuk konsumsi publik, namun tidak sedikit karya seni yang dibuat untuk kepuasan pribadi.
+    <br></br>
+    Clara mencoba menjelaskan dari sudut pandangnya mengenai seni sebagai rumah adalah tempat untuk mencurahkan segala rasa dan karya seni yang tersimpan mampu memberikan ingatan-ingatan terhadap kejadian tertentu yang dapat memberikan pembelajaran di kemudian hari.
+    `,
+    url: '/clara.jpg'
+  },
+  jimi: {
+    name: 'Jimi Multhazam',
+    profession: 'Musisi',
+    title: 'Kekuatan Komposisi dan Cerita',
+    description: `Pada pertengahan dekade 2000-an, terdapat satu nama yang diasosiasikan dengan gerak laku juga syair yang flamboyan saat ia melantunkan tembang-tembangnya di panggung The Upstairs, nama tersebut adalah Jimi Multhazam. Menapak pada dekade 2010-an, Jimi melahirkan proyek barunya yang bernama Morfem. Entah melalui synthesizer ataupun distorsi, pria yang juga dikenal dengan nama Jimi ‘‘Danger’’ ini sudi menggunakan media atau teknik apa saja untuk mengekspresikan gagasannya. 
+    <br></br>
+    Pada talks kali ini,  Jimi Multhazam akan membicarakan bagaimana secara abstrak
+    `,
+    url: '/jimi.jpg'
+  },
+  hengki: {
+    name: 'Hengki Herwanto',
+    profession: 'Kurator',
+    title: 'Arsip Lempengan Nada',
+    description: `Rasa cintanya yang luar biasa terhadap seni musik menghantarkan suatu yayasan bernama Museum Musik Indonesia (MMI) diakui dan diresmikan oleh pemerintah pada tahun 2016. Hingga salah satu capaian mengesankan mereka, disaat UNESCO memberikan bantuan untuk proses digitalisasi koleksi. Salah satu yang terlibat merupakan sosok yang bernama Hengki Herwanto. 
+    <br></br>
+    Pada talks kali ini, Hengki Herwanto akan menarasikan cerita dibalik kurang lebih 26.000 artefak musik Indonesia dan mancanegara melalui cara  pengarsipan beragam produk seni musik.
+    `,
+    url: '/hengki.jpg'
+  },
+  abdul: {
+    name: 'Abdul Hair',
+    profession: 'Akademisi',
+    title: 'Untitled',
+    description: `Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?
+    <br></br>
+    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.
+    `,
+    url: '/abdul.JPG'
+  },
+  mice: {
+    name: 'Mice Cartoon',
+    profession: 'Komikus',
+    title: 'Memotret Peradaban Melalui Kritik Gelitik',
+    description: `Berangkat dari memotret keadaan sehari-hari yang banyak terjadi namun tidak disadari oleh masyarakat luas Mice Cartoon membungkus keberagaman tersebut menjadi sebuah kartun. Kehidupan manusia sangat berkaitan dengan perubahan peradaban yang terjadi di sekitarnya. Realita berganti dengan realita lain yang berjalan cepat seiring naik dan turunnya suatu budaya populer pada masyarakat. Perubahan ini disadari dan diterjemahkan tiap individu dengan membentuk komunitas tertentu.
+    <br></br>
+    Pada talk kali ini, Mice Cartoon akan membahas bagaimana potret dari proses kreatif yang dilewatinya dalam menanggapi perubahan peradaban dunia.
+    `,
+    url: '/mice.jpg'
+  },
+  bondan: {
+    name: 'Bondan Sekari Adi',
+    profession: 'Value Investor',
+    title: 'Manifestasi Budaya dengan Kuliner ',
+    description: `Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?
+    <br></br>
+    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.
+    `,
+    url: '/bondan.JPG'
+  },
 }
 
 const speakerAvatars = document.querySelectorAll('._tedx_speaker_avatar')
 speakerAvatars.forEach(avatar => {
   avatar.addEventListener('click', () => {
     const speakerProfile = document.querySelector('._tedx_speaker_profile')
-    speakerProfile.querySelector('img').src = speakers[avatar.dataset.target].url
+    speakerProfile.querySelector('._tedx_speaker_image img').src = `/img/speakers/${speakers[avatar.dataset.target].url}`
     speakerProfile.querySelector('h1').innerHTML = speakers[avatar.dataset.target].title
+    document.querySelector('._tedx_speaker_detail h1').innerHTML = speakers[avatar.dataset.target].title
+    document.querySelector('._tedx_speaker_detail h2').innerHTML = `<em>${speakers[avatar.dataset.target].name}</em> | ${speakers[avatar.dataset.target].profession}`
+    document.querySelector('._tedx_speaker_detail p').innerHTML = speakers[avatar.dataset.target].description
 
     const container = document.querySelector('.reveal')
     const img = container.querySelector("img");
@@ -93,12 +175,5 @@ speakerAvatars.forEach(avatar => {
 
     const easeInOut = "power3.out";
     const revealAnim = gsap.timeline({ ease: easeInOut });
-
-    revealAnim.fromTo(img, 4, {
-      scale: 1.2
-    }, {
-      scale: 1,
-      ease: easeInOut,
-    });
   })
 })

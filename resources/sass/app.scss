@@ -14,6 +14,10 @@
 @import "sections/speakerList";
 @import "sections/animaArchetype";
 @import "sections/ticketPurchase";
+@import "sections/aboutTed";
+@import "sections/coreTeams";
+@import "sections/volunteerTeams";
+@import "sections/timelineTedx";
 
 // Components
 @import "components/cursor";
@@ -47,13 +51,25 @@
     }
 }
 
-._tedx_section { text-align: center; }
+._tedx_section {
+    text-align: center;
+    margin: 150px 0;
+}
 
 ._tedx_section_about_cta {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    @include md { flex-direction: row; }
+    @include md {
+        flex-direction: row;
+    }
     align-items: center;
     justify-content: space-between;
+}
+
+.volunteer {
+    padding-top: 275px;
+    @include md { padding-top: 50px; }
+    @include lg { padding-top: 150px; }
+    margin: 150px 0;
 }

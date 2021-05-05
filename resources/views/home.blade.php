@@ -57,7 +57,7 @@
         </div>
         <div class="_tedx_section_text">
           <h3>Tema: Manifestasi Peradaban</h3>
-          <p>TEDxUniversitasBrawijaya 2021 tahun ini akan membahas bagaimana Pop Culture tidak melulu disajikan dalam bentuk kesenian musik dan lukisan, tapi juga dapat dibagikan melalui bagaimana kolektif manusia mempunyai kebebasan untuk mengekspresikan dirinya melalui Pop Culture dalam bentuk yang simbolis dan konseptual, namun praktis dan dapat dikonsumsi tanpa batas akhir sehingga dapat menarik perhatian banyak orang dari segala ras, tempat tinggal, usia, dan gender.</p>
+          <p>TEDxUniversitasBrawijaya merupakan TEDx University pertama di Malang yang diselenggarakan dan diinisiasi secara independen oleh mahasiswa Universitas Brawijaya dibawah lisensi TED yang telah berbagi ide kepada masyarakat luas sejak tahun 2015. TEDxUniversitasBrawijaya sekaligus menjadi upaya aktif dalam penyebaran gagasan unik dan transformatif dengan menjaring pembicara-pembicara lokal serta nasional yang telah terkurasi. </p>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>Tema: Manifestasi Peradaban</h3>
-        <p>TEDxUniversitasBrawijaya 2021 tahun ini akan membahas bagaimana Pop Culture tidak melulu disajikan dalam bentuk kesenian musik dan lukisan, tapi juga dapat dibagikan melalui bagaimana kolektif manusia mempunyai kebebasan untuk mengekspresikan dirinya melalui Pop Culture dalam bentuk yang simbolis dan konseptual, namun praktis dan dapat dikonsumsi tanpa batas akhir sehingga dapat menarik perhatian banyak orang dari segala ras, tempat tinggal, usia, dan gender.</p>
+        <p>Peradaban dimaknai sebagai pola kebudayaan yang terstruktur dalam menilai tingkatan suatu budaya di masyarakat. TEDx Universitas Brawijaya 2021 menghadirkan para pembicara terbaik di bidangnya yang akan berbagi gagasan dan pengalaman denganmu untuk merayakan manifestasi peradaban.</p>
       </div>
     </div>
   </div>
@@ -100,43 +100,86 @@
 <!-- Speaker List -->
 <div id="speakerList" data-scroll-section>
   <div class="_tedx_speaker_container">
-    <div class="_tedx_speaker_profile">
-      <div class="_tedx_speaker_image reveal">
-        <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80">
-        <div class="_tedx_speaker_title">
-          <div>
-            <h1>Peran Acting Di Dunia Industri</h1>
+    <div class="_tedx_speaker_wrapper">
+      <div class="_tedx_speaker_profile">
+        <div class="_tedx_speaker_image reveal">
+          <img src="{{ asset('img/speakers/clara.jpg') }}">
+          <div class="_tedx_speaker_title">
+            <div>
+              <h1>Ungkaian Persepsi dan Stigma Wajah Asia</h1>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="_tedx_speaker_detail">
+        <div class="_tedx_speaker_detail_title">
+          <h1>Ungkaian Persepsi dan Stigma Wajah Asia</h1>
+        </div>
+        <div class="_tedx_speaker_detail_name">
+          <h2><em>Anastasia Satriyo</em> | Psikolog</h2>
+        </div>
+        <div class="_tedx_speaker_detail_description">
+          <p>Persepsi menjadi salah satu proses penting untuk menangkap dan memproses informasi untuk diterjemahkan dalam otak yang kemudian setiap individu berimprovisasi untuk mengelompokkan informasi-informasi tersebut berdasarkan kategorinya sebagai sebuah stereotip. Stereotip dapat dilakukan pada suatu kelompok manusia, benda, budaya, dan lainnya. Tidak jarang dalam prakteknya bahwa pengelompokkan informasi ini dapat dilakukan secara negatif dan sengaja oleh suatu kelompok budaya pada kelompok lainnya sehingga menimbulkan keresahan dan dampak multidimensi. <br><br>
+          Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.</p>
         </div>
       </div>
     </div>
-    <div class="separator"></div>
-    <div class="_tedx_speaker_wrapper">
-      <div class="_tedx_speaker_list">
-        <div class="_tedx_speaker_avatar" data-target="angelina_jolie" cursor-class="speaker">
-          <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80">
-          <div class="_tedx_speaker_info">
-            <h1>Angelina Jolie</h1>
-            <p>Actor</p>
-          </div>
-        </div>
-        <div class="_tedx_speaker_avatar" data-target="karen_elina" cursor-class="speaker">
-          <img src="https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80">
-          <div class="_tedx_speaker_info">
-            <h1>Karen Elina</h1>
-            <p>Writer / Novelist</p>
-          </div>
-        </div>
-        <div class="_tedx_speaker_avatar" data-target="jane_wong" style="border-bottom: 0;" cursor-class="speaker">
-          <img src="https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w">
-          <div class="_tedx_speaker_info">
-            <h1>Jane Wong</h1>
-            <p>Beauty Guru</p>
-          </div>
+    <div class="_tedx_speaker_list">
+      <div class="_tedx_speaker_avatar" data-target="anastasia" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Anastasia Satriyo</h1>
+          <p>Psikolog</p>
         </div>
       </div>
-      <div class="_tedx_link">
-        <a href="#">Read More About The Timelines</a>
+      <div class="_tedx_speaker_avatar" data-target="diego" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Diego Yanuar</h1>
+          <p>Pesepeda</p>
+        </div>
+      </div>
+      <div class="_tedx_speaker_avatar" data-target="clara" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Clara Tunjung Pramesti</h1>
+          <p>Mahasiswa</p>
+        </div>
+      </div>
+      <div class="_tedx_speaker_avatar" data-target="jimi" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Jimi Multhazam</h1>
+          <p>Musisi</p>
+        </div>
+      </div>
+      <div class="_tedx_speaker_avatar" data-target="hengki" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Hengki Herwanto</h1>
+          <p>Kurator</p>
+        </div>
+      </div>
+      <div class="_tedx_speaker_avatar" data-target="abdul" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Abdul Hair</h1>
+          <p>Akademisi</p>
+        </div>
+      </div>
+      <div class="_tedx_speaker_avatar" data-target="mice" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Mice Cartoon</h1>
+          <p>Komikus</p>
+        </div>
+      </div>
+      <div class="_tedx_speaker_avatar" data-target="bondan" cursor-class="speaker">
+        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <div class="_tedx_speaker_info">
+          <h1>Bondan Sekari Adi</h1>
+          <p>Value Investor</p>
+        </div>
       </div>
     </div>
   </div>
@@ -187,7 +230,8 @@
       </div>
       <div class="_tedx_section_text">
         <h3>PRESALE TICKETS</h3>
-        <p>Pembelian tiket hanya diberlakukan pre-sale dan dapat dilakukan pada tanggal 11 - 17 Mei 2021 untuk pre-sale pertama kemudian pre-sale kedua dimulai pada tanggal 18 - 24 Mei 2021. Untuk melakukan pembelian, pastikan kamu sudah melakukan registrasi akun sebelumnya ya.</p>
+        <p>Pesan tiket Presale 1 pada tanggal 11-17 Mei sekarang untuk mendapatkan penawaran menarik! Kesempatan terakhir! Beli tiket Presale 2 pada tanggal 18-24 Mei sekarang untuk mengisi kursi terbatas.
+        </p>
       </div>
     </div>
   </div>
@@ -204,7 +248,7 @@
         <div class="_tedx_ticket_title">
           <h2>Manifestasi Peradaban</h2>
           <div>
-            <span>Senin, 30 Mei 2021</span>
+            <span>29-30 Mei 2021</span>
             <span class="dot"></span>
             <span>12:00 WIB</span>
           </div>
@@ -232,7 +276,7 @@
           <p>Pembelian hanya berlaku pada tanggal <br> <span>11 - 17 Mei 2021</span></p>
         </div>
         <div>
-          <p>Mohon pastikan kamu sudah membaca syarat dan ketentuan pembelian tiket sebelum melakukan pembelian</p>
+          <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
         </div>
         <div>
           <a href="#" cursor-class="hover">Syarat dan Ketentuan</a>
@@ -257,7 +301,7 @@
           <p>Pembelian hanya berlaku pada tanggal <br> <span>18 - 24 Mei 2021</span></p>
         </div>
         <div>
-          <p>Mohon pastikan kamu sudah membaca syarat dan ketentuan pembelian tiket sebelum melakukan pembelian</p>
+          <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
         </div>
         <div>
           <a href="#" cursor-class="hover">Syarat dan Ketentuan</a>
@@ -278,7 +322,7 @@
         <div class="_tedx_ticket_title">
           <h2>Manifestasi Peradaban</h2>
           <div>
-            <span>Senin, 30 Mei 2021</span>
+            <span>29-30 Mei 2021</span>
             <span class="dot"></span>
             <span>12:00 WIB</span>
           </div>

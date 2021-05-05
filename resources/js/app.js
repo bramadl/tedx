@@ -1,13 +1,15 @@
 // @ts-nocheck
-require('./bootstrap');
+require("./bootstrap");
 
-require('./plugins/custom-cursor');
-require('./plugins/locomotiveScroll');
+require("./plugins/custom-cursor");
+require("./plugins/locomotiveScroll");
 
-require('./modules/menu');
-require('./modules/hero');
-require('./modules/teaser');
-require('./modules/speaker');
-require('./modules/archetype');
+// Home Page
+require("./modules/menu");
+require("./modules/hero");
+require("./modules/teaser");
+require("./modules/speaker");
+require("./modules/archetype");
 
-// console.clear();
+// About Page
+require("./modules/about");

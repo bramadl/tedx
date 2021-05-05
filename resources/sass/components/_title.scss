@@ -67,3 +67,58 @@
   padding: 25px 0 65px;
   @include md { padding: 50px 0 90px; }
 }
+
+._tedx_section_teams
+._tedx_section_title_overlay {
+  padding: 25px 0 50px;
+  @include md { padding: 50px 0 75px; }
+}
+
+._tedx_title,
+._tedx_title_alt {
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    @include md { font-size: 2.25rem; }
+    font-weight: 800;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    
+    p {
+      overflow: hidden;
+      display: inline-block;
+
+      span {
+        display: inline-block;
+      }
+    }
+    
+    .background {
+      position: absolute;
+      left: -1.5rem;
+      top: -1.5rem;
+      width: 100%;
+      height: 100%;
+      background: $red-25;
+      z-index: -1;
+    }
+  }
+}
+
+._tedx_text {
+  margin: 1rem 0;
+  @include md { margin: 1rem 0; }
+  @include lg { margin: 2rem 0; }
+
+  p {
+      color: $white-75;
+      font-size: 1rem;
+      font-weight: 300;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 2;
+  }
+}
