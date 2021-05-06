@@ -76,7 +76,7 @@
       <div class="_tedx_video_text">
         <h1><span>TEDx</span>UniversitasBrawijaya</h1>
         <h2>Teaser Video</h2>
-        <button cursor-class="hover">Play Video</button>
+        <button cursor-class="hover" class="open-video-player">Play Video</button>
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@
         </div>
         <div class="_tedx_speaker_detail_description">
           <p>Persepsi menjadi salah satu proses penting untuk menangkap dan memproses informasi untuk diterjemahkan dalam otak yang kemudian setiap individu berimprovisasi untuk mengelompokkan informasi-informasi tersebut berdasarkan kategorinya sebagai sebuah stereotip. Stereotip dapat dilakukan pada suatu kelompok manusia, benda, budaya, dan lainnya. Tidak jarang dalam prakteknya bahwa pengelompokkan informasi ini dapat dilakukan secara negatif dan sengaja oleh suatu kelompok budaya pada kelompok lainnya sehingga menimbulkan keresahan dan dampak multidimensi. <br><br>
-          Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.</p>
+            Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.</p>
         </div>
       </div>
     </div>

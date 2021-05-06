@@ -1,6 +1,7 @@
 // @ts-nocheck
 require("./bootstrap");
 
+// Required Plugins
 require("./plugins/custom-cursor");
 require("./plugins/locomotiveScroll");
 
@@ -14,56 +15,65 @@ require("./modules/archetype");
 // About Page
 require("./modules/about");
 
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.8
-}
+// Partners Page
+require('./modules/partners')
 
-const scaleCallback = (entries, self) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const image = entry.target.querySelector('img')
-      const title = entry.target.querySelector('._tedx_partner_profile_wrapper')
-      const links = title.querySelectorAll('li')
+const playVideoButton = document.querySelector('.open-video-player')
+const closeVideoButton = document.querySelector('.close-video-player')
+const videoPlayer = document.querySelector('#videoPlayer')
 
-      gsap.to(
-        image,
-        {
-          scale: 1.15,
-          duration: 2,
-          ease: 'power2.inOut'
-        }
-      )
+playVideoButton.addEventListener('click', () => {
+  const timeline = gsap.timeline()
 
-      const tl = gsap.timeline({ ease: 'power2.out' })
-      tl.to(
-        title,
-        {
-          opacity: 1,
-          duration: 1.4
-        }
-      ).from(
-        links,
-        {
-          y: '100%',
-          opacity: 0,
-          duration: .6,
-          stagger: {
-            amount: .8
-          }
-        },
-        '<'
-      )
-
-      self.unobserve(entry.target)
+  timeline
+  .to(
+    videoPlayer,
+    {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      pointerEvents: 'all',
+      duration: 1.2,
+      ease: 'power2.inOut'
     }
-  })
-}
+  )
+  .to(
+    closeVideoButton,
+    {
+      opacity: 1,
+      duration: 1,
+      ease: 'power.out'
+    }
+  )
+})
 
-const observer = new IntersectionObserver(scaleCallback, options)
+closeVideoButton.addEventListener('click', () => {
+  const video = videoPlayer.querySelector('video')
+  
+  const timeline = gsap.timeline()
 
-const partnerContainers = document.querySelectorAll('.tedx_section_image_partners_content')
-partnerContainers.forEach(container => {
-  observer.observe(container)
+  timeline
+  .to(
+    closeVideoButton,
+    {
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.inOut'
+    }
+  )
+  .to(
+    videoPlayer,
+    {
+      opacity: 0,
+      scale: 0,
+      y: '100%',
+      pointerEvents: 'none',
+      duration: 1.2,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        video.pause()
+        video.currentTime = 0
+      }
+    }
+  )
 })

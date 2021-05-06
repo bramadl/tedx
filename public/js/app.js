@@ -19379,7 +19379,8 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // @ts-nocheck
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Required Plugins
+
 
 __webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js");
 
@@ -19397,48 +19398,48 @@ __webpack_require__(/*! ./modules/speaker */ "./resources/js/modules/speaker.js"
 __webpack_require__(/*! ./modules/archetype */ "./resources/js/modules/archetype.js"); // About Page
 
 
-__webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js");
+__webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js"); // Partners Page
 
-var options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.8
-};
 
-var scaleCallback = function scaleCallback(entries, self) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      var image = entry.target.querySelector('img');
-      var title = entry.target.querySelector('._tedx_partner_profile_wrapper');
-      var links = title.querySelectorAll('li');
-      gsap.to(image, {
-        scale: 1.15,
-        duration: 2,
-        ease: 'power2.inOut'
-      });
-      var tl = gsap.timeline({
-        ease: 'power2.out'
-      });
-      tl.to(title, {
-        opacity: 1,
-        duration: 1.4
-      }).from(links, {
-        y: '100%',
-        opacity: 0,
-        duration: .6,
-        stagger: {
-          amount: .8
-        }
-      }, '<');
-      self.unobserve(entry.target);
+__webpack_require__(/*! ./modules/partners */ "./resources/js/modules/partners.js");
+
+var playVideoButton = document.querySelector('.open-video-player');
+var closeVideoButton = document.querySelector('.close-video-player');
+var videoPlayer = document.querySelector('#videoPlayer');
+playVideoButton.addEventListener('click', function () {
+  var timeline = gsap.timeline();
+  timeline.to(videoPlayer, {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    pointerEvents: 'all',
+    duration: 1.2,
+    ease: 'power2.inOut'
+  }).to(closeVideoButton, {
+    opacity: 1,
+    duration: 1,
+    ease: 'power.out'
+  });
+});
+closeVideoButton.addEventListener('click', function () {
+  var video = videoPlayer.querySelector('video');
+  var timeline = gsap.timeline();
+  timeline.to(closeVideoButton, {
+    opacity: 0,
+    duration: 1,
+    ease: 'power2.inOut'
+  }).to(videoPlayer, {
+    opacity: 0,
+    scale: 0,
+    y: '100%',
+    pointerEvents: 'none',
+    duration: 1.2,
+    ease: 'power2.inOut',
+    onComplete: function onComplete() {
+      video.pause();
+      video.currentTime = 0;
     }
   });
-};
-
-var observer = new IntersectionObserver(scaleCallback, options);
-var partnerContainers = document.querySelectorAll('.tedx_section_image_partners_content');
-partnerContainers.forEach(function (container) {
-  observer.observe(container);
 });
 
 /***/ }),
@@ -19896,6 +19897,57 @@ function closeMenu() {
     menuOpen.play();
   }
 }
+
+/***/ }),
+
+/***/ "./resources/js/modules/partners.js":
+/*!******************************************!*\
+  !*** ./resources/js/modules/partners.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.8
+};
+
+var scaleCallback = function scaleCallback(entries, self) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      var image = entry.target.querySelector('img');
+      var title = entry.target.querySelector('._tedx_partner_profile_wrapper');
+      var links = title.querySelectorAll('li');
+      gsap.to(image, {
+        scale: 1.15,
+        duration: 2,
+        ease: 'power2.inOut'
+      });
+      var tl = gsap.timeline({
+        ease: 'power2.out'
+      });
+      tl.to(title, {
+        opacity: 1,
+        duration: 1.4
+      }).from(links, {
+        y: '100%',
+        opacity: 0,
+        duration: .6,
+        stagger: {
+          amount: .8
+        }
+      }, '<');
+      self.unobserve(entry.target);
+    }
+  });
+};
+
+var observer = new IntersectionObserver(scaleCallback, options);
+var partnerContainers = document.querySelectorAll('.tedx_section_image_partners_content');
+partnerContainers.forEach(function (container) {
+  observer.observe(container);
+});
 
 /***/ }),
 

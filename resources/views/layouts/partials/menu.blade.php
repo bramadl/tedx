@@ -2,19 +2,19 @@
   <div class="_tedx_menu_container">
     <div class="_tedx_main_links">
       <div class="_tedx_link_wrapper">
-        <a href="{{ url('/') }}">Home</a>
+        <a href="{{ url('/') }}" cursor-class="hover">Home</a>
       </div>
       <div class="_tedx_link_wrapper">
-        <a href="{{ url('/about') }}">About</a>
+        <a href="{{ url('/about') }}" cursor-class="hover">About</a>
       </div>
       <div class="_tedx_link_wrapper">
-        <a href="{{ url('/partners') }}">Partners</a>
+        <a href="{{ url('/partners') }}" cursor-class="hover">Partners</a>
       </div>
       <div class="_tedx_link_wrapper">
-        <a href="{{ url('/faqs') }}">FAQs</a>
+        <a href="{{ url('/faqs') }}" cursor-class="hover">FAQs</a>
       </div>
       <div class="_tedx_link_wrapper">
-        <a href="{{ url('/login') }}">Login</a>
+        <a href="{{ url('/login') }}" cursor-class="hover">Login</a>
       </div>
     </div>
     <div class="separator"></div>
@@ -23,8 +23,8 @@
         <h4>Explore</h4>
         <ul>
           <li><a href="https://tedx.amhanisa.com/" cursor-class="hover">Past Events</a></li>
-          <li><a href="https://www.ted.com/" cursor-class="hover">TED & TEDx</a></li>
-          <li><a href="{{ url('/behind-the-team') }}" cursor-class="hover">People Behind The Team</a></li>
+          <li><a href="https://www.ted.com/" cursor-class="hover">TED</a></li>
+          <li><a href="https://www.ted.com/about/programs-initiatives/tedx-program" cursor-class="hover">TEDx</a></li>
         </ul>
       </div>
       <div>
@@ -43,7 +43,7 @@
         </ul>
       </div>
       <div class="_tedx_link">
-        <button id="close">Close Menu</button>
+        <button id="close" cursor-class="hover">Close Menu</button>
       </div>
     </div>
   </div>

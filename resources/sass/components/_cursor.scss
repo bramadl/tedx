@@ -24,6 +24,13 @@
                 height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
+        #cursor.greeting .cursor__circle {
+            width: 6rem;
+            height: 6rem;
+            background-color: #990707;
+            border-color: #990707;
+        }
+
         #cursor.hover .cursor__circle {
             width: 1.5rem;
             height: 1.5rem;
@@ -59,7 +66,8 @@
             background-color: #073099;
             border-color: #073099;
         }
-
+        
+        #cursor.greeting::after,
         #cursor.dreamer::after,
         #cursor.hero::after,
         #cursor.lover::after,
@@ -83,6 +91,9 @@
             font-size: 1rem;
         }
 
+        #cursor.greeting::after {
+            content: "Hello !";
+        }
         #cursor.speaker::after {
             content: "Click To Read";
         }
