@@ -1,0 +1,146 @@
+._tedx_register_container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+
+    background: linear-gradient(-45deg, #860b0b, #350517, #000000, #c20909);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+._tedx_register_content {
+    padding: 2rem 1rem;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+
+    @include md {
+        width: 400px;
+    }
+    @include lg {
+        width: 500px;
+    }
+    @include xl {
+        width: 700px;
+        padding: 3rem 2rem;
+    }
+
+    ._tedx_register_title {
+        color: black;
+        margin-bottom: 1.5rem;
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            @include xl {
+                font-size: 2rem;
+            }
+            
+            span {
+                color: red;
+            }
+        }
+
+        p {
+            font-size: .75rem;
+
+            @include xl {
+                font-size: 2rem;
+            }
+            @include md {
+                font-size: 1rem;
+            }
+            a {
+                color: #b11818;
+            }
+        }
+    }
+
+    ._tedx_register_form_wrapper {
+        display: flex;
+        flex-direction: column;
+            input {
+                margin: 10px 0;
+                padding: 10px;
+                border: 1px solid #dadada;
+                border-radius: 10px;
+                background-color: #dadada;
+                outline: none;
+
+                &::placeholder {
+                    color: #666;
+                }
+            }
+            select {
+                margin: 10px 0;
+                padding: 10px;
+                border: 1px solid #dadada;
+                border-radius: 10px;
+                background-color: #dadada;
+                outline: none;
+                color: #666;
+            }
+
+        ._tedx_form_group {
+            display: flex;
+            flex-direction: column;
+
+            @include md {
+                flex-direction: row;
+
+                .firstName {
+                    flex: 1;
+
+                    @include md {
+                        margin-right: 10px;
+                    }
+                }
+
+                .lastName {
+                    flex: 1;
+                }
+            }
+        }
+
+        ._tedx_form {
+            width: 100%;
+            
+            input {
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+            }
+            select {
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+            }
+        }
+
+    }
+    ._tedx_submit_button button{
+        background-color: #b11818;
+        border-radius: 10px;
+        border: none;
+        margin-top: 1rem;
+        padding: 5px 20px;
+        width: 100%;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+    }
+}

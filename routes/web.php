@@ -18,3 +18,7 @@ Route::view('/about', 'about');
 Route::view('/test', 'test');
 Route::view('/partners', 'partners');
 Route::view('/faq', 'faq');
+Route::view('/register', 'auth.register.index');
+Route::view('/register/core', 'auth.register.core');
+Route::view('/register/volunteer', 'auth.register.volunteer');
+Route::view('/login', 'auth.login');

@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+body.custom-cursor {
+  cursor: none !important;
+}
+
 html,
 body,
 div,
@@ -90,7 +94,6 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  cursor: none !important;
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -3309,6 +3312,204 @@ textarea {
   background: rgba(184, 43, 43, 0.5);
   z-index: -1;
   transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+._tedx_register_container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(-45deg, #860b0b, #350517, #000000, #c20909);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+._tedx_register_content {
+  padding: 2rem 1rem;
+  width: 80%;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_register_content {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_register_content {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_register_content {
+    width: 700px;
+    padding: 3rem 2rem;
+  }
+}
+
+._tedx_register_content ._tedx_register_title {
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+._tedx_register_content ._tedx_register_title h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_register_content ._tedx_register_title h1 {
+    font-size: 2rem;
+  }
+}
+
+._tedx_register_content ._tedx_register_title h1 span {
+  color: red;
+}
+
+._tedx_register_content ._tedx_register_title p {
+  font-size: 0.75rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_register_content ._tedx_register_title p {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_register_content ._tedx_register_title p {
+    font-size: 1rem;
+  }
+}
+
+._tedx_register_content ._tedx_register_title p a {
+  color: #b11818;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  background-color: #dadada;
+  outline: none;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper input::-moz-placeholder {
+  color: #666;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper input:-ms-input-placeholder {
+  color: #666;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper input::placeholder {
+  color: #666;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper select {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  background-color: #dadada;
+  outline: none;
+  color: #666;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper ._tedx_form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_register_content ._tedx_register_form_wrapper ._tedx_form_group {
+    flex-direction: row;
+  }
+
+  ._tedx_register_content ._tedx_register_form_wrapper ._tedx_form_group .firstName {
+    flex: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  ._tedx_register_content ._tedx_register_form_wrapper ._tedx_form_group .firstName {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_register_content ._tedx_register_form_wrapper ._tedx_form_group .lastName {
+    flex: 1;
+  }
+}
+
+._tedx_register_content ._tedx_register_form_wrapper ._tedx_form {
+  width: 100%;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper ._tedx_form input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+._tedx_register_content ._tedx_register_form_wrapper ._tedx_form select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+._tedx_register_content ._tedx_submit_button button {
+  background-color: #b11818;
+  border-radius: 10px;
+  border: none;
+  margin-top: 1rem;
+  padding: 5px 20px;
+  width: 100%;
+  color: white;
+  font-family: "Open Sans", sans-serif;
 }
 
 ._tedx {

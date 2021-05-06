@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
-<body>
+<body class="custom-cursor">
     <div class="_tedx" data-scroll-container>
         @include('layouts.partials.menu')
         <div class="_tedx_header_wrapper" data-scroll-section>
