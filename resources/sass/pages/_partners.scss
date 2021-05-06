@@ -1,0 +1,99 @@
+._tedx_section_image_partners_container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include md { grid-template-columns: repeat(2, 1fr); }
+    grid-column-gap: 100px;
+    grid-row-gap: 100px;
+    margin-bottom: 100px;
+    @include md {
+        grid-row-gap: 0;
+        margin-bottom: 0;
+    }
+    
+    .tedx_section_image_partners_content {
+
+        &:last-child {
+            @include md { margin-top: 200px; }
+        }
+
+        ._tedx_partner_image_wrapper {
+            z-index: 10;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        ._tedx_partner_profile_wrapper {
+            opacity: 0;
+            margin: 2rem 0 0;
+
+            h1 {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.25rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                display: inline-block;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100px;
+                    border-bottom: 1px solid $white-50;
+                    border-radius: 1px;
+                    left: 100%;
+                    top: 50%;
+                    transform: translate(1rem, -50%);
+                }
+            }
+
+            ul {
+                margin-top: .5rem;
+
+                li {
+                    display: inline-block;
+                    margin-right: .5rem;
+                    padding-right: .5rem;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 100%;
+                        transform: translate(-50%, -50%);
+                        width: .25rem;
+                        height: .25rem;
+                        background: $white-50;
+                        border-radius: 50%;
+                    }
+
+                    &:last-child::after {
+                        display: none;
+                    }
+
+                    a,
+                    span {
+                        color: $white-50;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: .8rem;
+                        text-decoration: none;
+                        transition: .4s $cubiz-bezier;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

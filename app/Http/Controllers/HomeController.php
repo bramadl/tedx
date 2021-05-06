@@ -16,6 +16,16 @@ class HomeController extends Controller
         return view('about');
     }
 
+    public function partners()
+    {
+        return view('partners');
+    }
+
+    public function faqs()
+    {
+        return view('faqs');
+    }
+
     public function coreProfile($core)
     {
         $cores = [

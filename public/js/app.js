@@ -19399,6 +19399,48 @@ __webpack_require__(/*! ./modules/archetype */ "./resources/js/modules/archetype
 
 __webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js");
 
+var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.8
+};
+
+var scaleCallback = function scaleCallback(entries, self) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      var image = entry.target.querySelector('img');
+      var title = entry.target.querySelector('._tedx_partner_profile_wrapper');
+      var links = title.querySelectorAll('li');
+      gsap.to(image, {
+        scale: 1.15,
+        duration: 2,
+        ease: 'power2.inOut'
+      });
+      var tl = gsap.timeline({
+        ease: 'power2.out'
+      });
+      tl.to(title, {
+        opacity: 1,
+        duration: 1.4
+      }).from(links, {
+        y: '100%',
+        opacity: 0,
+        duration: .6,
+        stagger: {
+          amount: .8
+        }
+      }, '<');
+      self.unobserve(entry.target);
+    }
+  });
+};
+
+var observer = new IntersectionObserver(scaleCallback, options);
+var partnerContainers = document.querySelectorAll('.tedx_section_image_partners_content');
+partnerContainers.forEach(function (container) {
+  observer.observe(container);
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19777,12 +19819,19 @@ function openMenu() {
   });
   var menuOpen = gsap.timeline({
     paused: true
+  }).from(links, {
+    y: '110%',
+    duration: .6,
+    ease: 'power2.inOut',
+    stagger: {
+      amount: .4
+    }
   }).to("._tedx_menu_wrapper", {
     opacity: 1,
     pointerEvents: 'all',
-    duration: 1,
+    duration: .6,
     ease: 'sine.inOut'
-  }).from(sublinks, {
+  }, '-=.6').from(sublinks, {
     opacity: 0,
     y: 64,
     duration: 1.4,
@@ -19790,16 +19839,9 @@ function openMenu() {
   }, '-=4').from(separator, {
     height: 0,
     opacity: 0,
-    duration: 1.4,
+    duration: 1.2,
     ease: 'sine.inOut'
-  }, '<').from(links, {
-    y: '100%',
-    duration: 1,
-    ease: 'power2.inOut',
-    stagger: {
-      amount: .6
-    }
-  }, '-=1');
+  }, '<');
 
   if (hasMenuOpen) {
     menuWrapper.classList.toggle('menu-open');
