@@ -141,6 +141,8 @@
                 @include md { font-size: 1.5rem; }
                 font-weight: 800;
                 font-family: "Open Sans", sans-serif;
+                margin-bottom: 1rem;
+                @include lg { margin-bottom: 2rem; }
 
                 span {
                     color: $red;
@@ -148,13 +150,9 @@
             }
 
             p {
-                margin: 1rem 0;
-                @include lg { margin: 0.5rem 0;; }
                 color: $white-50;
                 font-family: "Open Sans", sans-serif;
-                font-size: .75rem;
-                @include lg { font-size: .8rem; }
-                @include xl { font-size: 1rem; }
+                font-size: .8rem;
                 font-weight: 300;
                 line-height: 1.5;
 
@@ -166,11 +164,13 @@
             a {
                 color: $red;
                 font-family: "Open Sans", sans-serif;
-                font-size: .75rem;
-                @include md { font-size: 1rem; }
+                font-size: .8rem;
                 font-weight: 300;
                 text-decoration: none;
                 transition: 0.4s $cubiz-bezier;
+                display: inline-block;
+                margin-top: 1rem;
+                @include lg { margin-top: 1rem; }
 
                 &:hover {
                     margin-left: 0.5rem;

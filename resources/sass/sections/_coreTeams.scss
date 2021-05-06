@@ -52,12 +52,14 @@
 
           h1 {
               font-size: 1rem;
-              color: $white-50;
-          }
-
-          p {
+              color: $white;
+              text-shadow: 0 2px 8px rgb(184, 45, 45);
+            }
+            
+            p {
               font-size: .75rem;
-              color: $white-50;
+              color: $white;
+              text-shadow: 0 2px 8px rgb(184, 45, 45);
           }
       }
 

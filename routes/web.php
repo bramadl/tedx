@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home');
-Route::view('/about', 'about');
-Route::view('/test', 'test');
+Route::get('/', 'HomeController@index');
+Route::get('/about', 'HomeController@about');
+Route::get('/core/{name}/profile', 'HomeController@coreProfile');

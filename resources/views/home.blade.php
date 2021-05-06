@@ -273,9 +273,8 @@
           <h3><span>Ticket</span> Presale 1</h3>
         </div>
         <div>
-          <p>Pembelian hanya berlaku pada tanggal <br> <span>11 - 17 Mei 2021</span></p>
-        </div>
-        <div>
+          <p>Berbagai bahasan mengenai budaya populer akan diulik dalam TED Talks oleh beragam speakers melalui perspektif dari background masing-masing. Dilengkapi dengan Virtual Exhibition dan Special Performance yang atraktif.</p>
+          <br>
           <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
         </div>
         <div>
@@ -295,12 +294,11 @@
     <div class="_tedx_ticket_detail">
       <div class="_tedx_ticket_description">
         <div>
-          <h3><span>Ticket</span> Presale 1</h3>
+          <h3><span>Ticket</span> Presale 2</h3>
         </div>
         <div>
-          <p>Pembelian hanya berlaku pada tanggal <br> <span>18 - 24 Mei 2021</span></p>
-        </div>
-        <div>
+          <p>Sudut pandang dari berbagai speakers akan ditungkan lebih jelas dalam TED Talks yang akan hadir. Tidak ketinggalan, terdapat Special Performance dan Virtual Exhibition yang menarik.</p>
+          <br>
           <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
         </div>
         <div>

@@ -20,6 +20,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        max-width: 120px;
+        @include lg { max-width: 100%; }
 
         .indicator {
             width: .5rem;
@@ -86,53 +88,55 @@
     ._tedx_timeline_one {
         top: 0;
         transform: translate(-36px, -50%);
-        @include md { transform: translate(-34px, -50%); }
-    }
-
-    ._tedx_timeline_two {
-        top: 12.5%;
-        transform: translate(32px, -50%);
-        @include md { transform: translate(28px, -50%); }
-        @include xl { transform: translate(32px, -50%); }
-    }
-
-    ._tedx_timeline_three {
-        top: 25%;
-        transform: translate(20px, -50%);
-        @include md { transform: translate(24px, -50%); }
-        @include lg { transform: translate(26px, -50%); }
-    }
-
-    ._tedx_timeline_four {
-        top: 37.5%;
-        transform: translate(-32px, -50%);
-        @include md { transform: translate(-36px, -50%); }
+        @include lg { transform: translate(-34px, -50%); }
         @include xl { transform: translate(-38px, -50%); }
     }
 
-    ._tedx_timeline_five {
+    ._tedx_timeline_two {
+        top: 16.67%;
+        transform: translate(32px, -50%);
+        @include md { transform: translate(28px, -50%); }
+        @include lg { transform: translate(32px, -50%); }
+        @include xl { transform: translate(38px, -50%); }
+    }
+
+    ._tedx_timeline_three {
+        top: 33.34%;
+        transform: translate(20px, -50%);
+        @include md { transform: translate(24px, -50%); }
+        @include lg { transform: translate(-8px, -50%); }
+        @include xl { transform: translate(-10px, -50%); }
+    }
+
+    ._tedx_timeline_four {
         top: 50%;
+        transform: translate(-32px, -50%);
+        @include md { transform: translate(-36px, -50%); }
+        @include lg { transform: translate(-46px, -50%); }
+        @include xl { transform: translate(-52px, -50%); }
+    }
+
+    ._tedx_timeline_five {
+        top: 66.67%;
         transform: translate(-34px, -50%);
         @include md { transform: translate(-30px, -50%); }
-        @include xl { transform: translate(-34px, -50%); }
+        @include lg { transform: translate(42px, -50%); }
+        @include xl { transform: translate(46px, -50%); }
     }
 
     ._tedx_timeline_six {
-        top: 62.5%;
+        top: 83.34%;
         transform: translate(8px, -50%);
         @include md { transform: translate(4px, -50%); }
-        @include lg { transform: translate(4px, -50%); }
+        @include lg { transform: translate(-12px, -50%); }
+        @include xl { transform: translate(-14px, -50%); }
     }
 
     ._tedx_timeline_seven {
-        top: 75%;
+        top: 100%;
         transform: translate(34px, -50%);
         @include md { transform: translate(38px, -50%); }
-        @include xl { transform: translate(42px, -50%); }
-    }
-
-    ._tedx_timeline_eight {
-        top: 87.5%;
-        transform: translate(-32px, -50%);
+        @include lg { transform: translate(-32px, -50%); }
+        @include xl { transform: translate(-38px, -50%); }
     }
 }
