@@ -11,6 +11,9 @@
 
 // Pages
 @import "pages/coreDroplink";
+@import "pages/partners";
+@import "pages/faq";
+@import "pages/auth";
 
 // Sections
 @import "sections/videoTeaser";
@@ -28,9 +31,9 @@
 @import "components/menu";
 @import "components/title";
 
-// Pages
-@import "pages/partners";
-@import "pages/faq";
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 
 ._tedx {
     position: relative;

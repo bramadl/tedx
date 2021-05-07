@@ -15,7 +15,7 @@
       <h2>Membicarakan yang dibicarakan manusia</h2>
     </div>
     <div class="_tedx_register_cta">
-      <a href="#" cursor-class="hover">Beli Tiket</a>
+      <button cursor-class="hover">Beli Tiket</button>
     </div>
   </div>
 </div>
@@ -282,10 +282,10 @@
         </div>
       </div>
       <div class="_tedx_ticket_button">
-        <button cursor-class="hover">
+        <a href="{{ url('/ticket/presale-1') }}" cursor-class="hover">
           <span>Beli Tiket</span>
           <strong>Rp 85.000</strong>
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -306,10 +306,10 @@
         </div>
       </div>
       <div class="_tedx_ticket_button">
-        <button cursor-class="hover">
+        <a href="{{ url('/ticket/presale-2') }}" cursor-class="hover">
           <span>Beli Tiket</span>
           <strong>Rp 85.000</strong>
-        </button>
+        </a>
       </div>
     </div>
     <div class="_tedx_ticket">

@@ -11,7 +11,7 @@
                 </div>
                 <div class="_tedx_section_text">
                     <h3>Beberapa Pihak yang terlibat</h3>
-                    <p>TEDxUniversitasBrawijaya 2021 tahun ini akan membahas bagaimana Pop Culture tidak melulu disajikan dalam bentuk kesenian musik dan lukisan, tapi juga dapat dibagikan melalui bagaimana kolektif manusia mempunyai kebebasan untuk mengekspresikan dirinya melalui Pop Culture dalam bentuk yang simbolis dan konseptual, namun praktis dan dapat dikonsumsi tanpa batas akhir sehingga dapat menarik perhatian banyak orang dari segala ras, tempat tinggal, usia, dan gender.</p>
+                    <p>TEDxUniversitasBrawijaya 2021 mengucapkan terima kasih kepada seluruh pihak yang terlibat. Tanpa kontribusi para pihak terkait Manifestasi Peradaban tidak akan dapat berjalan dengan baik.</p>
                 </div>
             </div>
         </div>

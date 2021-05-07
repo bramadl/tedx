@@ -26,6 +26,11 @@ class HomeController extends Controller
         return view('faqs');
     }
 
+    public function ticket($number)
+    {
+        return $number;
+    }
+
     public function coreProfile($core)
     {
         $cores = [

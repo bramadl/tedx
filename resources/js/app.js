@@ -17,3 +17,10 @@ require("./modules/about");
 
 // Partners Page
 require('./modules/partners')
+
+const buyTicketLink = document.querySelector('._tedx_register_cta')
+if (buyTicketLink) {
+  buyTicketLink.addEventListener('click', (e) => {
+    scroller.scrollTo('#ticketPurchase')
+  })
+}

@@ -19406,6 +19406,14 @@ __webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js"); /
 
 __webpack_require__(/*! ./modules/partners */ "./resources/js/modules/partners.js");
 
+var buyTicketLink = document.querySelector('._tedx_register_cta');
+
+if (buyTicketLink) {
+  buyTicketLink.addEventListener('click', function (e) {
+    _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo('#ticketPurchase');
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
