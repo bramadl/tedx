@@ -9,9 +9,11 @@ class MemberController extends Controller
 {
     public function dashboard()
     {
-        $user = Auth::user();
-        return view('member.dashboard', [
-            'user' => $user
-        ]);
+        return view('member.dashboard');
+    }
+
+    public function profile()
+    {
+        return view('member.profile');
     }
 }

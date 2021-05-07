@@ -21,7 +21,9 @@ Route::get('/faqs', 'HomeController@faqs');
 Route::get('/core/{name}/profile', 'HomeController@coreProfile');
 
 Route::group(['middleware' => ['verified']], function () {
-  Route::get('/ticket/presale-{number}', 'HomeController@ticket')->where(['number' => '[0-9]+']);
+  Route::get('/ticket/payment', 'TicketController@payment');
+  Route::post('/ticket/payment', 'TicketController@storePayment');
+  Route::get('/ticket/invoice', 'TicketController@invoice');
 });
 
 Route::group(['prefix' => '/member'], function () {
@@ -43,7 +45,8 @@ Route::group(['prefix' => '/member'], function () {
     Route::get('/login', 'AuthController@login')->name('login');
   });
   
-  Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dashboard', 'MemberController@dashboard');
+  Route::group(['middleware' => 'auth', 'name' => 'member'], function () {
+    Route::get('/dashboard', 'MemberController@dashboard')->name('dashboard');
+    Route::get('/kelola-akun', 'MemberController@profile')->name('profile');
   });
 });

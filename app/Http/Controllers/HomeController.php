@@ -2,35 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index()
-    {   
+    public function determineTicketAvailability($startDate, $endDate) {
         $todayDate = date('Y-m-d');
         $todayDate= date('Y-m-d', strtotime($todayDate));
 
-        $presaleOneStartDate = date('Y-m-d', strtotime("11/05/2001"));
-        $presaleOneEndDate = date('Y-m-d', strtotime("17/05/2021"));
-
-        $presaleTwoStartDate = date('Y-m-d', strtotime("11/05/2001"));
-        $presaleTwoEndDate = date('Y-m-d', strtotime("17/05/2021"));
-            
-        $presaleOneAvailable = false;
-        $presaleTwoAvailable = false;
-
-        if (($todayDate >= $presaleOneStartDate) && ($todayDate <= $presaleOneEndDate)){
-            $presaleOneAvailable = true;
+        if (($todayDate >= $startDate) && ($todayDate <= $endDate)){
+            return true;
+        } else {
+            return false;
         }
+    }
+    
+    public function index()
+    {   
+        $presaleOneAvailable = $this->determineTicketAvailability(
+            date('Y-m-d', strtotime("11/05/2001")),
+            date('Y-m-d', strtotime("17/05/2021"))
+        );
+        $presaleTwoAvailable = $this->determineTicketAvailability(
+            date('Y-m-d', strtotime("11/05/2001")),
+            date('Y-m-d', strtotime("17/05/2021"))
+        );
 
-        if (($todayDate >= $presaleTwoStartDate) && ($todayDate <= $presaleTwoEndDate)) {
-            $presaleTwoAvailable = true;
-        }
+        $tickets = Ticket::all();
         
         return view('home', [
-            'presaleOneAvailable' => $presaleOneAvailable,
-            'presaleTwoAvailable' => $presaleTwoAvailable,
+            'presaleOneAvailable' => true || $presaleOneAvailable,
+            'presaleTwoAvailable' => true || $presaleTwoAvailable,
+            'tickets' => $tickets
         ]);
     }
 
@@ -47,11 +52,6 @@ class HomeController extends Controller
     public function faqs()
     {
         return view('faqs');
-    }
-
-    public function ticket($number)
-    {
-        return $number;
     }
 
     public function coreProfile($core)

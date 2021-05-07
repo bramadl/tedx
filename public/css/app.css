@@ -1888,7 +1888,8 @@ textarea {
   background: rgba(0, 0, 0, 0.9);
 }
 
-#videoPlayer video {
+#videoPlayer video,
+#videoPlayer iframe {
   width: 80%;
   height: 80%;
   border: 0.5rem solid #FFFFFF;
@@ -2457,14 +2458,39 @@ textarea {
 }
 
 #ticketPurchase ._tedx_ticket_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 25px;
+  align-items: center;
 }
 
 @media only screen and (min-width: 996px) {
   #ticketPurchase ._tedx_ticket_container {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #ticketPurchase ._tedx_ticket_container {
+    grid-gap: 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #ticketPurchase ._tedx_ticket_container {
+    grid-gap: 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #ticketPurchase ._tedx_ticket_container {
+    grid-gap: 100px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  #ticketPurchase ._tedx_ticket_container:first-child ._tedx_ticket {
+    order: 0;
   }
 }
 
@@ -2478,20 +2504,19 @@ textarea {
   }
 }
 
+@media only screen and (min-width: 996px) {
+  #ticketPurchase ._tedx_ticket_container:last-child ._tedx_ticket {
+    order: 1;
+  }
+}
+
 #ticketPurchase ._tedx_ticket {
-  order: 0;
   background: linear-gradient(to left bottom, #1a1a1a, #111111);
   width: 100%;
   height: 180px;
   border-left: 0.25rem solid #B82B2B;
   display: flex;
   justify-content: space-between;
-}
-
-@media only screen and (min-width: 996px) {
-  #ticketPurchase ._tedx_ticket:last-child {
-    order: 1;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -2625,17 +2650,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin-top: 50px;
-}
-
-@media only screen and (min-width: 996px) {
-  #ticketPurchase ._tedx_ticket_detail:first-child {
-    margin: 0 50px 0 0;
-  }
-
-  #ticketPurchase ._tedx_ticket_detail:last-child {
-    margin: 0 0 0 50px;
-  }
+  height: 100%;
 }
 
 #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_description {
@@ -2726,7 +2741,8 @@ textarea {
   }
 }
 
-#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a {
+#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a,
+#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button button {
   box-sizing: border-box;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2750,28 +2766,33 @@ textarea {
 }
 
 @media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a {
+  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a,
+  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button button {
     padding: 1rem 2rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a {
+  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a,
+  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button button {
     padding: 0.75rem 2rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a {
+  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a,
+  #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button button {
     font-size: 1rem;
   }
 }
 
-#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a:hover {
+#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a:hover,
+#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button button:hover {
   background: #B82B2B;
 }
 
-#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a strong {
+#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button a strong,
+#ticketPurchase ._tedx_ticket_detail ._tedx_ticket_button button strong {
   font-weight: 400;
 }
 
