@@ -16,9 +16,8 @@
       </div>
     </div>
     <div class="_tedx_section_about_cta">
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#ted') }}">About TED</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDxUniversitasBrawijaya</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#tedx') }}">About TEDx</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a target="_blank" href="https://tedx.amhanisa.com/">Past Events</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a target="_blank" href="{{ url('/faqs') }}">FAQs</a></div>
     </div>
   </div>
 </section>

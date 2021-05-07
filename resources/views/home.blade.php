@@ -41,9 +41,9 @@
 </div>
 
 <div class="_tedx_hero_icons">
-  <a href="#" cursor-class="hover"><i class="fab fa-twitter"></i></a>
-  <a href="#" cursor-class="hover"><i class="fab fa-instagram"></i></a>
-  <a href="#" cursor-class="hover"><i class="fab fa-line"></i></a>
+  <a href="https://twitter.com/tedxbrawijaya" cursor-class="hover"><i class="fab fa-twitter"></i></a>
+  <a href="https://instagram.com/tedxuniversitasbrawijaya" cursor-class="hover"><i class="fab fa-instagram"></i></a>
+  <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=cgu9302m&openerPlatform=webview&openerKey=webview%3AunifiedSearch" cursor-class="hover"><i class="fab fa-line"></i></a>
 </div>
 @endsection
 
@@ -62,9 +62,9 @@
       </div>
     </div>
     <div class="_tedx_section_about_cta">
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#ted') }}">About TED</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TED</a></div>
       <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDxUniversitasBrawijaya</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#tedx') }}">About TEDx</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDx</a></div>
     </div>
   </div>
 </section>
