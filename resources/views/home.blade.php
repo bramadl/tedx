@@ -103,7 +103,7 @@
     <div class="_tedx_speaker_wrapper">
       <div class="_tedx_speaker_profile">
         <div class="_tedx_speaker_image reveal">
-          <img src="">
+          <img src="https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg">
           <div class="_tedx_speaker_title">
             <div>
               <h1>Ungkaian Persepsi dan Stigma Wajah Asia</h1>
@@ -126,56 +126,56 @@
     </div>
     <div class="_tedx_speaker_list">
       <div class="_tedx_speaker_avatar" data-target="anastasia" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg">
         <div class="_tedx_speaker_info">
           <h1>Anastasia Satriyo</h1>
           <p>Psikolog</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="diego" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/diego_17X4gmRxS.jpg">
         <div class="_tedx_speaker_info">
           <h1>Diego Yanuar</h1>
           <p>Pesepeda</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="clara" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg">
         <div class="_tedx_speaker_info">
           <h1>Clara Tunjung Pramesti</h1>
           <p>Mahasiswa</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="jimi" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/jimi_pe2cB_9Ovan.jpg">
         <div class="_tedx_speaker_info">
           <h1>Jimi Multhazam</h1>
           <p>Musisi</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="hengki" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/DSC04080_hLZtl6tYTh1O.JPG">
         <div class="_tedx_speaker_info">
           <h1>Hengki Herwanto</h1>
           <p>Kurator</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="abdul" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/abdul_9Ve4sVKfy.JPG">
         <div class="_tedx_speaker_info">
           <h1>Abdul Hair</h1>
           <p>Akademisi</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="mice" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/mice_YRGNQESaK.jpg">
         <div class="_tedx_speaker_info">
           <h1>Mice Cartoon</h1>
           <p>Komikus</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="bondan" cursor-class="speaker">
-        <img src="">
+        <img src="https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG">
         <div class="_tedx_speaker_info">
           <h1>Bondan Sekari Adi</h1>
           <p>Value Investor</p>
@@ -206,10 +206,10 @@
     <div id="drag-container" cursor-class="drag">
       <div id="spin-container">
         <!-- Add your images (or video) here -->
-        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=931&q=80" data-archetype="dreamer" cursor-class="dreamer" />
-        <img src="https://images.unsplash.com/photo-1575995872537-3793d29d972c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=965&q=80" data-archetype="lover" cursor-class="lover" />
-        <img src="https://images.unsplash.com/photo-1578924824780-b7c49930e310?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=935&q=80" data-archetype="hero" cursor-class="hero" />
-        <img src="https://images.unsplash.com/photo-1582201942961-2e1c3e63d9b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=911&q=80" data-archetype="jester" cursor-class="jester" />
+        <img src="https://ik.imagekit.io/tedxub/Dreamer_Z_Qi8RWfGv.png" data-archetype="dreamer" cursor-class="dreamer" />
+        <img src="https://ik.imagekit.io/tedxub/Lover_OTft5lKXOpI.png" data-archetype="lover" cursor-class="lover" />
+        <img src="https://ik.imagekit.io/tedxub/Hero_kA1rvFeZMvh.png" data-archetype="hero" cursor-class="hero" />
+        <img src="https://ik.imagekit.io/tedxub/Jester_r8BP7ai_UT.png" data-archetype="jester" cursor-class="jester" />
 
         <!-- Text at center of ground -->
         <div id="archetypeText" class="text">
@@ -257,7 +257,7 @@
         </div>
       </div>
       <div class="_tedx_ticket_button">
-        @if ($presaleOneAvailable)
+        @if ($presaleAvailable[$ticket->type])
         <a href="{{ url('/ticket/payment?type=' . $ticket->type) }}" cursor-class="hover">
           <span>Beli Tiket</span>
           <strong>Rp {{ number_format($ticket->price,2,',','.') }}</strong>
@@ -311,7 +311,7 @@
   </div>
 
   <video width="320" height="240" controls>
-    <source src="/video/teaser.webm" type="video/webm">
+    <source src="https://tedxuniversitasbrawijaya.com/video/teaser.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
 </div>

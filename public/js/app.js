@@ -19561,7 +19561,7 @@ if (window.innerWidth < 576) {
   imgWidth = 120;
   imgHeight = 150;
 } else {
-  radius = 320;
+  radius = 260;
   imgWidth = 150;
   imgHeight = 180;
 } // Link of background music - set 'null' if you dont want to play background music
@@ -20001,7 +20001,7 @@ var revealCallback = function revealCallback(entries, self) {
     var avatars = document.querySelectorAll('._tedx_speaker_avatar');
     var details = document.querySelector('._tedx_speaker_detail');
     var easeInOut = "power3.out";
-    var revealAnim = gsap.timeline({
+    var revealAnim = new TimelineLite({
       ease: easeInOut
     });
 
@@ -20064,74 +20064,67 @@ var speakers = {
     profession: 'Psikolog',
     title: 'Ungkaian Persepsi dan Stigma Wajah Asia',
     description: "\n    Persepsi menjadi salah satu proses penting untuk menangkap dan memproses informasi untuk diterjemahkan dalam otak yang kemudian setiap individu berimprovisasi untuk mengelompokkan informasi-informasi tersebut berdasarkan kategorinya sebagai sebuah stereotip. Stereotip dapat dilakukan pada suatu kelompok manusia, benda, budaya, dan lainnya. Tidak jarang dalam prakteknya bahwa pengelompokkan informasi ini dapat dilakukan secara negatif dan sengaja oleh suatu kelompok budaya pada kelompok lainnya sehingga menimbulkan keresahan dan dampak multidimensi.\n    <br></br>\n    Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.\n    ",
-    url: '/anastasia.jpg'
+    url: 'https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg'
   },
   diego: {
     name: 'Diego Yanuar',
     profession: 'Pesepeda',
     title: 'Tidak Apa-Apa Untuk Tidak Memiliki Cita-Cita',
     description: "\n    Mendefinisikan kesuksesan dengan hal-hal kecil, Diego merasa terhambat dalam tumbuh kembang karena menurutnya saat ini setiap orang harus memiliki tujuan hidup untuk mencapai kesuksesan. Suatu saat Diego bertemu dengan seseorang dan berkata \u201Cit\u2019s okay to not to have goals in your life\u201D, Dari kutipan itu Diego memaknai bahwa Ia dapat melakukan hal apa saja tanpa ada batasan.\n    ",
-    url: '/diego.jpg'
+    url: 'https://ik.imagekit.io/tedxub/diego_17X4gmRxS.jpg'
   },
   clara: {
     name: 'Clara Tunjung Pramesti',
     profession: 'Mahasiswa',
     title: 'Seni Sebagai Rumah Bukan Limbah',
     description: "\n    Untuk sebagian orang karya seni diperuntukan untuk konsumsi publik, namun tidak sedikit karya seni yang dibuat untuk kepuasan pribadi.\n    <br></br>\n    Clara mencoba menjelaskan dari sudut pandangnya mengenai seni sebagai rumah adalah tempat untuk mencurahkan segala rasa dan karya seni yang tersimpan mampu memberikan ingatan-ingatan terhadap kejadian tertentu yang dapat memberikan pembelajaran di kemudian hari.\n    ",
-    url: '/clara.jpg'
+    url: 'https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg'
   },
   jimi: {
     name: 'Jimi Multhazam',
     profession: 'Musisi',
     title: 'Kekuatan Komposisi dan Cerita',
     description: "Pada pertengahan dekade 2000-an, terdapat satu nama yang diasosiasikan dengan gerak laku juga syair yang flamboyan saat ia melantunkan tembang-tembangnya di panggung The Upstairs, nama tersebut adalah Jimi Multhazam. Menapak pada dekade 2010-an, Jimi melahirkan proyek barunya yang bernama Morfem. Entah melalui synthesizer ataupun distorsi, pria yang juga dikenal dengan nama Jimi \u2018\u2018Danger\u2019\u2019 ini sudi menggunakan media atau teknik apa saja untuk mengekspresikan gagasannya. \n    <br></br>\n    Pada talks kali ini,  Jimi Multhazam akan membicarakan bagaimana secara abstrak\n    ",
-    url: '/jimi.jpg'
+    url: 'https://ik.imagekit.io/tedxub/jimi_pe2cB_9Ovan.jpg'
   },
   hengki: {
     name: 'Hengki Herwanto',
     profession: 'Kurator',
     title: 'Arsip Lempengan Nada',
     description: "Rasa cintanya yang luar biasa terhadap seni musik menghantarkan suatu yayasan bernama Museum Musik Indonesia (MMI) diakui dan diresmikan oleh pemerintah pada tahun 2016. Hingga salah satu capaian mengesankan mereka, disaat UNESCO memberikan bantuan untuk proses digitalisasi koleksi. Salah satu yang terlibat merupakan sosok yang bernama Hengki Herwanto. \n    <br></br>\n    Pada talks kali ini, Hengki Herwanto akan menarasikan cerita dibalik kurang lebih 26.000 artefak musik Indonesia dan mancanegara melalui cara  pengarsipan beragam produk seni musik.\n    ",
-    url: '/hengki.jpg'
+    url: 'https://ik.imagekit.io/tedxub/DSC04080_hLZtl6tYTh1O.JPG'
   },
   abdul: {
     name: 'Abdul Hair',
     profession: 'Akademisi',
     title: 'Untitled',
     description: "Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?\n    <br></br>\n    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.\n    ",
-    url: '/abdul.JPG'
+    url: 'https://ik.imagekit.io/tedxub/abdul_9Ve4sVKfy.JPG'
   },
   mice: {
     name: 'Mice Cartoon',
     profession: 'Komikus',
     title: 'Memotret Peradaban Melalui Kritik Gelitik',
     description: "Berangkat dari memotret keadaan sehari-hari yang banyak terjadi namun tidak disadari oleh masyarakat luas Mice Cartoon membungkus keberagaman tersebut menjadi sebuah kartun. Kehidupan manusia sangat berkaitan dengan perubahan peradaban yang terjadi di sekitarnya. Realita berganti dengan realita lain yang berjalan cepat seiring naik dan turunnya suatu budaya populer pada masyarakat. Perubahan ini disadari dan diterjemahkan tiap individu dengan membentuk komunitas tertentu.\n    <br></br>\n    Pada talk kali ini, Mice Cartoon akan membahas bagaimana potret dari proses kreatif yang dilewatinya dalam menanggapi perubahan peradaban dunia.\n    ",
-    url: '/mice.jpg'
+    url: 'https://ik.imagekit.io/tedxub/mice_YRGNQESaK.jpg'
   },
   bondan: {
     name: 'Bondan Sekari Adi',
     profession: 'Value Investor',
     title: 'Manifestasi Budaya dengan Kuliner ',
     description: "Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?\n    <br></br>\n    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.\n    ",
-    url: '/bondan.JPG'
+    url: 'https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG'
   }
 };
 var speakerAvatars = document.querySelectorAll('._tedx_speaker_avatar');
 speakerAvatars.forEach(function (avatar) {
   avatar.addEventListener('click', function () {
     var speakerProfile = document.querySelector('._tedx_speaker_profile');
-    speakerProfile.querySelector('._tedx_speaker_image img').src = "/img/speakers/".concat(speakers[avatar.dataset.target].url);
+    speakerProfile.querySelector('._tedx_speaker_image img').src = speakers[avatar.dataset.target].url;
     speakerProfile.querySelector('h1').innerHTML = speakers[avatar.dataset.target].title;
     document.querySelector('._tedx_speaker_detail h1').innerHTML = speakers[avatar.dataset.target].title;
     document.querySelector('._tedx_speaker_detail h2').innerHTML = "<em>".concat(speakers[avatar.dataset.target].name, "</em> | ").concat(speakers[avatar.dataset.target].profession);
     document.querySelector('._tedx_speaker_detail p').innerHTML = speakers[avatar.dataset.target].description;
-    var container = document.querySelector('.reveal');
-    var img = container.querySelector("img");
-    var titleContainer = container.querySelector('._tedx_speaker_title');
-    var easeInOut = "power3.out";
-    var revealAnim = gsap.timeline({
-      ease: easeInOut
-    });
   });
 });
 
@@ -20169,37 +20162,24 @@ if (videoTeaser && videoMask && videoText) {
       };
     }
   });
+  var timeline = new TimelineLite();
   ScrollTrigger.create({
     trigger: videoMask,
     scroller: videoTeaser,
     start: 'top+=30% 50%',
     end: 'bottom-=40% 50%',
-    animation: gsap.to(videoMask, {
+    animation: timeline.to(videoMask, {
       backgroundSize: '120%'
-    }),
+    }).to(videoText, {
+      opacity: 1,
+      y: '-50%'
+    }, '<'),
     scrub: 2
   });
   ScrollTrigger.addEventListener('refresh', function () {
     return _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].update();
   });
   ScrollTrigger.refresh();
-  var options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.8
-  };
-  var observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translate(-50%, -50%)';
-      } else {
-        entry.target.style.opacity = '0';
-        entry.target.style.transform = 'translate(-50%, -40%)';
-      }
-    });
-  }, options);
-  observer.observe(videoText);
 }
 
 var playVideoButton = document.querySelector('.open-video-player');

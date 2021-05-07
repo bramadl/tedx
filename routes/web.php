@@ -36,11 +36,11 @@ Route::group(['prefix' => '/member'], function () {
   Route::post('/register/volunteer', 'AuthController@registerVolunteerPost');
   Route::post('/login', 'AuthController@authenticate');
   Route::post('/logout', 'AuthController@logout');
-
+  
   Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', 'AuthController@registerAudience');
     Route::get('/register/core', 'AuthController@registerCore');
-    Route::get('/volunteer', 'AuthController@registerVolunteer');
+    Route::get('/register/volunteer', 'AuthController@registerVolunteer');
     
     Route::get('/login', 'AuthController@login')->name('login');
   });

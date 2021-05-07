@@ -30,6 +30,7 @@ class VerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->view('auth.verify-user');
+        return $this->from('tedxbrawijaya@gmail.com')
+                    ->view('auth.verify-user');
     }
 }

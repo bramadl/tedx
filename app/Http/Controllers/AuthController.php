@@ -127,7 +127,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function resendConfirmEmail()
+    public function resendConfirmEmail(Request $request)
     {
         if (!Auth::check()) {
             return redirect('');

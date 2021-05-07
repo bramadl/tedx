@@ -38,15 +38,11 @@
             <div class="_tedx_dashboard_status_button">
                 <div class="_tedx_dashboard_status_audiens">
                     <p>{{ Auth::user()->role === 'user' ? 'Audience' : Auth::user()->role }}</p>
-                    <a
-                        href="{{ url('member/resend/confirm') }}"
-                        style="{{
+                    <a href="{{ url('member/resend/confirm') }}" target="_blank" style="{{
                             Auth::user()->verified
                                 ? 'background: linear-gradient(135deg, #A1FF8B 0%, #3F93FF 96.83%)'
                                 : 'background: linear-gradient(135deg, #BD344B 2.88%, #082440 100%)'
-                        }}"
-                        cursor-class="hover"
-                    >
+                        }}" cursor-class="resend">
                         {{ Auth::user()->verified ? 'Confirmed' : 'Not Confirmed' }}
                     </a>
                 </div>
@@ -135,6 +131,21 @@
 @endsection
 
 @push('scripts')
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/609035a1b1d5182476b532e1/1f4pl30i8';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 @if (session('warning'))
 <script>
     Toast.fire({

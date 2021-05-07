@@ -14,7 +14,7 @@ let revealCallback = (entries, self) => {
     let details = document.querySelector('._tedx_speaker_detail')
 
     const easeInOut = "power3.out";
-    const revealAnim = gsap.timeline({ ease: easeInOut });
+    const revealAnim = new TimelineLite({ ease: easeInOut });
 
     if (entry.isIntersecting) {
       revealAnim.set(container, {
@@ -85,7 +85,7 @@ const speakers = {
     <br></br>
     Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.
     `,
-    url: '/anastasia.jpg'
+    url: 'https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg'
   },
   diego: {
     name: 'Diego Yanuar',
@@ -94,7 +94,7 @@ const speakers = {
     description: `
     Mendefinisikan kesuksesan dengan hal-hal kecil, Diego merasa terhambat dalam tumbuh kembang karena menurutnya saat ini setiap orang harus memiliki tujuan hidup untuk mencapai kesuksesan. Suatu saat Diego bertemu dengan seseorang dan berkata “it’s okay to not to have goals in your life”, Dari kutipan itu Diego memaknai bahwa Ia dapat melakukan hal apa saja tanpa ada batasan.
     `,
-    url: '/diego.jpg'
+    url: 'https://ik.imagekit.io/tedxub/diego_17X4gmRxS.jpg'
   },
   clara: {
     name: 'Clara Tunjung Pramesti',
@@ -105,7 +105,7 @@ const speakers = {
     <br></br>
     Clara mencoba menjelaskan dari sudut pandangnya mengenai seni sebagai rumah adalah tempat untuk mencurahkan segala rasa dan karya seni yang tersimpan mampu memberikan ingatan-ingatan terhadap kejadian tertentu yang dapat memberikan pembelajaran di kemudian hari.
     `,
-    url: '/clara.jpg'
+    url: 'https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg'
   },
   jimi: {
     name: 'Jimi Multhazam',
@@ -115,7 +115,7 @@ const speakers = {
     <br></br>
     Pada talks kali ini,  Jimi Multhazam akan membicarakan bagaimana secara abstrak
     `,
-    url: '/jimi.jpg'
+    url: 'https://ik.imagekit.io/tedxub/jimi_pe2cB_9Ovan.jpg'
   },
   hengki: {
     name: 'Hengki Herwanto',
@@ -125,7 +125,7 @@ const speakers = {
     <br></br>
     Pada talks kali ini, Hengki Herwanto akan menarasikan cerita dibalik kurang lebih 26.000 artefak musik Indonesia dan mancanegara melalui cara  pengarsipan beragam produk seni musik.
     `,
-    url: '/hengki.jpg'
+    url: 'https://ik.imagekit.io/tedxub/DSC04080_hLZtl6tYTh1O.JPG'
   },
   abdul: {
     name: 'Abdul Hair',
@@ -135,7 +135,7 @@ const speakers = {
     <br></br>
     Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.
     `,
-    url: '/abdul.JPG'
+    url: 'https://ik.imagekit.io/tedxub/abdul_9Ve4sVKfy.JPG'
   },
   mice: {
     name: 'Mice Cartoon',
@@ -145,7 +145,7 @@ const speakers = {
     <br></br>
     Pada talk kali ini, Mice Cartoon akan membahas bagaimana potret dari proses kreatif yang dilewatinya dalam menanggapi perubahan peradaban dunia.
     `,
-    url: '/mice.jpg'
+    url: 'https://ik.imagekit.io/tedxub/mice_YRGNQESaK.jpg'
   },
   bondan: {
     name: 'Bondan Sekari Adi',
@@ -155,7 +155,7 @@ const speakers = {
     <br></br>
     Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.
     `,
-    url: '/bondan.JPG'
+    url: 'https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG'
   },
 }
 
@@ -163,17 +163,10 @@ const speakerAvatars = document.querySelectorAll('._tedx_speaker_avatar')
 speakerAvatars.forEach(avatar => {
   avatar.addEventListener('click', () => {
     const speakerProfile = document.querySelector('._tedx_speaker_profile')
-    speakerProfile.querySelector('._tedx_speaker_image img').src = `/img/speakers/${speakers[avatar.dataset.target].url}`
+    speakerProfile.querySelector('._tedx_speaker_image img').src = speakers[avatar.dataset.target].url
     speakerProfile.querySelector('h1').innerHTML = speakers[avatar.dataset.target].title
     document.querySelector('._tedx_speaker_detail h1').innerHTML = speakers[avatar.dataset.target].title
     document.querySelector('._tedx_speaker_detail h2').innerHTML = `<em>${speakers[avatar.dataset.target].name}</em> | ${speakers[avatar.dataset.target].profession}`
     document.querySelector('._tedx_speaker_detail p').innerHTML = speakers[avatar.dataset.target].description
-
-    const container = document.querySelector('.reveal')
-    const img = container.querySelector("img");
-    const titleContainer = container.querySelector('._tedx_speaker_title')
-
-    const easeInOut = "power3.out";
-    const revealAnim = gsap.timeline({ ease: easeInOut });
   })
 })

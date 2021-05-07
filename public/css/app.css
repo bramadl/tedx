@@ -1777,7 +1777,7 @@ textarea {
 #videoTeaser ._tedx_video_teaser ._tedx_video_mask {
   width: 80vw;
   height: 80vh;
-  background: url(/img/teaser.png);
+  background: url(https://ik.imagekit.io/tedxub/teaser_MstP6mvKJFC.png);
   background-size: cover;
   background-position-x: 50%;
   background-position-y: 90%;
@@ -1807,7 +1807,7 @@ textarea {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -25%);
   text-align: center;
   z-index: 1;
   opacity: 0;
@@ -3597,6 +3597,7 @@ textarea {
     transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
+  .custom-cursor #cursor.resend .cursor__circle,
   .custom-cursor #cursor.greeting .cursor__circle {
     width: 6rem;
     height: 6rem;
@@ -3647,6 +3648,7 @@ textarea {
     border-color: #073099;
   }
 
+  .custom-cursor #cursor.resend::after,
   .custom-cursor #cursor.greeting::after,
   .custom-cursor #cursor.dreamer::after,
   .custom-cursor #cursor.hero::after,
@@ -3669,6 +3671,10 @@ textarea {
     text-align: center;
     color: #FFFFFF;
     font-size: 1rem;
+  }
+
+  .custom-cursor #cursor.resend::after {
+    content: "Resend Link";
   }
 
   .custom-cursor #cursor.greeting::after {

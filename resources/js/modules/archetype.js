@@ -21,7 +21,7 @@ else if (window.innerWidth < 996) {
   imgHeight = 150
 }
 else { 
-  radius = 320;
+  radius = 260;
   imgWidth = 150
   imgHeight = 180
 }

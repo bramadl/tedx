@@ -26,37 +26,32 @@ if (videoTeaser && videoMask && videoText) {
     }
   )
   
+  const timeline = new TimelineLite()
   ScrollTrigger.create({
     trigger: videoMask,
     scroller: videoTeaser,
     start: 'top+=30% 50%',
     end: 'bottom-=40% 50%',
-    animation: gsap.to(videoMask, {backgroundSize: '120%'}),
+    animation: timeline
+    .to(
+      videoMask, 
+      {
+        backgroundSize: '120%'
+      }
+    )
+    .to(
+      videoText,
+      {
+        opacity: 1,
+        y: '-50%'
+      },
+      '<'
+    ),
     scrub: 2
   })
   
   ScrollTrigger.addEventListener('refresh', () => scroller.update())
   ScrollTrigger.refresh()
-  
-  const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.8
-  }
-  
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translate(-50%, -50%)';
-      } else {
-        entry.target.style.opacity = '0';
-        entry.target.style.transform = 'translate(-50%, -40%)';
-      }
-    })
-  }, options)
-  
-  observer.observe(videoText)
 }
 
 const playVideoButton = document.querySelector('.open-video-player')
