@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about');
 Route::get('/partners', 'HomeController@partners');
@@ -26,18 +25,20 @@ Route::group(['middleware' => ['verified']], function () {
 });
 
 Route::group(['prefix' => '/member'], function () {
+  Route::get('/verify/{token}', 'AuthController@verifyUser');
+  Route::get('/confirm', 'AuthController@confirmEmail');
+  Route::get('/resend/confirm', 'AuthController@resendConfirmEmail');
+  
   Route::post('/register', 'AuthController@registerAudiencePost');
   Route::post('/register/core', 'AuthController@registerCorePost');
   Route::post('/register/volunteer', 'AuthController@registerVolunteerPost');
   Route::post('/login', 'AuthController@authenticate');
+  Route::post('/logout', 'AuthController@logout');
 
   Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', 'AuthController@registerAudience');
     Route::get('/register/core', 'AuthController@registerCore');
     Route::get('/volunteer', 'AuthController@registerVolunteer');
-    
-    Route::get('/verify/{token}', 'AuthController@verifyUser');
-    Route::get('/confirm', 'AuthController@confirmEmail');
     
     Route::get('/login', 'AuthController@login')->name('login');
   });

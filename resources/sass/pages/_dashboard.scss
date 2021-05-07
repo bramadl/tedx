@@ -1,0 +1,201 @@
+._tedx_section {
+
+    ._tedx_section_title_overlay.dashboard {
+        padding: 25px 0 35px;
+    }
+
+    ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
+        font-size: 3.4rem;
+        @include md {
+            font-size: 6rem;
+        }
+        @include lg {
+            font-size: 8rem;
+        }
+        @include xl {
+            font-size: 11rem;
+        }
+    }
+
+    ._tedx_section_dashboard_cta {
+        flex-direction: row !important;
+        align-items: center;
+        margin-top: 1rem;
+        @include md { margin-top: 2rem; }
+        
+        button {
+            appearance: none;
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            text-decoration: none;
+            @include md {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+._tedx_dashboard_status_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 100px;
+
+    @include lg {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    ._tedx_dashboard_status_caption {
+        margin-bottom: 2rem;
+        @include lg { margin-bottom: 0; }
+
+        h2 {
+            margin-bottom: .25rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+            @include md {
+                font-size: 1.5rem;
+            }
+            @include lg {
+                font-size: 2rem;
+            }
+
+            span {
+                color: $red;
+            }
+        }
+
+        p {
+            position: relative;
+            color: $white;
+            font-size: .85rem;
+            font-weight: 300;
+            display: inline-block;
+
+            @include lg {
+                font-size: 1.2rem;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 1px;
+                background-color: $white;
+                top: 50%;
+                left: 100%;
+                transform: translate(1rem, -50%);
+            }
+        }
+    }
+
+    ._tedx_dashboard_status_button {
+        font-size: .8rem;
+        @include md { font-size: 1rem; }
+
+        ._tedx_dashboard_status_audiens {
+            display: flex;
+            align-items: center;
+
+            p:first-child {
+                margin-right: 1rem;
+                border: 1px solid $red;
+                border-radius: 0.25rem;
+                text-align: center;
+                padding: 0.5rem;
+                color: $red;
+            }
+
+            a {
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                text-align: center;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+._tedx_dashboard_card_features_wrapper {
+    font-family: "Open Sans", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include md { grid-template-columns: repeat(2, 1fr); }
+    @include xl { grid-template-columns: repeat(3, 1fr); }
+    grid-gap: 25px;
+    @include md { grid-gap: 50px; }
+    @include lg { grid-gap: 75px; }
+    @include xl { grid-gap: 100px; }
+
+    ._tedx_dashboard_card_feature {
+        padding: 2rem;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #e25544 2.88%, #42127e 98.14%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        ._tedx_card_feature_title {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                margin-left: 1rem;
+                font-size: 1.2rem;
+            }
+
+            i {
+                font-size: 1rem;
+            }
+        }
+
+        ._tedx_card_feature_caption {
+            flex: 1;
+            margin: 1rem 0;
+
+            p {
+                font-size: 0.9rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+
+        ._tedx_link_alt {
+            position: relative;
+            display: inline-block;
+
+            &:hover::after {
+                left: 0;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                width: 100%;
+                height: 50%;
+                background: $black-50;
+                z-index: 0;
+                transition: .4s $cubiz-bezier;
+            }
+
+            a {
+                position: relative;
+                z-index: 1;
+                color: $white;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
+}

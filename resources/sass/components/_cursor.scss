@@ -31,6 +31,13 @@
             border-color: #990707;
         }
 
+        #cursor.overlay.link .cursor__circle {
+            width: 2rem;
+            height: 2rem;
+            background-color: #073099;
+            border-color: #073099;
+        }
+
         #cursor.hover .cursor__circle {
             width: 1.5rem;
             height: 1.5rem;
@@ -43,10 +50,10 @@
         }
 
         #cursor.overlay .cursor__circle {
-            width: 48px;
-            height: 48px;
-            background-color: rgba(227, 222, 193, 0.08);
-            border-color: transparent;
+            width: 6rem;
+            height: 6rem;
+            background-color: #990707;
+            border-color: #990707;
         }
 
         #cursor.speaker .cursor__circle,

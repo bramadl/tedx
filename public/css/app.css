@@ -1473,6 +1473,269 @@ textarea {
   background: #a32626;
 }
 
+._tedx_section ._tedx_section_title_overlay.dashboard {
+  padding: 25px 0 35px;
+}
+
+._tedx_section ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
+  font-size: 3.4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_section ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_section ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
+    font-size: 11rem;
+  }
+}
+
+._tedx_section ._tedx_section_dashboard_cta {
+  flex-direction: row !important;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section ._tedx_section_dashboard_cta {
+    margin-top: 2rem;
+  }
+}
+
+._tedx_section ._tedx_section_dashboard_cta button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section ._tedx_section_dashboard_cta button {
+    margin-top: 0;
+  }
+}
+
+._tedx_dashboard_status_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 100px;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_status_wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption {
+    margin-bottom: 0;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption h2 {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption h2 {
+    font-size: 2rem;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption h2 span {
+  color: #B82B2B;
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p {
+  position: relative;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 300;
+  display: inline-block;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p {
+    font-size: 1.2rem;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background-color: #FFFFFF;
+  top: 50%;
+  left: 100%;
+  transform: translate(1rem, -50%);
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button {
+  font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button {
+    font-size: 1rem;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens {
+  display: flex;
+  align-items: center;
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens p:first-child {
+  margin-right: 1rem;
+  border: 1px solid #B82B2B;
+  border-radius: 0.25rem;
+  text-align: center;
+  padding: 0.5rem;
+  color: #B82B2B;
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens a {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+._tedx_dashboard_card_features_wrapper {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_card_features_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_card_features_wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_card_features_wrapper {
+    grid-gap: 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_card_features_wrapper {
+    grid-gap: 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_card_features_wrapper {
+    grid-gap: 100px;
+  }
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature {
+  padding: 2rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e25544 2.88%, #42127e 98.14%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_title {
+  display: flex;
+  align-items: center;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_title h2 {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_title i {
+  font-size: 1rem;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_caption {
+  flex: 1;
+  margin: 1rem 0;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_caption p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_link_alt {
+  position: relative;
+  display: inline-block;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_link_alt:hover::after {
+  left: 0;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_link_alt::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  background: rgba(16, 16, 16, 0.5);
+  z-index: 0;
+  transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_link_alt a {
+  position: relative;
+  z-index: 1;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
 #videoTeaser {
   margin: 50px 0;
 }
@@ -3306,6 +3569,13 @@ textarea {
     border-color: #990707;
   }
 
+  .custom-cursor #cursor.overlay.link .cursor__circle {
+    width: 2rem;
+    height: 2rem;
+    background-color: #073099;
+    border-color: #073099;
+  }
+
   .custom-cursor #cursor.hover .cursor__circle {
     width: 1.5rem;
     height: 1.5rem;
@@ -3318,10 +3588,10 @@ textarea {
   }
 
   .custom-cursor #cursor.overlay .cursor__circle {
-    width: 48px;
-    height: 48px;
-    background-color: rgba(227, 222, 193, 0.08);
-    border-color: transparent;
+    width: 6rem;
+    height: 6rem;
+    background-color: #990707;
+    border-color: #990707;
   }
 
   .custom-cursor #cursor.speaker .cursor__circle,
@@ -3421,7 +3691,10 @@ textarea {
   color: #FFFFFF;
 }
 
-._tedx_link a {
+._tedx_link a,
+._tedx_link button,
+._tedx_link p,
+._tedx_link span {
   color: rgba(255, 255, 255, 0.5);
   font-family: "Open Sans", sans-serif;
   font-size: 0.75rem;
@@ -3431,7 +3704,10 @@ textarea {
 }
 
 @media only screen and (min-width: 768px) {
-  ._tedx_link a {
+  ._tedx_link a,
+  ._tedx_link button,
+  ._tedx_link p,
+  ._tedx_link span {
     font-size: 1rem;
   }
 }

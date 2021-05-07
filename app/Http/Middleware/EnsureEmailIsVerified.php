@@ -16,6 +16,11 @@ class EnsureEmailIsVerified
      */
     public function handle($request, Closure $next)
     {
+        if (!Auth::check()) {
+            return redirect('/member/login')
+                    ->with('warning', 'Mohon login terlebih dahulu.');    
+        }
+
         if (!Auth::user()->verified) {
             return redirect('/member/dashboard')
                     ->with('warning', 'Mohon konfirmasi email terlebih dahulu.');

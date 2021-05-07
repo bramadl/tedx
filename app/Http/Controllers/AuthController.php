@@ -76,7 +76,7 @@ class AuthController extends Controller
                 ->with('status', 'Mohon maaf terjadi kesalahan, silahkan dicoba beberapa saat lagi.');
         }
 
-        return redirect('/login')->with('status', 'Akun berhasil terdaftar!');
+        return redirect('/member/login')->with('status', 'Akun berhasil terdaftar!');
     }
 
     public function registerVolunteer()
@@ -105,7 +105,7 @@ class AuthController extends Controller
                 ->with('status', 'Mohon maaf terjadi kesalahan, silahkan dicoba beberapa saat lagi.');
         }
 
-        return redirect('/login')->with('status', 'Akun berhasil terdaftar!');
+        return redirect('/member/login')->with('status', 'Akun berhasil terdaftar!');
     }
 
     public function confirmEmail(Request $request)
@@ -127,12 +127,29 @@ class AuthController extends Controller
         ]);
     }
 
+    public function resendConfirmEmail()
+    {
+        if (!Auth::check()) {
+            return redirect('');
+        }
+
+        $user = User::with('verifyUser')
+                        ->where('id', Auth::id())
+                        ->first();
+
+        Mail::to($user->email_address)->send(new VerifyMail($user));
+
+        return view('/auth.confirm-email', [
+            'user' => $user
+        ]);
+    }
+
     public function verifyUser($token)
     {
         $verifyUser = VerifyUser::where('token', $token)->first();
 
         if (!$verifyUser) {
-            return redirect('/login')->with('warning', 'Mohon maaf email kamu tidak dapat diverifikasi.');
+            return redirect('/member/login')->with('warning', 'Mohon maaf email kamu tidak dapat diverifikasi.');
         }
 
         $user = $verifyUser->user;
@@ -144,7 +161,7 @@ class AuthController extends Controller
             $status = 'Verifikasi email berhasil, silahkan login.';
         }
 
-        return redirect('/login')->with('status', $status);
+        return redirect('/member/login')->with('status', $status);
     }
 
     public function login()
@@ -170,5 +187,11 @@ class AuthController extends Controller
                     ->back()
                     ->with('error', 'Akun tidak ditemukan.');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }

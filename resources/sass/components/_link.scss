@@ -23,7 +23,10 @@
       color: $white;
   }
 
-  a {
+  a,
+  button,
+  p,
+  span {
       color: $white-50;
       font-family: "Open Sans", sans-serif;
       font-size: .75rem;
