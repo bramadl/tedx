@@ -1616,6 +1616,10 @@ textarea {
 }
 
 #animaArchetype {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin: 50px 0;
 }
 
@@ -1665,6 +1669,12 @@ textarea {
   line-height: 200px;
   font-size: 50px;
   text-align: center;
+  cursor: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
   box-shadow: 0 0 8px #fff;
   -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
 }
@@ -1684,6 +1694,7 @@ textarea {
   left: 50%;
   min-width: 320px;
   transform: translate(-50%, -50%) rotateX(90deg);
+  cursor: none;
 }
 
 @media only screen and (min-width: 768px) {
