@@ -103,7 +103,7 @@
     <div class="_tedx_speaker_wrapper">
       <div class="_tedx_speaker_profile">
         <div class="_tedx_speaker_image reveal">
-          <img src="{{ asset('img/speakers/clara.jpg') }}">
+          <img src="">
           <div class="_tedx_speaker_title">
             <div>
               <h1>Ungkaian Persepsi dan Stigma Wajah Asia</h1>
@@ -126,56 +126,56 @@
     </div>
     <div class="_tedx_speaker_list">
       <div class="_tedx_speaker_avatar" data-target="anastasia" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Anastasia Satriyo</h1>
           <p>Psikolog</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="diego" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Diego Yanuar</h1>
           <p>Pesepeda</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="clara" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Clara Tunjung Pramesti</h1>
           <p>Mahasiswa</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="jimi" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Jimi Multhazam</h1>
           <p>Musisi</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="hengki" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Hengki Herwanto</h1>
           <p>Kurator</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="abdul" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Abdul Hair</h1>
           <p>Akademisi</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="mice" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Mice Cartoon</h1>
           <p>Komikus</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="bondan" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="">
         <div class="_tedx_speaker_info">
           <h1>Bondan Sekari Adi</h1>
           <p>Value Investor</p>
