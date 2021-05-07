@@ -3512,6 +3512,287 @@ textarea {
   font-family: "Open Sans", sans-serif;
 }
 
+._tedx_section._tedx_section_about.dashboard {
+  margin: 150px 0 0;
+}
+
+._tedx_section_title.dashboard h2 {
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section_title.dashboard h2 {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_section_title.dashboard h2 {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_section_title.dashboard h2 {
+    font-size: 11rem;
+  }
+}
+
+._tedx_section_title_overlay.dashboard {
+  padding: 25px 0 35px;
+}
+
+._tedx_dashboard_user {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  line-height: 2rem;
+}
+
+._tedx_dashboard_user a {
+  color: white;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_user a {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_user {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 0;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_user {
+    font-size: 1.5rem;
+  }
+}
+
+._tedx_dashboard_status_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2rem;
+  margin: 2rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 4rem 0 0;
+  }
+}
+
+._tedx_dashboard_status_wrapper h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_status_wrapper h2 {
+    font-size: 2.5rem;
+  }
+}
+
+._tedx_dashboard_status_wrapper span {
+  color: red;
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption {
+  margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption {
+    margin-bottom: 0;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p {
+  color: white;
+  position: relative;
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  top: 50%;
+  left: 180px;
+  transform: translateY(-50%);
+  background-color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
+    left: 200px;
+    width: 70px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
+    left: 280px;
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button {
+    font-size: 1.5rem;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens p:nth-child(2) {
+  border-radius: 5px;
+  text-align: center;
+  background: #11998e;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #38ef7d, #11998e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens p:nth-child(2) {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens {
+    display: flex;
+  }
+
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button ._tedx_dashboard_status_audiens p {
+    margin: 0 5px;
+  }
+}
+
+._tedx_dashboard_card_features_wrapper {
+  font-family: "Open Sans", sans-serif;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_card_features_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-gap: 30px;
+    padding: 0;
+    margin: 35px 0 0;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_card_features_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+  }
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature {
+  padding: 30px 30px;
+  border-radius: 10px;
+  margin: 3rem 0;
+  line-height: 1.5rem;
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(#e25544, #42127e);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature {
+    width: auto;
+  }
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_title {
+  display: flex;
+  align-items: center;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_card_feature_title h2 {
+  margin-left: 2rem;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature a {
+  color: white;
+  text-decoration: none;
+  z-index: 5;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_link.card {
+  position: relative;
+  display: inline-block;
+}
+
+._tedx_dashboard_card_features_wrapper ._tedx_dashboard_card_feature ._tedx_link.card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+  transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
 ._tedx {
   position: relative;
   color: #FFFFFF;

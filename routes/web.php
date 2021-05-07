@@ -22,3 +22,4 @@ Route::view('/register', 'auth.register.index');
 Route::view('/register/core', 'auth.register.core');
 Route::view('/register/volunteer', 'auth.register.volunteer');
 Route::view('/login', 'auth.login');
+Route::view('/dashboard', 'dashboard');
