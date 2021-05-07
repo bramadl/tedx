@@ -18,7 +18,7 @@
             <div>
                 <form action="{{ url('/member/logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="_tedx_link">Logout Account</button>
+                    <button type="submit" class="_tedx_link" cursor-class="overlay">Logout Account</button>
                 </form>
             </div>
         </div>
@@ -45,6 +45,7 @@
                                 ? 'background: linear-gradient(135deg, #A1FF8B 0%, #3F93FF 96.83%)'
                                 : 'background: linear-gradient(135deg, #BD344B 2.88%, #082440 100%)'
                         }}"
+                        cursor-class="hover"
                     >
                         {{ Auth::user()->verified ? 'Confirmed' : 'Not Confirmed' }}
                     </a>

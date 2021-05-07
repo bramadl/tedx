@@ -7,8 +7,31 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index()
-    {
-        return view('home');
+    {   
+        $todayDate = date('Y-m-d');
+        $todayDate= date('Y-m-d', strtotime($todayDate));
+
+        $presaleOneStartDate = date('Y-m-d', strtotime("11/05/2001"));
+        $presaleOneEndDate = date('Y-m-d', strtotime("17/05/2021"));
+
+        $presaleTwoStartDate = date('Y-m-d', strtotime("11/05/2001"));
+        $presaleTwoEndDate = date('Y-m-d', strtotime("17/05/2021"));
+            
+        $presaleOneAvailable = false;
+        $presaleTwoAvailable = false;
+
+        if (($todayDate >= $presaleOneStartDate) && ($todayDate <= $presaleOneEndDate)){
+            $presaleOneAvailable = true;
+        }
+
+        if (($todayDate >= $presaleTwoStartDate) && ($todayDate <= $presaleTwoEndDate)) {
+            $presaleTwoAvailable = true;
+        }
+        
+        return view('home', [
+            'presaleOneAvailable' => $presaleOneAvailable,
+            'presaleTwoAvailable' => $presaleTwoAvailable,
+        ]);
     }
 
     public function about()

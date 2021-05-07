@@ -33,6 +33,10 @@
             @include md {
                 margin-top: 0;
             }
+
+            &:hover::after {
+                transform: translate(0);
+            }
         }
     }
 }
@@ -81,15 +85,25 @@
                 font-size: 1.2rem;
             }
 
-            &::after {
+            &::after,
+            &::before {
                 content: "";
                 position: absolute;
-                width: 100px;
-                height: 1px;
                 background-color: $white;
                 top: 50%;
                 left: 100%;
                 transform: translate(1rem, -50%);
+            }
+
+            &::after {
+                width: 100px;
+                height: 1px;
+            }
+
+            &::before {
+                width: .25rem;
+                height: .25rem;
+                border-radius: 50%;
             }
         }
     }

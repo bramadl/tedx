@@ -239,6 +239,7 @@
 
 <!-- Ticket Purchase -->
 <div id="ticketPurchase" data-scroll-section>
+  
   <div class="_tedx_ticket_container">
     <div class="_tedx_ticket">
       <div class="_tedx_ticket_left">
@@ -342,4 +343,20 @@
   </div>
 </div>
 <!-- ./Ticket Purchase -->
+@endsection
+
+@section('video')
+<div id="videoPlayer">
+  <div class="close-video-player">
+    <span>&times;</span>
+  </div>
+
+  <video width="320" height="240" controls>
+    <source src="/video/teaser.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<div id="cursor">
+  <div class="cursor__circle"></div>
+</div>
 @endsection

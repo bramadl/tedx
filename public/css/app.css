@@ -1528,6 +1528,10 @@ textarea {
   }
 }
 
+._tedx_section ._tedx_section_dashboard_cta button:hover::after {
+  transform: translate(0);
+}
+
 ._tedx_dashboard_status_wrapper {
   display: flex;
   flex-direction: column;
@@ -1590,15 +1594,25 @@ textarea {
   }
 }
 
-._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after,
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::before {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 1px;
   background-color: #FFFFFF;
   top: 50%;
   left: 100%;
   transform: translate(1rem, -50%);
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
+  width: 100px;
+  height: 1px;
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::before {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
 }
 
 ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button {
