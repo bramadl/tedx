@@ -13,9 +13,15 @@
       <div class="_tedx_link_wrapper">
         <a href="{{ url('/faqs') }}" cursor-class="hover">FAQs</a>
       </div>
+      @if (!Auth::check())
       <div class="_tedx_link_wrapper">
-        <a href="{{ url('/login') }}" cursor-class="hover">Login</a>
+        <a href="{{ url('/member/login') }}" cursor-class="hover">Login</a>
       </div>
+      @else
+      <div class="_tedx_link_wrapper">
+        <a href="{{ url('/member/dashboard') }}" cursor-class="hover">Dashboard</a>
+      </div>
+      @endif
     </div>
     <div class="separator"></div>
     <div class="_tedx_sub_links">

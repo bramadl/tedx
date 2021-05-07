@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    public function confirmEmail(Request $request)
+    public function dashboard()
     {
-        return $request->query('email');
+        return 'Hia';
     }
 }

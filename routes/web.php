@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,16 +26,23 @@ Route::group(['middleware' => ['verified']], function () {
 });
 
 Route::group(['prefix' => '/member'], function () {
-  Route::get('/confirm', 'MemberController@confirmEmail');
-});
-
-Route::group(['middleware' => 'guest'], function () {
-  Route::get('/member/verify/{token}', 'AuthController@verifyUser');
-  Route::get('/member/confirm', 'AuthController@confirmEmail');
-
-  Route::get('/register', 'AuthController@registerAudience');
-  Route::get('/register/core', 'AuthController@registerCore');
-  Route::get('/register/volunteer', 'AuthController@registerVolunteer');
-  Route::get('/login', 'AuthController@login')->name('login');
   Route::post('/register', 'AuthController@registerAudiencePost');
+  Route::post('/register/core', 'AuthController@registerCorePost');
+  Route::post('/register/volunteer', 'AuthController@registerVolunteerPost');
+  Route::post('/login', 'AuthController@authenticate');
+
+  Route::group(['middleware' => 'guest'], function () {
+    Route::get('/register', 'AuthController@registerAudience');
+    Route::get('/register/core', 'AuthController@registerCore');
+    Route::get('/volunteer', 'AuthController@registerVolunteer');
+    
+    Route::get('/verify/{token}', 'AuthController@verifyUser');
+    Route::get('/confirm', 'AuthController@confirmEmail');
+    
+    Route::get('/login', 'AuthController@login')->name('login');
+  });
+  
+  Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'MemberController@dashboard');
+  });
 });

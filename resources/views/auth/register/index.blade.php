@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ted</title>
+    <title>TEDxUniversitasBrawijaya 2021 | Member Register</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             <div class="_tedx_register_title">
                 <h1>Bergabung dengan <span>TEDx</span>UniversitasBrawijaya</h1>
             </div>
-            <form action="{{ url('/register') }}" method="POST" class="_tedx_register_form_wrapper">
+            <form action="{{ url('/member/register') }}" method="POST" class="_tedx_register_form_wrapper">
                 @csrf
                 <div class="_tedx_form_group">
                     <div>
@@ -55,7 +55,10 @@
                     <button type="submit">Sign Up</button>
                 </div>
             </form>
-            <p>Sudah memiliki akun? <a href="{{ url('/login') }}">Sign in</a></p>
+            <p>
+                <span>Sudah memiliki akun? <a href="{{ url('/member/login') }}">Sign in</a></span>
+                <span><a href="/">Kembali ke halaman utama</a></span>
+            </p>
         </div>
     </section>
 </body>

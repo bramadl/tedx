@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginUserRequest;
+use App\Http\Requests\RegisterTeamRequest;
 use App\Http\Requests\RegisterUserRequest;
 use App\Mail\VerifyMail;
 use App\User;
 use App\VerifyUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -26,7 +29,7 @@ class AuthController extends Controller
             'last_name' => $validated['last_name'],
             'email_address' => $validated['email_address'],
             'password' => Hash::make($validated['password']),
-            'phone_number' => $validated['phone_number'] || null,
+            'phone_number' => $validated['phone_number']
         ];
 
         $user = User::create($data);
@@ -52,9 +55,57 @@ class AuthController extends Controller
         return view('auth.register.core');
     }
 
+    public function registerCorePost(RegisterTeamRequest $request)
+    {
+        $validated = $request->validated();
+
+        $data = [
+            'first_name' => $validated['first_name'],
+            'last_name' => $validated['last_name'],
+            'email_address' => $validated['email_address'],
+            'password' => Hash::make($validated['password']),
+            'role' => 'core',
+            'division' => $validated['division'],
+            'verified' => true
+        ];
+
+        $user = User::create($data);
+        if (!$user) {
+            redirect()
+                ->back()
+                ->with('status', 'Mohon maaf terjadi kesalahan, silahkan dicoba beberapa saat lagi.');
+        }
+
+        return redirect('/login')->with('status', 'Akun berhasil terdaftar!');
+    }
+
     public function registerVolunteer()
     {
         return view('auth.register.volunteer');
+    }
+
+    public function registerVolunteerPost(RegisterTeamRequest $request)
+    {
+        $validated = $request->validated();
+
+        $data = [
+            'first_name' => $validated['first_name'],
+            'last_name' => $validated['last_name'],
+            'email_address' => $validated['email_address'],
+            'password' => Hash::make($validated['password']),
+            'role' => 'volunteer',
+            'division' => $validated['division'],
+            'verified' => true
+        ];
+
+        $user = User::create($data);
+        if (!$user) {
+            redirect()
+                ->back()
+                ->with('status', 'Mohon maaf terjadi kesalahan, silahkan dicoba beberapa saat lagi.');
+        }
+
+        return redirect('/login')->with('status', 'Akun berhasil terdaftar!');
     }
 
     public function confirmEmail(Request $request)
@@ -101,7 +152,23 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function authenticate(Request $request) {
-        return $request->all();
+    public function authenticate(LoginUserRequest $request) {
+        $validated = $request->validated();
+
+        $credentials = [
+            'email_address' => $validated['email_address'],
+            'password' => $validated['password']
+        ];
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            return redirect()
+                    ->intended('member/dashboard')
+                    ->with('status', 'Selamat datang, ' . $user->first_name . $user->last_name . '!');
+        } else {
+            return redirect()
+                    ->back()
+                    ->with('error', 'Akun tidak ditemukan.');
+        }
     }
 }

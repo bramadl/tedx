@@ -17,19 +17,22 @@
             <div class="_tedx_register_title">
                 <h1>Selamat Datang di <span>TEDx</span>UniversitasBrawijaya</h1>
             </div>
-            <form action="{{ url('/login') }}" method="POST" class="_tedx_register_form_wrapper">
+            <form action="{{ url('/member/login') }}" method="POST" class="_tedx_register_form_wrapper">
                 @csrf
                 <div class="_tedx_form">
-                    <input type="email" name="" id="" placeholder="Alamat Email">
+                    <input type="email" name="email_address" placeholder="Alamat Email">
                 </div>
                 <div class="_tedx_form">
-                    <input type="password" name="" id="" placeholder="Kata Sandi">
+                    <input type="password" name="password" placeholder="Kata Sandi">
                 </div>
                 <div class="_tedx_submit_button">
                     <button type="submit">Sign In</button>
                 </div>
             </form>
-            <p>Belum memiliki akun? <a href="{{ url('/register') }}">Sign up</a></p>
+            <p>
+                <span>Belum memiliki akun? <a href="{{ url('/member/register') }}">Register</a></span>
+                <span><a href="/">Kembali ke halaman utama</a></span>
+            </p>
         </div>
     </section>
 
