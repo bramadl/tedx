@@ -40,7 +40,11 @@
     ._tedx_register_cta {
       margin-top: 1.75rem;
 
-      a {
+      button {
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
         display: inline-block;
         border: 1px solid $white;
         border-radius: .25rem;

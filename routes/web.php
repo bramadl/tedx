@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home');
-Route::view('/about', 'about');
-Route::view('/test', 'test');
-Route::view('/partners', 'partners');
-Route::view('/faq', 'faq');
-Route::view('/register', 'auth.register.index');
-Route::view('/register/core', 'auth.register.core');
-Route::view('/register/volunteer', 'auth.register.volunteer');
-Route::view('/login', 'auth.login');
-Route::view('/dashboard', 'dashboard');
+
 Route::view('/tickets', 'ticket');
+Route::get('/', 'HomeController@index');
+Route::get('/about', 'HomeController@about');
+Route::get('/partners', 'HomeController@partners');
+Route::get('/faqs', 'HomeController@faqs');
+Route::get('/core/{name}/profile', 'HomeController@coreProfile');
+
+Route::group(['middleware' => ['verified']], function () {
+  Route::get('/ticket/payment', 'TicketController@payment');
+  Route::post('/ticket/payment', 'TicketController@storePayment');
+  Route::get('/ticket/invoice', 'TicketController@invoice');
+});
+
+Route::group(['prefix' => '/member'], function () {
+  Route::get('/verify/{token}', 'AuthController@verifyUser');
+  Route::get('/confirm', 'AuthController@confirmEmail');
+  Route::get('/resend/confirm', 'AuthController@resendConfirmEmail');
+  
+  Route::post('/register', 'AuthController@registerAudiencePost');
+  Route::post('/register/core', 'AuthController@registerCorePost');
+  Route::post('/register/volunteer', 'AuthController@registerVolunteerPost');
+  Route::post('/login', 'AuthController@authenticate');
+  Route::post('/logout', 'AuthController@logout');
+  
+  Route::group(['middleware' => 'guest'], function () {
+    Route::get('/register', 'AuthController@registerAudience');
+    Route::get('/register/core', 'AuthController@registerCore');
+    Route::get('/register/volunteer', 'AuthController@registerVolunteer');
+    
+    Route::get('/login', 'AuthController@login')->name('login');
+  });
+  
+  Route::group(['middleware' => 'auth', 'name' => 'member'], function () {
+    Route::get('/dashboard', 'MemberController@dashboard')->name('dashboard');
+    Route::get('/kelola-akun', 'MemberController@profile')->name('profile');
+  });
+});
+

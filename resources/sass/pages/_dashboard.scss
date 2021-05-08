@@ -1,225 +1,215 @@
-._tedx_section._tedx_section_about.dashboard {
-    margin: 150px 0 0;
-    @include md {
-    }
-}
+._tedx_section {
 
-._tedx_section_title.dashboard h2{
-    font-size: 3rem;
-    @include md {
-        font-size: 6rem;
+    ._tedx_section_title_overlay.dashboard {
+        padding: 25px 0 35px;
     }
 
-    @include lg {
-        font-size: 8rem;
-    }
-    @include xl {
-        font-size: 11rem;
-    }
-}
-._tedx_section_title_overlay.dashboard {
-    padding: 25px 0 35px;
-}
-._tedx_dashboard_user {
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    line-height: 2rem;
-
-    a {
-        color: white;
-        text-decoration: none;
-        margin-top: 2rem;
+    ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
+        font-size: 3.4rem;
         @include md {
-            margin-top: 0;
+            font-size: 6rem;
+        }
+        @include lg {
+            font-size: 8rem;
+        }
+        @include xl {
+            font-size: 11rem;
         }
     }
-    @include md {
-        flex-direction: row;
-        justify-content: space-between;
+
+    ._tedx_section_dashboard_cta {
+        flex-direction: row !important;
         align-items: center;
-        margin: 60px 0;
-    }
-    @include lg {
-        font-size: 1.5rem;
+        margin-top: 1rem;
+        @include md { margin-top: 2rem; }
+        
+        button {
+            appearance: none;
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            text-decoration: none;
+            @include md {
+                margin-top: 0;
+            }
+
+            &:hover::after {
+                transform: translate(0);
+            }
+        }
     }
 }
 
 ._tedx_dashboard_status_wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 2rem;
-    margin: 2rem 0;
-    @include md {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin: 4rem 0 0;
-    }
-    @include lg {
-    }
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 100px;
 
-    h2 {
-        font-weight: bold;
-        font-size: 1.5rem;
-        @include md {
-            font-size: 1.5rem;
-        }
-        @include xl {
-            font-size: 2.5rem;
-        }
-    }
-    span {
-        color: red;
+    @include lg {
+        flex-direction: row;
+        align-items: center;
     }
 
     ._tedx_dashboard_status_caption {
-        margin-bottom: 50px;
-        @include md {
-            margin-bottom: 0;
-        }
-        p {
-            color: white;
-            // opacity: 60%;
-            // text-align: center;
-            position: relative;
-            
-            @include xl {
+        margin-bottom: 2rem;
+        @include lg { margin-bottom: 0; }
+
+        h2 {
+            margin-bottom: .25rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+            @include md {
                 font-size: 1.5rem;
-                font-weight: lighter;
+            }
+            @include lg {
+                font-size: 2rem;
+            }
+
+            span {
+                color: $red;
+            }
+        }
+
+        p {
+            position: relative;
+            color: $white;
+            font-size: .85rem;
+            font-weight: 300;
+            display: inline-block;
+
+            @include lg {
+                font-size: 1.2rem;
+            }
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: $white;
+                top: 50%;
+                left: 100%;
+                transform: translate(1rem, -50%);
             }
 
             &::after {
-                content: '';
-                position: absolute;
-                width: 60px;
+                width: 100px;
                 height: 1px;
-                top: 50%;
-                left: 180px;
-                transform: translateY(-50%);
-                background-color: white;
+            }
 
-                @include md {
-                    left: 200px;
-                    width: 70px;
-                }
-                @include xl {
-                    left: 280px;
-                    width: 100px;
-                }
+            &::before {
+                width: .25rem;
+                height: .25rem;
+                border-radius: 50%;
             }
         }
     }
-    ._tedx_dashboard_status_button {
-        @include xl {
-            font-size: 1.5rem;
-        }
-        ._tedx_dashboard_status_audiens p:nth-child(2){
-            // border: 1px solid red;
-            border-radius: 5px;
-            text-align: center;
-            background: #11998e;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            padding: 0 10px;
-            @include xl {
-                font-size: 1rem;
-            }
-        }
-        ._tedx_dashboard_status_audiens {
-            @include lg {
-                display: flex;
 
-                p {
-                    margin: 0 5px;
-                }
+    ._tedx_dashboard_status_button {
+        font-size: .8rem;
+        @include md { font-size: 1rem; }
+
+        ._tedx_dashboard_status_audiens {
+            display: flex;
+            align-items: center;
+
+            p:first-child {
+                margin-right: 1rem;
+                border: 1px solid $red;
+                border-radius: 0.25rem;
+                text-align: center;
+                padding: 0.5rem;
+                color: $red;
+            }
+
+            a {
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                text-align: center;
+                color: $white;
+                text-decoration: none;
             }
         }
     }
 }
-._tedx_dashboard_card_features_wrapper {
-    font-family: 'Open Sans', sans-serif;
-    padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    @include md {
-        // border: 1px solid red;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        grid-gap: 30px;
-        padding: 0;
-        margin: 35px 0 0;
-    }
-    @include lg {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 30px;
-    }
-    @include xl {
 
-    }
+._tedx_dashboard_card_features_wrapper {
+    font-family: "Open Sans", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include md { grid-template-columns: repeat(2, 1fr); }
+    @include xl { grid-template-columns: repeat(3, 1fr); }
+    grid-gap: 25px;
+    @include md { grid-gap: 50px; }
+    @include lg { grid-gap: 75px; }
+    @include xl { grid-gap: 100px; }
+
     ._tedx_dashboard_card_feature {
-        padding: 30px 30px;
+        padding: 2rem;
         border-radius: 10px;
-        margin: 3rem 0;
-        line-height: 1.5rem;
-        height: 200px;
-        width: 200px;
-        background: linear-gradient(rgba(226, 85, 68, 1), rgba(66, 18, 126, 1));
+        background: linear-gradient(135deg, #e25544 2.88%, #42127e 98.14%);
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         justify-content: space-between;
-        align-items: center;
 
-        @include md {
-            width: 250px;
-            height: 250px;
-            margin: 0;
-        }
-        @include lg {
-            width: 200px;
-            height: 200px;
-        }
-        @include xl {
-            width: auto;
-        }
         ._tedx_card_feature_title {
             display: flex;
             align-items: center;
+
             h2 {
-                margin-left: 2rem;
+                margin-left: 1rem;
+                font-size: 1.2rem;
+            }
+
+            i {
+                font-size: 1rem;
             }
         }
-        a {
-            color: white;
-            text-decoration: none;
-            z-index: 5;
+
+        ._tedx_card_feature_caption {
+            flex: 1;
+            margin: 1rem 0;
+
+            p {
+                font-size: 0.9rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
         }
-        ._tedx_link.card {
+
+        ._tedx_link_alt {
             position: relative;
             display: inline-block;
-          
+
+            &:hover::after {
+                left: 0;
+            }
+
             &::after {
                 content: "";
                 position: absolute;
-                left: 0;
+                left: 10px;
                 top: 50%;
-                transform: translate(1rem, 0);
                 width: 100%;
                 height: 50%;
-                background: $red-50;
-                z-index: -1;
-                transition: 0.4s $cubiz-bezier;
+                background: $black-50;
+                z-index: 0;
+                transition: .4s $cubiz-bezier;
+            }
+
+            a {
+                position: relative;
+                z-index: 1;
+                color: $white;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                text-decoration: none;
             }
         }
-        
     }
 }

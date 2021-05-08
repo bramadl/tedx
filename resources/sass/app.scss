@@ -9,6 +9,13 @@
 @import "layouts/hero";
 @import "layouts/footer";
 
+// Pages
+@import "pages/coreDroplink";
+@import "pages/partners";
+@import "pages/faq";
+@import "pages/auth";
+@import "pages/dashboard";
+
 // Sections
 @import "sections/videoTeaser";
 @import "sections/speakerList";
@@ -25,12 +32,18 @@
 @import "components/menu";
 @import "components/title";
 
+<<<<<<< HEAD
 // Pages;
 @import "pages/partners";
 @import "pages/faq";
 @import "pages/register";
 @import "pages/dashboard";
 @import "pages/ticket";
+=======
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+>>>>>>> e0a4207bbf9a5fcdc0d44c59b91957f7b0d9d853
 
 ._tedx {
     position: relative;

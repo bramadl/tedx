@@ -1,6 +1,8 @@
 <div class="_tedx_navigation_wrapper">
   <div class="_tedx_logo_container">
-    <img src="{{ asset('img/tedx.png') }}" alt="TEDxUniversitasBrawijaya2021">
+    <a href="/" cursor-class="greeting">
+      <img src="{{ asset('img/tedx.png') }}" alt="TEDxUniversitasBrawijaya2021">
+    </a>
   </div>
   <div class="_tedx_menu_container" cursor-class="hover">
     <svg class="_tedx_hamburger" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">

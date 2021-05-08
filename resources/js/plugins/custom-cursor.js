@@ -13,7 +13,6 @@ const updateCoordinates = e => {
 
 window.addEventListener('mousemove', updateCoordinates);
 
-
 function getAngle(diffX, diffY) {
   return Math.atan2(diffY, diffX) * 180 / Math.PI;
 }
@@ -60,9 +59,10 @@ cursorModifiers.forEach(curosrModifier => {
     const className = this.getAttribute('cursor-class');
     cursor.classList.add(className);
   });
-  
+
   curosrModifier.addEventListener('mouseleave', function() {
     const className = this.getAttribute('cursor-class');
     cursor.classList.remove(className);
   });
+  
 });

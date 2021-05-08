@@ -16,9 +16,8 @@
       </div>
     </div>
     <div class="_tedx_section_about_cta">
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#ted') }}">About TED</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDxUniversitasBrawijaya</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#tedx') }}">About TEDx</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a target="_blank" href="https://tedx.amhanisa.com/">Past Events</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a target="_blank" href="{{ url('/faqs') }}">FAQs</a></div>
     </div>
   </div>
 </section>
@@ -74,7 +73,7 @@
   </div>
 </div>
 
-<section class="_tedx_section _tedx_section_core" data-scroll-section>
+<section id="behind-the-team" class="_tedx_section _tedx_section_core" data-scroll-section>
   <div class="_tedx_section_title_overlay">
     <div class="_tedx_section_title_wrapper">
       <div class="_tedx_section_title">
@@ -82,7 +81,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>The Core Teams</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas distinctio excepturi vel tenetur vitae ullam nobis, dolorem facilis ipsa magnam dolorum iste aperiam in vero, deleniti blanditiis sint architecto! Saepe placeat itaque facere quae eos quis veritatis veniam magnam blanditiis cum? Nobis laudantium consequuntur fugit distinctio voluptates! Aut, ullam!</p>
+        <p>TEDxUniversitasBrawijaya dinahkodai oleh berbagai sosok individu yang tergabung dalam Core Team. Mereka merupakan bagian dari komunitas lokal Mahasiswa/i Universitas Brawijaya yang mempunyai satu tujuan yang sama, yaitu menjalankan “Ideas Worth Spreading.”</p>
       </div>
     </div>
   </div>
@@ -91,118 +90,118 @@
 <div id="coreTeams" data-scroll-section>
   <div class="container">
     <div class="carousel">
-      <div class="carousel__face" cursor-class="speaker">
+      <a href="/core/muhammad-huda/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/organizer.svg" alt="">
         <div>
           <h1>Muhammad Huda</h1>
           <p>Organizer</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/david-leonardo/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/co-organizer.svg" alt="">
         <div>
           <h1>David Leonardo</h1>
           <p>Co Organizer</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/sheila-istiningtyas/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/bm.svg" alt="">
         <div>
           <h1>Sheila Istiningtyas Padmarini</h1>
           <p>Budget Marketing</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/putri-nesya/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/curator-1.svg" alt="">
         <div>
           <h1>Putri Nesya Wibowo</h1>
           <p>Curator</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/daffa-naradhipa/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/curator-2.svg" alt="">
         <div>
           <h1>Daffa Naradhipa</h1>
           <p>Curator</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/dio-pratama/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/sponsor-1.svg" alt="">
         <div>
           <h1>Dio Arya Pratama</h1>
           <p>Sponsorship</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/andi-talitha/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/sponsor-2.svg" alt="">
         <div>
           <h1>Andi Talitha Ghassani Rizky</h1>
           <p>Sponsorship</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/afina-syahrani/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/em-1.svg" alt="">
         <div>
           <h1>Afina Syahrani Damiar</h1>
           <p>Event Manager</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/dewangga-akbar/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/em-2.svg" alt="">
         <div>
           <h1>Dewangga Akbar Pangaji</h1>
           <p>Event Manager</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/afif-royyanto/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/ep-1.svg" alt="">
         <div>
           <h1>Afif Royyanto</h1>
           <p>Executive Producer</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/destya-pramesti/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/ep-2.svg" alt="">
         <div>
-          <h1>Desta Pramesti Shafa S</h1>
+          <h1>Destya Pramesti Shafa S</h1>
           <p>Executive Producer</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/tsabita-afifah/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/cem.svg" alt="">
         <div>
           <h1>Tsabita Afifah Khoirunnisa</h1>
           <p>Communication, Editorials, and Marketing</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/naufaldy-ghaly/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/design.svg" alt="">
         <div>
           <h1>Naufaldy Ghaly Alana</h1>
           <p>Designer</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/dimas-prasetya/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/vp-1.svg" alt="">
         <div>
           <h1>Dimas Prasetya Adi Herlambang</h1>
           <p>Video Production</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/mohammad-ikhsanudin/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/vp-2.svg" alt="">
         <div>
           <h1>Mohammad Ikhsanudin</h1>
           <p>Video Production</p>
         </div>
-      </div>
-      <div class="carousel__face" cursor-class="speaker">
+      </a>
+      <a href="/core/bram-adl/profile" target="_blank" class="carousel__face" cursor-class="speaker">
         <img src="/img/cores/website.svg" alt="">
         <div>
           <h1>Bintang Ramadhan</h1>
           <p>Website Developer</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -215,7 +214,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>The Volunteers</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas distinctio excepturi vel tenetur vitae ullam nobis, dolorem facilis ipsa magnam dolorum iste aperiam in vero, deleniti blanditiis sint architecto! Saepe placeat itaque facere quae eos quis veritatis veniam magnam blanditiis cum? Nobis laudantium consequuntur fugit distinctio voluptates! Aut, ullam!</p>
+        <p>Terima kasih karena telah memilih untuk saling membersamai di TEDxUniversitasBrawijaya 2021. Biarlah Manifestasi Peradaban menjadi kisah dan pengalaman baru untuk kita sebagai individu di tengah carut-marut dunia virtual yang melelahkan. Kami bangga dengan kalian!</p>
       </div>
     </div>
   </div>
@@ -330,7 +329,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>PERJALANAN TEDXUNIVERSITASBRAWIJAYA 2021</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas distinctio excepturi vel tenetur vitae ullam nobis, dolorem facilis ipsa magnam dolorum iste aperiam in vero, deleniti blanditiis sint architecto! Saepe placeat itaque facere quae eos quis veritatis veniam magnam blanditiis cum? Nobis laudantium consequuntur fugit distinctio voluptates! Aut, ullam!</p>
+        <p>Situasi pandemi bukan menjadi penghalang bagi kami untuk menyebarkan ide-ide luar biasa tentang budaya populer kepadamu. Mari kilas balik perjalanan TEDxUniversitasBrawijaya 2021 dalam menciptakan Manifestasi Peradaban secara virtual dengan memberikan pengalaman transendental. Perjalanan istimewa ini takkan terwujud tanpa kehadiranmu. </p>
       </div>
     </div>
   </div>

@@ -19,14 +19,26 @@ function openMenu () {
 
   const menuOpen = gsap
   .timeline({ paused: true })
+  .from(
+    links,
+    {
+      y: '110%',
+      duration: .6,
+      ease: 'power2.inOut',
+      stagger: {
+        amount: .4
+      }
+    }
+  )
   .to(
     "._tedx_menu_wrapper",
     {
       opacity: 1,
       pointerEvents: 'all',
-      duration: 1,
+      duration: .6,
       ease: 'sine.inOut'
-    }
+    },
+    '-=.6'
   )
   .from(
     sublinks,
@@ -43,22 +55,10 @@ function openMenu () {
     {
       height: 0,
       opacity: 0,
-      duration: 1.4,
+      duration: 1.2,
       ease: 'sine.inOut'
     },
     '<'
-  )
-  .from(
-    links,
-    {
-      y: '100%',
-      duration: 1,
-      ease: 'power2.inOut',
-      stagger: {
-        amount: .6
-      }
-    },
-    '-=1'
   )
 
   if (hasMenuOpen) {

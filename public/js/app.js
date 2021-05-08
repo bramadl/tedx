@@ -19375,15 +19375,19 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugins/locomotiveScroll */ "./resources/js/plugins/locomotiveScroll.js");
 // @ts-nocheck
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Required Plugins
 
-__webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js");
 
-__webpack_require__(/*! ./plugins/locomotiveScroll */ "./resources/js/plugins/locomotiveScroll.js"); // Home Page
+
+
+__webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js"); // Home Page
 
 
 __webpack_require__(/*! ./modules/menu */ "./resources/js/modules/menu.js");
@@ -19397,7 +19401,18 @@ __webpack_require__(/*! ./modules/speaker */ "./resources/js/modules/speaker.js"
 __webpack_require__(/*! ./modules/archetype */ "./resources/js/modules/archetype.js"); // About Page
 
 
-__webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js");
+__webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js"); // Partners Page
+
+
+__webpack_require__(/*! ./modules/partners */ "./resources/js/modules/partners.js");
+
+var buyTicketLink = document.querySelector('._tedx_register_cta');
+
+if (buyTicketLink) {
+  buyTicketLink.addEventListener('click', function (e) {
+    _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo('#ticketPurchase');
+  });
+}
 
 /***/ }),
 
@@ -19546,7 +19561,7 @@ if (window.innerWidth < 576) {
   imgWidth = 120;
   imgHeight = 150;
 } else {
-  radius = 320;
+  radius = 260;
   imgWidth = 150;
   imgHeight = 180;
 } // Link of background music - set 'null' if you dont want to play background music
@@ -19634,7 +19649,7 @@ if (odrag && ospin) {
   } // setup events
 
 
-  document.onpointerdown = function (e) {
+  odrag.onpointerdown = function (e) {
     clearInterval(odrag.timer);
     e = e || window.event;
     var sX = e.clientX,
@@ -19668,10 +19683,66 @@ if (odrag && ospin) {
         }
       }, 17);
       this.onpointermove = this.onpointerup = null;
-    };
+    }; // customScroll()
 
-    return false;
+
+    return true;
   };
+}
+
+function customScroll() {
+  var cursor = document.querySelector('#cursor');
+  var cursorCircle = cursor.querySelector('.cursor__circle');
+  var mouse = {
+    x: -100,
+    y: -100
+  }; // mouse pointer's coordinates
+
+  var pos = {
+    x: 0,
+    y: 0
+  }; // cursor's coordinates
+
+  var speed = 0.1; // between 0 and 1
+
+  var updateCoordinates = function updateCoordinates(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  };
+
+  window.addEventListener('mousemove', updateCoordinates);
+
+  function getAngle(diffX, diffY) {
+    return Math.atan2(diffY, diffX) * 180 / Math.PI;
+  }
+
+  function getSqueeze(diffX, diffY) {
+    var distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+    var maxSqueeze = 0.15;
+    var accelerator = 1500;
+    return Math.min(distance / accelerator, maxSqueeze);
+  }
+
+  var updateCursor = function updateCursor() {
+    var diffX = Math.round(mouse.x - pos.x);
+    var diffY = Math.round(mouse.y - pos.y);
+    pos.x += diffX * speed;
+    pos.y += diffY * speed;
+    var angle = getAngle(diffX, diffY);
+    var squeeze = getSqueeze(diffX, diffY);
+    var scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) + ')';
+    var rotate = 'rotate(' + angle + 'deg)';
+    var translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+    cursor.style.transform = translate;
+    cursorCircle.style.transform = rotate + scale;
+  };
+
+  function loop() {
+    updateCursor();
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
 }
 
 /***/ }),
@@ -19777,12 +19848,19 @@ function openMenu() {
   });
   var menuOpen = gsap.timeline({
     paused: true
+  }).from(links, {
+    y: '110%',
+    duration: .6,
+    ease: 'power2.inOut',
+    stagger: {
+      amount: .4
+    }
   }).to("._tedx_menu_wrapper", {
     opacity: 1,
     pointerEvents: 'all',
-    duration: 1,
+    duration: .6,
     ease: 'sine.inOut'
-  }).from(sublinks, {
+  }, '-=.6').from(sublinks, {
     opacity: 0,
     y: 64,
     duration: 1.4,
@@ -19790,16 +19868,9 @@ function openMenu() {
   }, '-=4').from(separator, {
     height: 0,
     opacity: 0,
-    duration: 1.4,
+    duration: 1.2,
     ease: 'sine.inOut'
-  }, '<').from(links, {
-    y: '100%',
-    duration: 1,
-    ease: 'power2.inOut',
-    stagger: {
-      amount: .6
-    }
-  }, '-=1');
+  }, '<');
 
   if (hasMenuOpen) {
     menuWrapper.classList.toggle('menu-open');
@@ -19857,6 +19928,57 @@ function closeMenu() {
 
 /***/ }),
 
+/***/ "./resources/js/modules/partners.js":
+/*!******************************************!*\
+  !*** ./resources/js/modules/partners.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.8
+};
+
+var scaleCallback = function scaleCallback(entries, self) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      var image = entry.target.querySelector('img');
+      var title = entry.target.querySelector('._tedx_partner_profile_wrapper');
+      var links = title.querySelectorAll('li');
+      gsap.to(image, {
+        scale: 1.15,
+        duration: 2,
+        ease: 'power2.inOut'
+      });
+      var tl = gsap.timeline({
+        ease: 'power2.out'
+      });
+      tl.to(title, {
+        opacity: 1,
+        duration: 1.4
+      }).from(links, {
+        y: '100%',
+        opacity: 0,
+        duration: .6,
+        stagger: {
+          amount: .8
+        }
+      }, '<');
+      self.unobserve(entry.target);
+    }
+  });
+};
+
+var observer = new IntersectionObserver(scaleCallback, options);
+var partnerContainers = document.querySelectorAll('.tedx_section_image_partners_content');
+partnerContainers.forEach(function (container) {
+  observer.observe(container);
+});
+
+/***/ }),
+
 /***/ "./resources/js/modules/speaker.js":
 /*!*****************************************!*\
   !*** ./resources/js/modules/speaker.js ***!
@@ -19879,7 +20001,7 @@ var revealCallback = function revealCallback(entries, self) {
     var avatars = document.querySelectorAll('._tedx_speaker_avatar');
     var details = document.querySelector('._tedx_speaker_detail');
     var easeInOut = "power3.out";
-    var revealAnim = gsap.timeline({
+    var revealAnim = new TimelineLite({
       ease: easeInOut
     });
 
@@ -19942,74 +20064,67 @@ var speakers = {
     profession: 'Psikolog',
     title: 'Ungkaian Persepsi dan Stigma Wajah Asia',
     description: "\n    Persepsi menjadi salah satu proses penting untuk menangkap dan memproses informasi untuk diterjemahkan dalam otak yang kemudian setiap individu berimprovisasi untuk mengelompokkan informasi-informasi tersebut berdasarkan kategorinya sebagai sebuah stereotip. Stereotip dapat dilakukan pada suatu kelompok manusia, benda, budaya, dan lainnya. Tidak jarang dalam prakteknya bahwa pengelompokkan informasi ini dapat dilakukan secara negatif dan sengaja oleh suatu kelompok budaya pada kelompok lainnya sehingga menimbulkan keresahan dan dampak multidimensi.\n    <br></br>\n    Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.\n    ",
-    url: '/anastasia.jpg'
+    url: 'https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg'
   },
   diego: {
     name: 'Diego Yanuar',
     profession: 'Pesepeda',
     title: 'Tidak Apa-Apa Untuk Tidak Memiliki Cita-Cita',
     description: "\n    Mendefinisikan kesuksesan dengan hal-hal kecil, Diego merasa terhambat dalam tumbuh kembang karena menurutnya saat ini setiap orang harus memiliki tujuan hidup untuk mencapai kesuksesan. Suatu saat Diego bertemu dengan seseorang dan berkata \u201Cit\u2019s okay to not to have goals in your life\u201D, Dari kutipan itu Diego memaknai bahwa Ia dapat melakukan hal apa saja tanpa ada batasan.\n    ",
-    url: '/diego.jpg'
+    url: 'https://ik.imagekit.io/tedxub/diego_17X4gmRxS.jpg'
   },
   clara: {
     name: 'Clara Tunjung Pramesti',
     profession: 'Mahasiswa',
     title: 'Seni Sebagai Rumah Bukan Limbah',
     description: "\n    Untuk sebagian orang karya seni diperuntukan untuk konsumsi publik, namun tidak sedikit karya seni yang dibuat untuk kepuasan pribadi.\n    <br></br>\n    Clara mencoba menjelaskan dari sudut pandangnya mengenai seni sebagai rumah adalah tempat untuk mencurahkan segala rasa dan karya seni yang tersimpan mampu memberikan ingatan-ingatan terhadap kejadian tertentu yang dapat memberikan pembelajaran di kemudian hari.\n    ",
-    url: '/clara.jpg'
+    url: 'https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg'
   },
   jimi: {
     name: 'Jimi Multhazam',
     profession: 'Musisi',
     title: 'Kekuatan Komposisi dan Cerita',
     description: "Pada pertengahan dekade 2000-an, terdapat satu nama yang diasosiasikan dengan gerak laku juga syair yang flamboyan saat ia melantunkan tembang-tembangnya di panggung The Upstairs, nama tersebut adalah Jimi Multhazam. Menapak pada dekade 2010-an, Jimi melahirkan proyek barunya yang bernama Morfem. Entah melalui synthesizer ataupun distorsi, pria yang juga dikenal dengan nama Jimi \u2018\u2018Danger\u2019\u2019 ini sudi menggunakan media atau teknik apa saja untuk mengekspresikan gagasannya. \n    <br></br>\n    Pada talks kali ini,  Jimi Multhazam akan membicarakan bagaimana secara abstrak\n    ",
-    url: '/jimi.jpg'
+    url: 'https://ik.imagekit.io/tedxub/jimi_pe2cB_9Ovan.jpg'
   },
   hengki: {
     name: 'Hengki Herwanto',
     profession: 'Kurator',
     title: 'Arsip Lempengan Nada',
     description: "Rasa cintanya yang luar biasa terhadap seni musik menghantarkan suatu yayasan bernama Museum Musik Indonesia (MMI) diakui dan diresmikan oleh pemerintah pada tahun 2016. Hingga salah satu capaian mengesankan mereka, disaat UNESCO memberikan bantuan untuk proses digitalisasi koleksi. Salah satu yang terlibat merupakan sosok yang bernama Hengki Herwanto. \n    <br></br>\n    Pada talks kali ini, Hengki Herwanto akan menarasikan cerita dibalik kurang lebih 26.000 artefak musik Indonesia dan mancanegara melalui cara  pengarsipan beragam produk seni musik.\n    ",
-    url: '/hengki.jpg'
+    url: 'https://ik.imagekit.io/tedxub/DSC04080_hLZtl6tYTh1O.JPG'
   },
   abdul: {
     name: 'Abdul Hair',
     profession: 'Akademisi',
     title: 'Untitled',
     description: "Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?\n    <br></br>\n    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.\n    ",
-    url: '/abdul.JPG'
+    url: 'https://ik.imagekit.io/tedxub/abdul_9Ve4sVKfy.JPG'
   },
   mice: {
     name: 'Mice Cartoon',
     profession: 'Komikus',
     title: 'Memotret Peradaban Melalui Kritik Gelitik',
     description: "Berangkat dari memotret keadaan sehari-hari yang banyak terjadi namun tidak disadari oleh masyarakat luas Mice Cartoon membungkus keberagaman tersebut menjadi sebuah kartun. Kehidupan manusia sangat berkaitan dengan perubahan peradaban yang terjadi di sekitarnya. Realita berganti dengan realita lain yang berjalan cepat seiring naik dan turunnya suatu budaya populer pada masyarakat. Perubahan ini disadari dan diterjemahkan tiap individu dengan membentuk komunitas tertentu.\n    <br></br>\n    Pada talk kali ini, Mice Cartoon akan membahas bagaimana potret dari proses kreatif yang dilewatinya dalam menanggapi perubahan peradaban dunia.\n    ",
-    url: '/mice.jpg'
+    url: 'https://ik.imagekit.io/tedxub/mice_YRGNQESaK.jpg'
   },
   bondan: {
     name: 'Bondan Sekari Adi',
     profession: 'Value Investor',
     title: 'Manifestasi Budaya dengan Kuliner ',
     description: "Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?\n    <br></br>\n    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.\n    ",
-    url: '/bondan.JPG'
+    url: 'https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG'
   }
 };
 var speakerAvatars = document.querySelectorAll('._tedx_speaker_avatar');
 speakerAvatars.forEach(function (avatar) {
   avatar.addEventListener('click', function () {
     var speakerProfile = document.querySelector('._tedx_speaker_profile');
-    speakerProfile.querySelector('._tedx_speaker_image img').src = "/img/speakers/".concat(speakers[avatar.dataset.target].url);
+    speakerProfile.querySelector('._tedx_speaker_image img').src = speakers[avatar.dataset.target].url;
     speakerProfile.querySelector('h1').innerHTML = speakers[avatar.dataset.target].title;
     document.querySelector('._tedx_speaker_detail h1').innerHTML = speakers[avatar.dataset.target].title;
     document.querySelector('._tedx_speaker_detail h2').innerHTML = "<em>".concat(speakers[avatar.dataset.target].name, "</em> | ").concat(speakers[avatar.dataset.target].profession);
     document.querySelector('._tedx_speaker_detail p').innerHTML = speakers[avatar.dataset.target].description;
-    var container = document.querySelector('.reveal');
-    var img = container.querySelector("img");
-    var titleContainer = container.querySelector('._tedx_speaker_title');
-    var easeInOut = "power3.out";
-    var revealAnim = gsap.timeline({
-      ease: easeInOut
-    });
   });
 });
 
@@ -20047,37 +20162,66 @@ if (videoTeaser && videoMask && videoText) {
       };
     }
   });
+  var timeline = new TimelineLite();
   ScrollTrigger.create({
     trigger: videoMask,
     scroller: videoTeaser,
     start: 'top+=30% 50%',
     end: 'bottom-=40% 50%',
-    animation: gsap.to(videoMask, {
+    animation: timeline.to(videoMask, {
       backgroundSize: '120%'
-    }),
+    }).to(videoText, {
+      opacity: 1,
+      y: '-50%'
+    }, '<'),
     scrub: 2
   });
   ScrollTrigger.addEventListener('refresh', function () {
     return _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].update();
   });
   ScrollTrigger.refresh();
-  var options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.8
-  };
-  var observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translate(-50%, -50%)';
-      } else {
-        entry.target.style.opacity = '0';
-        entry.target.style.transform = 'translate(-50%, -40%)';
+}
+
+var playVideoButton = document.querySelector('.open-video-player');
+var closeVideoButton = document.querySelector('.close-video-player');
+var videoPlayer = document.querySelector('#videoPlayer');
+
+if (playVideoButton && closeVideoButton) {
+  playVideoButton.addEventListener('click', function () {
+    var timeline = gsap.timeline();
+    timeline.to(videoPlayer, {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      pointerEvents: 'all',
+      duration: 1.2,
+      ease: 'power2.inOut'
+    }).to(closeVideoButton, {
+      opacity: 1,
+      duration: 1,
+      ease: 'power.out'
+    });
+  });
+  closeVideoButton.addEventListener('click', function () {
+    var video = videoPlayer.querySelector('video');
+    var timeline = gsap.timeline();
+    timeline.to(closeVideoButton, {
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.inOut'
+    }).to(videoPlayer, {
+      opacity: 0,
+      scale: 0,
+      y: '100%',
+      pointerEvents: 'none',
+      duration: 1.2,
+      ease: 'power2.inOut',
+      onComplete: function onComplete() {
+        video.pause();
+        video.currentTime = 0;
       }
     });
-  }, options);
-  observer.observe(videoText);
+  });
 }
 
 /***/ }),
@@ -20181,7 +20325,7 @@ var scroller = new LocomotiveScroll({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n37 │ @import \"pages/partners\";\n   │                         ^\n   ╵\n  /Users/apple/Documents/University/Volunteers/Tedx/tedx/resources/sass/app.scss 37:25  root stylesheet\n    at /Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass-loader/dist/index.js:73:7\n    at Function.call$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:92612:16)\n    at _render_closure1.call$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:81115:12)\n    at _RootZone.runBinary$3$3 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:27260:18)\n    at _FutureListener.handleError$1 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25816:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:26114:49)\n    at Object._Future__propagateToListeners (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:4536:77)\n    at _Future._completeError$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25946:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25600:12)\n    at Object._asyncRethrow (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:4335:17)\n    at /Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:12856:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:4360:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25621:12)\n    at _awaitOnObject_closure0.call$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25613:25)\n    at _RootZone.runBinary$3$3 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:27260:18)\n    at _FutureListener.handleError$1 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25816:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:26114:49)\n    at Object._Future__propagateToListeners (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:4536:77)\n    at _Future._completeError$2 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25946:9)\n    at _Future__asyncCompleteError_closure.call$0 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:26042:18)\n    at Object._microtaskLoop (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:4592:24)\n    at StaticClosure._startMicrotaskLoop (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:4598:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:25512:21)\n    at invokeClosure (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:1438:26)\n    at Immediate.<anonymous> (/Users/apple/Documents/University/Volunteers/Tedx/tedx/node_modules/sass/sass.dart.js:1459:18)\n    at processImmediate (internal/timers.js:461:21)");
 
 /***/ }),
 

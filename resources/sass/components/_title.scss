@@ -68,10 +68,28 @@
   @include md { padding: 50px 0 90px; }
 }
 
+._tedx_section_core
+._tedx_section_title_overlay {
+  padding: 25px 0 50px;
+  @include md { padding: 50px 0 75px; }
+}
+
 ._tedx_section_teams
 ._tedx_section_title_overlay {
   padding: 25px 0 50px;
   @include md { padding: 50px 0 75px; }
+}
+
+._tedx_section_timeline
+._tedx_section_title_overlay {
+  padding: 25px 0 65px;
+  @include md { padding: 50px 0 90px; }
+}
+
+._tedx_section_faqs
+._tedx_section_title_overlay {
+  padding: 25px 0 40px;
+  @include md { padding: 50px 0 60px; }
 }
 
 ._tedx_title,

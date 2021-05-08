@@ -11,7 +11,7 @@
                 </div>
                 <div class="_tedx_section_text">
                     <h3>Beberapa Pihak yang terlibat</h3>
-                    <p>TEDxUniversitasBrawijaya 2021 tahun ini akan membahas bagaimana Pop Culture tidak melulu disajikan dalam bentuk kesenian musik dan lukisan, tapi juga dapat dibagikan melalui bagaimana kolektif manusia mempunyai kebebasan untuk mengekspresikan dirinya melalui Pop Culture dalam bentuk yang simbolis dan konseptual, namun praktis dan dapat dikonsumsi tanpa batas akhir sehingga dapat menarik perhatian banyak orang dari segala ras, tempat tinggal, usia, dan gender.</p>
+                    <p>TEDxUniversitasBrawijaya 2021 mengucapkan terima kasih kepada seluruh pihak yang terlibat. Tanpa kontribusi para pihak terkait Manifestasi Peradaban tidak akan dapat berjalan dengan baik.</p>
                 </div>
             </div>
         </div>
@@ -21,49 +21,65 @@
 @endsection
 
 @section('content')
-<section class="_tedx_section _tedx_section_partners" data-scroll-section>
+<section id="partnersList" data-scroll-section>
     <div class="_tedx_section_image_partners_container">
-        <div class="tedx_section_image_partners_content">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><a href="">Sponsor</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Whatsapp</a></li>
-            </ul>
+        <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="1">
+            <div class="_tedx_partner_image_wrapper">
+                <img src="{{ asset('img/cocacola.png') }}" alt="">
+            </div>
+            <div class="_tedx_partner_profile_wrapper">
+                <h1>Coca Cola</h1>
+                <ul class="a">
+                    <li><span cursor-class="subtle">Sponsor</span></li>
+                    <li><a href="" cursor-class="hover">Instagram</a></li>
+                    <li><a href="" cursor-class="hover">Facebook</a></li>
+                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="tedx_section_image_partners_content image2">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><a href="">Sponsor</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Whatsapp</a></li>
-            </ul>
+        <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="1">
+            <div class="_tedx_partner_image_wrapper">
+                <img src="{{ asset('img/cocacola.png') }}" alt="">
+            </div>
+            <div class="_tedx_partner_profile_wrapper">
+                <h1>Coca Cola</h1>
+                <ul class="a">
+                    <li><span cursor-class="subtle">Sponsor</span></li>
+                    <li><a href="" cursor-class="hover">Instagram</a></li>
+                    <li><a href="" cursor-class="hover">Facebook</a></li>
+                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="_tedx_section_image_partners_container container2">
+    <div class="_tedx_section_image_partners_container" data-scroll data-scroll-speed="2">
         <div class="tedx_section_image_partners_content">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><a href="">Suuported By</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Whatsapp</a></li>
-            </ul>
+            <div class="_tedx_partner_image_wrapper">
+                <img src="{{ asset('img/cocacola.png') }}" alt="">
+            </div>
+            <div class="_tedx_partner_profile_wrapper">
+                <h1>Coca Cola</h1>
+                <ul class="a">
+                    <li><span cursor-class="subtle">Supported By</span></li>
+                    <li><a href="" cursor-class="hover">Instagram</a></li>
+                    <li><a href="" cursor-class="hover">Facebook</a></li>
+                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="tedx_section_image_partners_content image2">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><a href="">Partnership</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Whatsapp</a></li>
-            </ul>
+        <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="2">
+            <div class="_tedx_partner_image_wrapper">
+                <img src="{{ asset('img/cocacola.png') }}" alt="">
+            </div>
+            <div class="_tedx_partner_profile_wrapper">
+                <h1>Coca Cola</h1>
+                <ul class="a">
+                    <li><span cursor-class="subtle">Partnership</span></li>
+                    <li><a href="" cursor-class="hover">Instagram</a></li>
+                    <li><a href="" cursor-class="hover">Facebook</a></li>
+                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>

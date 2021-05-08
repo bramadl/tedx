@@ -15,7 +15,7 @@
       <h2>Membicarakan yang dibicarakan manusia</h2>
     </div>
     <div class="_tedx_register_cta">
-      <a href="#" cursor-class="hover">Beli Tiket</a>
+      <button cursor-class="hover">Beli Tiket</button>
     </div>
   </div>
 </div>
@@ -41,9 +41,9 @@
 </div>
 
 <div class="_tedx_hero_icons">
-  <a href="#" cursor-class="hover"><i class="fab fa-twitter"></i></a>
-  <a href="#" cursor-class="hover"><i class="fab fa-instagram"></i></a>
-  <a href="#" cursor-class="hover"><i class="fab fa-line"></i></a>
+  <a href="https://twitter.com/tedxbrawijaya" cursor-class="hover"><i class="fab fa-twitter"></i></a>
+  <a href="https://instagram.com/tedxuniversitasbrawijaya" cursor-class="hover"><i class="fab fa-instagram"></i></a>
+  <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=cgu9302m&openerPlatform=webview&openerKey=webview%3AunifiedSearch" cursor-class="hover"><i class="fab fa-line"></i></a>
 </div>
 @endsection
 
@@ -62,9 +62,9 @@
       </div>
     </div>
     <div class="_tedx_section_about_cta">
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#ted') }}">About TED</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TED</a></div>
       <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDxUniversitasBrawijaya</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#tedx') }}">About TEDx</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDx</a></div>
     </div>
   </div>
 </section>
@@ -76,7 +76,7 @@
       <div class="_tedx_video_text">
         <h1><span>TEDx</span>UniversitasBrawijaya</h1>
         <h2>Teaser Video</h2>
-        <button cursor-class="hover">Play Video</button>
+        <button cursor-class="hover" class="open-video-player">Play Video</button>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
     <div class="_tedx_speaker_wrapper">
       <div class="_tedx_speaker_profile">
         <div class="_tedx_speaker_image reveal">
-          <img src="{{ asset('img/speakers/clara.jpg') }}">
+          <img src="https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg">
           <div class="_tedx_speaker_title">
             <div>
               <h1>Ungkaian Persepsi dan Stigma Wajah Asia</h1>
@@ -120,62 +120,62 @@
         </div>
         <div class="_tedx_speaker_detail_description">
           <p>Persepsi menjadi salah satu proses penting untuk menangkap dan memproses informasi untuk diterjemahkan dalam otak yang kemudian setiap individu berimprovisasi untuk mengelompokkan informasi-informasi tersebut berdasarkan kategorinya sebagai sebuah stereotip. Stereotip dapat dilakukan pada suatu kelompok manusia, benda, budaya, dan lainnya. Tidak jarang dalam prakteknya bahwa pengelompokkan informasi ini dapat dilakukan secara negatif dan sengaja oleh suatu kelompok budaya pada kelompok lainnya sehingga menimbulkan keresahan dan dampak multidimensi. <br><br>
-          Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.</p>
+            Pada talk kali ini, Anastasia Satriyo akan membahas bagaimana persepsi stigma Asia dari kacamata Barat dapat membentuk konsep diri orang Indonesia.</p>
         </div>
       </div>
     </div>
     <div class="_tedx_speaker_list">
       <div class="_tedx_speaker_avatar" data-target="anastasia" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/anastasia_cCbiXpWj_3t.jpg">
         <div class="_tedx_speaker_info">
           <h1>Anastasia Satriyo</h1>
           <p>Psikolog</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="diego" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/diego_17X4gmRxS.jpg">
         <div class="_tedx_speaker_info">
           <h1>Diego Yanuar</h1>
           <p>Pesepeda</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="clara" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg">
         <div class="_tedx_speaker_info">
           <h1>Clara Tunjung Pramesti</h1>
           <p>Mahasiswa</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="jimi" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/jimi_pe2cB_9Ovan.jpg">
         <div class="_tedx_speaker_info">
           <h1>Jimi Multhazam</h1>
           <p>Musisi</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="hengki" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/DSC04080_hLZtl6tYTh1O.JPG">
         <div class="_tedx_speaker_info">
           <h1>Hengki Herwanto</h1>
           <p>Kurator</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="abdul" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/abdul_9Ve4sVKfy.JPG">
         <div class="_tedx_speaker_info">
           <h1>Abdul Hair</h1>
           <p>Akademisi</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="mice" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/mice_YRGNQESaK.jpg">
         <div class="_tedx_speaker_info">
           <h1>Mice Cartoon</h1>
           <p>Komikus</p>
         </div>
       </div>
       <div class="_tedx_speaker_avatar" data-target="bondan" cursor-class="speaker">
-        <img src="{{ asset('img/speakers/clara.jpg') }}">
+        <img src="https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG">
         <div class="_tedx_speaker_info">
           <h1>Bondan Sekari Adi</h1>
           <p>Value Investor</p>
@@ -206,10 +206,10 @@
     <div id="drag-container" cursor-class="drag">
       <div id="spin-container">
         <!-- Add your images (or video) here -->
-        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=931&q=80" data-archetype="dreamer" cursor-class="dreamer" />
-        <img src="https://images.unsplash.com/photo-1575995872537-3793d29d972c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=965&q=80" data-archetype="lover" cursor-class="lover" />
-        <img src="https://images.unsplash.com/photo-1578924824780-b7c49930e310?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=935&q=80" data-archetype="hero" cursor-class="hero" />
-        <img src="https://images.unsplash.com/photo-1582201942961-2e1c3e63d9b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=911&q=80" data-archetype="jester" cursor-class="jester" />
+        <img src="https://ik.imagekit.io/tedxub/Dreamer_Z_Qi8RWfGv.png" data-archetype="dreamer" cursor-class="dreamer" />
+        <img src="https://ik.imagekit.io/tedxub/Lover_OTft5lKXOpI.png" data-archetype="lover" cursor-class="lover" />
+        <img src="https://ik.imagekit.io/tedxub/Hero_kA1rvFeZMvh.png" data-archetype="hero" cursor-class="hero" />
+        <img src="https://ik.imagekit.io/tedxub/Jester_r8BP7ai_UT.png" data-archetype="jester" cursor-class="jester" />
 
         <!-- Text at center of ground -->
         <div id="archetypeText" class="text">
@@ -239,68 +239,17 @@
 
 <!-- Ticket Purchase -->
 <div id="ticketPurchase" data-scroll-section>
-  <div class="_tedx_ticket_container">
-    <div class="_tedx_ticket">
-      <div class="_tedx_ticket_left">
-        <div class="_tedx_ticket_logo">
-          <img src="{{ asset('img/tedx.png') }}">
-        </div>
-        <div class="_tedx_ticket_title">
-          <h2>Manifestasi Peradaban</h2>
-          <div>
-            <span>29-30 Mei 2021</span>
-            <span class="dot"></span>
-            <span>12:00 WIB</span>
-          </div>
-        </div>
-        <div class="_tedx_ticket_token">
-          <span>A2XX XXXX XXXX XXA2</span>
-        </div>
-      </div>
-      <div class="_tedx_ticket_right">
-        <svg viewBox="0 0 386 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.75" d="M0.206634 399.609L110.914 199.915L0.0834961 0H162.246L191.995 53.6622L221.745 0H371.999C375.772 0 385.464 0 385.464 0L273.076 199.915L385.311 399.609C385.311 399.609 375.732 399.609 371.999 399.609H221.622L191.995 346.168L162.369 399.609H0.206634Z" fill="#B82B2B" />
-          <line x1="1" y1="-1" x2="198.851" y2="-1" transform="matrix(0.48773 0.872994 -0.873401 0.487002 14 24.9756)" stroke="white" stroke-width="2" stroke-linecap="round" />
-          <line x1="1" y1="-1" x2="88.9328" y2="-1" transform="matrix(-0.48773 0.872994 0.873401 0.487002 371.473 24.9756)" stroke="white" stroke-width="2" stroke-linecap="round" />
-          <line x1="1" y1="-1" x2="58.9552" y2="-1" transform="matrix(0.48773 0.872994 -0.873401 0.487002 353 344.662)" stroke="white" stroke-width="2" stroke-linecap="round" />
-          <line x1="1" y1="-1" x2="58.9552" y2="-1" transform="matrix(-0.48773 0.872994 0.873401 0.487002 193.242 347.659)" stroke="white" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </div>
-    </div>
-    <div class="_tedx_ticket_detail">
-      <div class="_tedx_ticket_description">
-        <div>
-          <h3><span>Ticket</span> Presale 1</h3>
-        </div>
-        <div>
-          <p>Pembelian hanya berlaku pada tanggal <br> <span>11 - 17 Mei 2021</span></p>
-        </div>
-        <div>
-          <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
-        </div>
-        <div>
-          <a href="#" cursor-class="hover">Syarat dan Ketentuan</a>
-        </div>
-      </div>
-      <div class="_tedx_ticket_button">
-        <button cursor-class="hover">
-          <span>Beli Tiket</span>
-          <strong>Rp 85.000</strong>
-        </button>
-      </div>
-    </div>
-  </div>
 
+  @foreach ($tickets as $key => $ticket)
   <div class="_tedx_ticket_container">
     <div class="_tedx_ticket_detail">
       <div class="_tedx_ticket_description">
         <div>
-          <h3><span>Ticket</span> Presale 1</h3>
+          <h3><span>Ticket</span> Presale {{ $key + 1 }}</h3>
         </div>
         <div>
-          <p>Pembelian hanya berlaku pada tanggal <br> <span>18 - 24 Mei 2021</span></p>
-        </div>
-        <div>
+          <p>{{ $ticket->description }}</p>
+          <br>
           <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
         </div>
         <div>
@@ -308,10 +257,17 @@
         </div>
       </div>
       <div class="_tedx_ticket_button">
+        @if ($presaleAvailable[$ticket->type])
+        <a href="{{ url('/ticket/payment?type=' . $ticket->type) }}" cursor-class="hover">
+          <span>Beli Tiket</span>
+          <strong>Rp {{ number_format($ticket->price,2,',','.') }}</strong>
+        </a>
+        @else
         <button cursor-class="hover">
           <span>Beli Tiket</span>
-          <strong>Rp 85.000</strong>
+          <strong>Rp {{ number_format($ticket->price,2,',','.') }}</strong>
         </button>
+        @endif
       </div>
     </div>
     <div class="_tedx_ticket">
@@ -342,6 +298,21 @@
       </div>
     </div>
   </div>
+  @endforeach
+
 </div>
 <!-- ./Ticket Purchase -->
+@endsection
+
+@section('video')
+<div id="videoPlayer">
+  <div class="close-video-player">
+    <span>&times;</span>
+  </div>
+
+  <video width="320" height="240" controls>
+    <source src="https://tedxuniversitasbrawijaya.com/video/teaser.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+</div>
 @endsection
