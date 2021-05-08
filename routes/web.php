@@ -23,3 +23,4 @@ Route::view('/register/core', 'auth.register.core');
 Route::view('/register/volunteer', 'auth.register.volunteer');
 Route::view('/login', 'auth.login');
 Route::view('/dashboard', 'dashboard');
+Route::view('/tickets', 'ticket');
